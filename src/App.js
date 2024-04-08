@@ -22,7 +22,7 @@ function App() {
           <GlobalStyle />
         </ThemeProvider>
       </Provider>
-
+   
     </>
   );
 }

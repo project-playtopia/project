@@ -1,7 +1,9 @@
 import styled, { css } from "styled-components";
+import theme from "../../global/theme";
+
 const variantCSS = {
   main: css`
-    background-color: ${({theme})=>theme.PALETTE.primary["main"]};
+    background-color: ${ ({theme}) => theme.PALETTE.primary["main"]};
   `,
    sub: css`
    background-color: ${({theme})=>theme.PALETTE.sub["sub_soft"]};
