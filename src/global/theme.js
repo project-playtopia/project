@@ -21,5 +21,34 @@ theme.PALETTE = {
   }
 }
 
+theme.FONT_SIZE = {
+  h1: "50px",
+  h2: "38px",
+  h3: "30px",
+  h4: "24px",
+  default: "18px",
+  sub: "16px",
+  footer : "13px"
+}
+
+theme.FONT_WEIGHT = {
+
+  thin: "100",
+  regular: "400",
+  semibold:"600",
+  bold: "700",
+}
+
+theme.FONT_LINE = {
+
+  h1: "75px",
+  h2: "55px",
+  h3: "41px",
+  h4: "29px",
+  default: "25px",
+  sub: "22px",
+  footer: "17px",
+}
+
 
 export default theme;
