@@ -9,16 +9,15 @@ const ThreeButtons = ({size, shape, variant, children, ...rest}) => {
 
   const getButtonStyle =(path, index) =>{
     return location.pathname === path 
-    ? {width : "178px", height : "57px", fontSize : "24px", color : "#1FB1D9", background : "none" , fontWeight : "bold"}
-    : {width : "178px", height : "57px", fontSize : "24px", color : "#000000", background : "none" , fontWeight: "regular"}
+    ? {width : "120px", height : "57px", fontSize : "18px", color : "#1FB1D9", background : "none" , fontWeight : "bold"}
+    : {width : "120px", height : "57px", fontSize : "18px", color : "#000000", background : "none" , fontWeight: "regular"}
   }
 
   const verticalLineStyle = {
-    height: '24px', 
-    width: '2.5px', 
+    height: '18px', 
+    width: '1.8px', 
     backgroundColor: '#000000', 
     alignSelf: 'center'  
-    
   };
 
   return (

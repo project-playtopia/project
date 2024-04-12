@@ -3,28 +3,27 @@ import styled from "styled-components";
 const S = {};
 
 
-
-
 S.Button = styled.button`
 color: #000000;
 
 `
 
+S.Threebutton = styled.div`
+position:absolute;
+left: 38%;
+top : 15%;
+font-size: 16px;
+`
 
 
 // BasicSearch.jsx 검색창
 S.search = styled.div`
 position:absolute;
-left:30%;
-top : 15%;
+left: 30%;
+top : 25%;
 `
 
 S.gridContainer= styled.div`
-
-  /* 여기에다가 아마도
-  width : 90% 
-  margin : 0 auto;
-  */
 
      display: grid;
      position:absolute;
@@ -56,7 +55,6 @@ S.gridContainer= styled.div`
 
      `
 
-// 이미지를 감싸는 컨테이너 스타일, content를 props로 받음
 S.ImageWrapper = styled.div`
   width: 250px;
   height: 250px;
@@ -65,6 +63,7 @@ S.ImageWrapper = styled.div`
   gap : 10px;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 
 
   &:hover img {
@@ -76,6 +75,7 @@ S.ImageWrapper = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
     display: block;
   }
   
@@ -86,22 +86,29 @@ S.ImageWrapper = styled.div`
   height: 250px;
   position: relative;
   border-radius: 20px;
+  
  
 
 `;
 
 S.Content = styled.div`
-  color: #fff; // 텍스트 색상
-  font-size: 18px; // 텍스트 크기 (rem 단위)
+  color: #fff; 
+  font-size: 16px;
+  font-weight: ${({theme})=>theme.FONT_WEIGHT["thin"]};
   line-height: 1.5; 
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 70%;
+  left: 35%;
   transform: translate(-50%, -50%);
-  display: none; // 기본적으로 숨김
+  display: none; 
+
+  .attName{
+    font-weight: ${({theme})=>theme.FONT_WEIGHT["semibold"]};
+    font-size: ${({theme})=>theme.FONT_SIZE["default"]}
+  }
 
   ${S.ImageWrapper}:hover & {
-    display: block; // hover 시 보임
+    display: block; 
   }
 `;
 
