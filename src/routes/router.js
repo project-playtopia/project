@@ -70,7 +70,7 @@ const router = createBrowserRouter([
    path:"/",
     element : <LayoutMain />,
     children :  [{
-     path: "/",
+      path: "/",
       element: <Main />
     }]
   }
@@ -296,7 +296,7 @@ const router = createBrowserRouter([
         element :<LostnFoundListEverland />
       },
       {
-        path :"lostnfound/list/lotterworld",
+        path :"lostnfound/list/lotteworld",
         element :<LostnFoundListLotteworld />
       },
       {
