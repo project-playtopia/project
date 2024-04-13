@@ -258,8 +258,7 @@ const LayoutMain = () => {
                 snhyein2001@gmail.com <br/>
                 charmmmn@gmail.com<br/>
                 jungjune276@gmail.com <br/>
-                whs2769@gmail.com <br/>
-                parkminseo3123@gmail.com
+                parkminseo3123@gmail.com <br/>
             </p>
           </div>
         </S.Footer>

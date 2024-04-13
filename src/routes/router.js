@@ -64,6 +64,7 @@ import LostnFoundRegisterLotteworld from "../pages/lostnfoundRegister/LostnFound
 import LostnFoundRegisterSeoulland from "../pages/lostnfoundRegister/LostnFoundRegisterSeoulland";
 import LostnFoundExplain from "../pages/lostnfoundExplain/LostnFoundExplain";
 import LostnFoundSearch from "../pages/lostnfoundSearch/LostnFoundSearch";
+import SignupFinish from "../pages/signupFinish/SignupFinish";
 
 const router = createBrowserRouter([
   {
@@ -81,6 +82,10 @@ const router = createBrowserRouter([
       {
         path:"/signUp",
         element:<SignUp />
+      },
+      {
+        path : "/signUpFinish",
+        element:<SignupFinish/>
       },
       {
         path : "/signIn",
