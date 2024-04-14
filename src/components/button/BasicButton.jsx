@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './style';
+import Button from './style.js';
 
 const BasicButton = ({size, shape, variant, children, ...rest}) => {
   return (

@@ -10,9 +10,6 @@ const app = express();
 
 app.use(bodyParser.json()); 
 app.use(cors())
-app.listen(port,()=>{
-  console.log(`server is on ${port}`)
-})
 
 app.post('/signUp', async (req, res) => {
   try {

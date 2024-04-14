@@ -1,14 +1,13 @@
 import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import router from "./routes/router";
+import router from "./routes/router.js";
 import { ThemeProvider } from "styled-components";
-import theme from "./global/theme";
-
+import theme from "./global/theme.js";
 import { Provider } from 'react-redux'
 import { legacy_createStore as createStore} from "redux";
 import { devToolsEnhancer } from 'redux-devtools-extension'
-import themepark from "./modules/themepark";
-import GlobalStyle from "./global/global";
+import themepark from "./modules/themepark.js";
+import GlobalStyle from "./global/global.js";
 
 const store = createStore(themepark , devToolsEnhancer())
 

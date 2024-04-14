@@ -3,7 +3,7 @@ import React from 'react';
 const LotteworldAttractionExplain = () => {
   return (
     <div>
-      롯데월드 어트랙션 상세정보
+      <p>롯데월드 놀이기구 상세 정보</p> 
     </div>
   );
 };
