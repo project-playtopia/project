@@ -235,14 +235,14 @@ S.Footer = styled.div`
   .footerbox{
     position: relative;
     left: 350px;
-    bottom: 6%;
+    bottom: 7%;
     border-left: solid 2px #fff;
     height: 120px;
   }
   .maker{
     position: relative;
     left: 30px;
-    bottom: 6%;
+    bottom: 7%;
     color: #fff;
     font-weight:  ${ ({theme}) => theme.FONT_WEIGHT["bold"]};
   }

@@ -1,0 +1,61 @@
+[33mcommit 149b4b8c42b32dfad88901e4c63fc0481c5e5a78[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mattractions-branch[m[33m)[m
+Merge: 80a1adf 93ff57e
+Author: gyeomnii <a01020799303@gmail.com>
+Date:   Fri Apr 12 12:55:49 2024 +0900
+
+    Merge https://github.com/project-playtopia/project into attractions-branch
+
+[33mcommit 80a1adf20cd2762a6a0d66151319da75b2735f2a[m
+Author: gyeomnii <a01020799303@gmail.com>
+Date:   Fri Apr 12 12:50:23 2024 +0900
+
+    어트랙션 수정중
+
+[33mcommit 93ff57e9750c93f371178d281c6bae52fc7971c5[m[33m ([m[1;32mmain[m[33m)[m
+Merge: 039b35b 1dfc91f
+Author: Hye-in Son <130124509+hyein07100@users.noreply.github.com>
+Date:   Fri Apr 12 12:40:40 2024 +0900
+
+    Merge pull request #2 from project-playtopia/develop
+    
+    Develop
+
+[33mcommit 1dfc91fbf8e3140ae6c533783028e3092c6a48c0[m[33m ([m[1;31morigin/develop[m[33m)[m
+Merge: 039b35b e5a4747
+Author: Hye-in Son <130124509+hyein07100@users.noreply.github.com>
+Date:   Mon Apr 8 11:12:29 2024 +0900
+
+    Merge pull request #1 from project-playtopia/feature-main
+    
+    네비게이션바, 메인페이지
+
+[33mcommit e5a474734a9606faa7bbe351ab35a1b4be4886e4[m[33m ([m[1;31morigin/feature-main[m[33m)[m
+Author: Hyein <snhyein2001@gmail.com>
+Date:   Mon Apr 8 11:03:07 2024 +0900
+
+    네비게이션바, 메인페이지
+
+[33mcommit 039b35bbc41d3c368942acea3ba5fb488966b04e[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mperformance-branch[m[33m, [m[1;32mdevelop[m[33m, [m[1;32mcourse-branch[m[33m, [m[1;32mattractions[m[33m)[m
+Merge: 6ae383c d121f7b
+Author: Hyein <snhyein2001@gmail.com>
+Date:   Thu Mar 21 11:14:12 2024 +0900
+
+    Resolve merge conflict by removing content from README.md
+
+[33mcommit d121f7ba9d0a35b3593d8a46603c8084c9359653[m
+Author: Hyein <snhyein2001@gmail.com>
+Date:   Tue Mar 19 21:40:02 2024 +0900
+
+    first commit
+
+[33mcommit 5eefcd546f80e94b7d246bc69dcffdc36669c1e7[m
+Author: hyein07100 <snhyein2001@gmail.com>
+Date:   Sun Mar 17 18:35:38 2024 +0900
+
+    Initialize project using Create React App
+
+[33mcommit 6ae383c5066ab49048490908516ca83b1294668f[m
+Author: Hye-in Son <130124509+hyein07100@users.noreply.github.com>
+Date:   Sun Mar 17 18:19:03 2024 +0900
+
+    Initial commit
