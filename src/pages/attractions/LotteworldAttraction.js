@@ -1,6 +1,6 @@
 import React from 'react';
-import ThreeButtons from '../../components/ThreeButtons/ThreeButtons';
-import BasicSearch from '../../components/search/BasicSearch';
+import ThreeButtons from '../../components/ThreeButtons/ThreeButtons.jsx';
+import BasicSearch from '../../components/search/BasicSearch.jsx';
 import S from './style.js'
 import { NavLink } from 'react-router-dom';
 

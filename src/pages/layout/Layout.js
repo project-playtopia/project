@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import S from './style';
+import S from './style.js';
 import { useDispatch } from 'react-redux';
 import { setPreviousUrl } from '../../modules/user.js';
 import logoImage from './logo/logo.png'; 
