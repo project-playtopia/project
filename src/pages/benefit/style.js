@@ -8,6 +8,7 @@ const mainColor = ({theme}) => theme.PALETTE.primary.main;
 const mainDarkenColor = ({theme}) => theme.PALETTE.primary.main_darken;
 const searchBarBorder = '0.2rem';
 const h1FontSize = "40px";
+const basicFontSize = '0.9rem';
 
 S.Header1 = styled.h1`
 	margin: 100px auto 10px auto;
@@ -96,7 +97,7 @@ S.SearchInput = styled.input`
 	border-radius: 30px 0 0 30px;
 	outline: none;
 	padding-left: 1rem;
-	font-size: 0.9rem;
+	font-size: ${basicFontSize};
 `;
 
 S.SearchBtn = styled.button`
@@ -111,14 +112,14 @@ S.SearchBtn = styled.button`
 `;
 
 S.OrderSelector = styled.div`
-	font-size: 0.9rem;
+	font-size: ${basicFontSize};
 	margin: 10px 20px;
 `;
 
 S.OrderBtn = styled.button`
 	border: none;
 	background: none;	
-	font-size: 0.9rem;
+	font-size: ${basicFontSize};
 	cursor: pointer;
 
 `;
@@ -137,9 +138,24 @@ S.GridItem = styled.div`
 	border-style: solid;
 	border-radius: 30px;
 	border-width: 1px;
+	font-size: ${basicFontSize};
+	padding: 1rem;
+	color: #000;
+	height: 100%;
+	cursor: pointer;
 	&:hover{
 		box-shadow: 0 0 10px 2px ${mainLightenColor};
 	}
+	line-height: 2rem;
 `;
+
+S.ItemTitle = styled.p`
+	font-size: 1rem;
+	font-weight: 500;
+	width: 100%;
+	
+`;
+
+
 
 export default S;

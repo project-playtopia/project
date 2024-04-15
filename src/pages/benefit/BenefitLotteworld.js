@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import S from './style';
+import S from './style.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-// import { MongoClient } from "mongodb";
-// import connect from './connect';
-// import BenefitLotteworldSchema from './benefit_lotte_schma.js';
-// import express from 'express';
-// import cors from 'cors';
-// import bodyParser from 'body-parser';
+import BenefitItem from './BenefitItem.jsx';
 
 
 const BenefitLotteworld = () => {
@@ -23,8 +18,14 @@ const BenefitLotteworld = () => {
   // 배열로 저장되었다고 가정할 때 배열이 변하면 리스트도 변해야한다.
   // -> useState, useEffect를 사용한다.
 
-  
   useEffect(()=>{
+    fetch(`http://localhost:8000/benefit/list/?company=lotteworld&filter=${filter}`)
+      .then((res)=>res.json())
+      .then((data)=>{
+        // console.log(data);
+        setBenefitList(data);
+      })
+    ;
     document.getElementById('nav-container').children.forEach((btn)=>{
       if(btn.id === filter){
         btn.classList.add('active');
@@ -34,8 +35,6 @@ const BenefitLotteworld = () => {
     });
   }, [filter]);
   
-  useEffect(()=>{},[benefitList]);
-
   const onClickToSearch = () => {
     // console.log("clicked")
   }
@@ -68,7 +67,13 @@ const BenefitLotteworld = () => {
       </S.OrderSelector>
       <S.GridWrapper>
         {
-          benefitList.map(()=>{})
+          benefitList.map((item)=>(
+            <BenefitItem
+              itemId={item._id} title={item.title}
+              startAt={item.start_at} endAt={item.end_at} price={item.price}
+              img={item.img}
+            />
+          ))
         }
       </S.GridWrapper>
     </div>

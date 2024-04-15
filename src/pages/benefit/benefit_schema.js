@@ -1,8 +1,12 @@
 import { Schema, model } from 'mongoose';
 
-const benefitLotteworldSchema = new Schema(
+const benefitSchema = new Schema(
 	{
 		title: {
+			type: String,
+			required: true,
+		},
+		company:{
 			type: String,
 			required: true,
 		},
@@ -21,8 +25,11 @@ const benefitLotteworldSchema = new Schema(
 		price: {
 			type: Number,
 			required: true,
+		},
+		img: {
+			type: String,
 		}
 	}
 );
 
-export default model("BenefitLotteworldSchema", benefitLotteworldSchema);
+export default model("BenefitSchema", benefitSchema);
