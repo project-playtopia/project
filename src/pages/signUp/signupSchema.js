@@ -1,9 +1,9 @@
 import { Schema, model } from "mongoose";
 
 const signupSchema = new Schema({
-  id:{type : String, require : true},
+  id:{type : String, unique : true, require : true},
   password:{type:String, require:true},
-  phonenumber : {type:Number,require:true}
+  phonenumber : {type:String,require:true}
 })
 
 export default model("Signup", signupSchema);
