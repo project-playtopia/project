@@ -9,6 +9,8 @@ const BasicCostLotteworld = () => {
       <S.CostWrapper>
         <S.costboxtop>
           <S.line></S.line>
+          <p>DAY01</p>
+          <p>After04</p>
         </S.costboxtop>
         </S.CostWrapper>
     </S.Background>
