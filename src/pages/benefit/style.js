@@ -6,6 +6,10 @@ const mainSoftColor = ({theme}) => theme.PALETTE.primary.main_soft;
 const mainLightenColor = ({theme}) => theme.PALETTE.primary.main_lighten;
 const mainColor = ({theme}) => theme.PALETTE.primary.main;
 const mainDarkenColor = ({theme}) => theme.PALETTE.primary.main_darken;
+const subColor = ({theme}) => theme.PALETTE.sub.sub;
+const fontRegular = ({theme}) => theme.FONT_WEIGHT.regular;
+const fontSemiBold = ({theme}) => theme.FONT_WEIGHT.semibold;
+const fontBold = ({theme}) => theme.FONT_WEIGHT.bold;
 const searchBarBorder = '0.2rem';
 const h1FontSize = "40px";
 const basicFontSize = '0.9rem';
@@ -113,7 +117,7 @@ S.SearchBtn = styled.button`
 
 S.OrderSelector = styled.div`
 	font-size: ${basicFontSize};
-	margin: 10px 20px;
+	margin: 20px 30px;
 `;
 
 S.OrderBtn = styled.button`
@@ -121,7 +125,10 @@ S.OrderBtn = styled.button`
 	background: none;	
 	font-size: ${basicFontSize};
 	cursor: pointer;
-
+	&.active{
+		color: ${mainColor};
+		font-weight: ${fontBold};
+	}
 `;
 
 S.GridWrapper = styled.div`
@@ -139,7 +146,7 @@ S.GridItem = styled.div`
 	border-radius: 30px;
 	border-width: 1px;
 	font-size: ${basicFontSize};
-	padding: 1rem;
+	padding: 1.2rem;
 	color: #000;
 	height: 100%;
 	cursor: pointer;
@@ -151,9 +158,24 @@ S.GridItem = styled.div`
 
 S.ItemTitle = styled.p`
 	font-size: 1rem;
-	font-weight: 500;
+	font-weight: ${fontBold};
 	width: 100%;
-	
+`;
+
+S.ItemPrice = styled.span`
+	font-weight: ${fontSemiBold};
+	color: ${subColor};
+`;
+
+S.ItemImgWrapper = styled.div`
+	width: 100%;
+	text-align: center;
+	height: 10rem;
+	justify-content: center;
+	background-image: url(${(props) => props.imgSrc});
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 `;
 
 

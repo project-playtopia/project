@@ -84,8 +84,6 @@ connect();
 // 	}
 // );
 
-// const benefitModify = await BenefitSchema.findOne({_id: '661b8b01e2d89c8c164e28e3'});
-// await BenefitSchema.updateOne(benefitModify, {img: 'https://adventure.lotteworld.com/image/2024/3/202403250908047910_231.jpg'});
 
 app.use(bodyParser.json())
 app.use(cors())
@@ -94,3 +92,38 @@ app.listen(port, ()=>{
 	console.log(`server start on ${port}`);
 })
 
+// const benefitModify = await BenefitSchema.findOne({_id: '661cab5770f2928aa8a761d1'});
+// await BenefitSchema.updateOne(benefitModify, {
+// 	img: 'https://seoulland.co.kr/_File/operate/saleProgram//listImgFile_1682499760_0.webp'
+// });
+
+
+// const benfitInserted = await BenefitSchema.create(
+	// {
+	// 	title: '픽시매직 교복 패키지',
+	// 	company: 'lotteworld',
+	// 	start_at: '2024-04-01',
+	// 	end_at: '2024-04-30',
+	// 	price: 53000,
+	// 	benefit_type: 'normal',	
+	// 	img: 'https://adventure.lotteworld.com/image/2024/3/202403260512067230_231.jpg',
+	// },
+// 	{
+// 		title: '롯데카드 제휴실적에 상관없이 40%할인!',
+// 		company: 'seoulland',
+// 		start_at: '2024-03-04',
+// 		end_at: '2024-04-30',
+// 		price: 31200,
+// 		benefit_type: 'card',
+// 		img: 'https://seoulland.co.kr/_File/operate/saleProgram//listImgFile_1653554002_0.webp',
+// 	},
+// 	{
+// 		title: '기아멤버스 전 회원 최대 71% 혜택! (포인트 차감 조건)',
+// 		company: 'seoulland',
+// 		start_at: '2024-04-01',
+// 		end_at: '2024-05-31',
+// 		price: 15000,
+// 		benefit_type: 'membership',
+// 		img: 'https://seoulland.co.kr/_File/operate/saleProgram//listImgFile_1692345851_0.webp'
+// 	}
+// );
