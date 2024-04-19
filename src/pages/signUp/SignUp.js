@@ -11,8 +11,8 @@ import { useForm } from 'react-hook-form';
 const SignUp = () => {
   const {register, handleSubmit, getValues, formState: {isSubmitting, isSubmitted, errors}} = useForm({mode: "onChange"})
     
-  const idRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[!@#])[\da-zA-Z!@#]{8,}$/;
+  const idRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]{5,}$/;
+  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[!@#])[\da-zA-Z!@#]{10,}$/;
 
   const [allAgreed, setAllAgreed] = useState(false);
   const [privacyAgreed, setPrivacyAgreed] = useState(false);
@@ -76,46 +76,33 @@ const SignUp = () => {
   };
 
   const navigate = useNavigate();
-  // const handleSignUpClick = (e) => {
-  //   if (!privacyAgreed || !termsAgreed || !uniqueIdAgreed || !telecomAgreed) {
-  //     alert("필수 약관에 동의해주세요.")
-  //     e.preventDefault();
-  //   } else {
-  //     // navigate("/signUpFinish");
-  //     const response = await fetch("http://localhost:3000/signUp", {
-  //       method: "POST", // 또는 'PUT'
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         id: id,
-  //         password: password
-  //       }),
-  //     });
-
-  //   }
-  // };
-  return (
-    <S.Background>
-      <S.FormContainer>
-      <S.H1>회원가입</S.H1>
-      <S.Form onSubmit={handleSubmit((data) => {
-            console.log(data)
-            fetch('http://localhost:3000/signUp', {
+  const handleSignUpClick = (data) => {
+    if (!privacyAgreed || !termsAgreed || !uniqueIdAgreed || !telecomAgreed) {
+      alert("필수 약관에 동의해주세요.");
+    } else {
+      fetch('http://localhost:8000/register/signUp', {
                 method : 'POST',
+                credentials:'include',
                 headers : {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Accept':'application/json'
                 },
                 body : JSON.stringify({
                     id : data.id,
                     password : data.password,
                     phonenumber : data.phonenumber
-                }),
-                credentials : 'include'
+                })
             })
             .then(res => res.json())
             .then(res => console.log(res))
-        })}>
+            navigate('/signUpFinish')
+      
+  }};
+  return (
+    <S.Background>
+      <S.FormContainer>
+      <S.H1>회원가입</S.H1>
+      <form onSubmit={handleSubmit(handleSignUpClick)}>
         <S.IdInputContainer>
           <S.Input type="text" placeholder=" 아이디 (최소 5글자)" id="id"  
            {...register("id", {
@@ -138,7 +125,7 @@ const SignUp = () => {
             }
         })}/>
          {errors?.password?.type === 'pattern' && (
-                    <S.ErrorMessge>소문자, 숫자, 특수문자 각 하나씩 포함한 8자리 이상의 패스워드를 만들어주세요.</S.ErrorMessge>
+                    <S.ErrorMessge>소문자, 숫자, 특수문자 각 하나씩 포함한 10자리 이상의 패스워드를 만들어주세요.</S.ErrorMessge>
                 )}
 
           <S.Icon onClick={togglePasswordVisiblity}>
@@ -250,7 +237,7 @@ const SignUp = () => {
                 <S.CancleButton>취소</S.CancleButton>
               </NavLink>
             </S.ButtonContainer>
-            </S.Form>
+            </form>
       </S.FormContainer>
       </S.Background>
   );

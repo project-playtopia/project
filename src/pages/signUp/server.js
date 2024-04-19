@@ -6,11 +6,17 @@ import bodyParser from 'body-parser'
 
 connect();
 const app = express();
-const port = 3000;
-app.use(bodyParser.json());
+const port = 8000;
 
-app.use(cors())
-app.use('/signUp', router)
+app.use(bodyParser.json());
+app.use(express.urlencoded({extended : false}));
+app.use(cors({
+  origin : 'http://localhost:3000',
+  method : ['GET', 'POST', 'DELETE', 'PUT'],
+  credentials : true,
+}));
+
+app.use('/register', router)
  
 
 app.listen(port,()=>{
