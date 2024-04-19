@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
-import S from './style';
+import S from './style.js';
 import { useDispatch } from 'react-redux';
 import { setPreviousUrl } from '../../modules/user.js';
 import logoImage from './logo/logo.png'; 
@@ -258,8 +258,7 @@ const LayoutMain = () => {
                 snhyein2001@gmail.com <br/>
                 charmmmn@gmail.com<br/>
                 jungjune276@gmail.com <br/>
-                whs2769@gmail.com <br/>
-                parkminseo3123@gmail.com
+                parkminseo3123@gmail.com <br/>
             </p>
           </div>
         </S.Footer>

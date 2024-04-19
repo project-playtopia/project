@@ -26,6 +26,7 @@ theme.FONT_SIZE = {
   h2: "38px",
   h3: "30px",
   h4: "24px",
+  h5:"20px",
   default: "18px",
   sub: "16px",
   footer : "13px"
@@ -45,6 +46,7 @@ theme.FONT_LINE = {
   h2: "55px",
   h3: "41px",
   h4: "29px",
+  h5 : "20px",
   default: "25px",
   sub: "22px",
   footer: "17px",
