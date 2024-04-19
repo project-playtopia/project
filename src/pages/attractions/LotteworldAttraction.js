@@ -45,7 +45,9 @@ import Image36 from "../../pages/attractions/images/Lotteworld/at36.jpg"
 
 
 const LotteworldAttraction = () => {
+  
  
+
   return (
     <div>
       <S.Threebutton>
@@ -59,7 +61,7 @@ const LotteworldAttraction = () => {
 
         <S.ImageWrapper>
           <S.gridItem>       
-            <NavLink to={"/attraction/lotteworld/explain"}>  
+            <NavLink to={`/attraction/lotteworld/explain/${1}`}>
             <S.Image src={Image1} alt="롯데월드 어트랙션1" /> 
             </NavLink>
           </S.gridItem>
@@ -71,7 +73,7 @@ const LotteworldAttraction = () => {
 
           <S.ImageWrapper>
           <S.gridItem> 
-          <NavLink to={"/attraction/lotteworld/explain"}>  
+          <NavLink to={`/attraction/lotteworld/explain/${2}`}>  
             <S.Image src={Image2} alt="롯데월드 어트랙션2" /> 
             </NavLink>
           </S.gridItem>
@@ -83,7 +85,9 @@ const LotteworldAttraction = () => {
 
           <S.ImageWrapper>
           <S.gridItem> 
-            <S.Image src={Image3} alt="롯데월드 어트랙션3" /> 
+          <NavLink to={`/attraction/lotteworld/explain/${3}`}>  
+            <S.Image src={Image3} alt="롯데월드 어트랙션3" />
+            </NavLink> 
           </S.gridItem>
           <S.Content>
             <p className='attName'>카트라이더 레이싱월드</p>
@@ -93,7 +97,9 @@ const LotteworldAttraction = () => {
 
           <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/lotteworld/explain/${4}`}>  
             <S.Image src={Image4} alt="롯데월드 어트랙션4" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'>월드 모노레일</p>
@@ -103,7 +109,9 @@ const LotteworldAttraction = () => {
 
           <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/lotteworld/explain/${5}`}>  
             <S.Image src={Image5} alt="롯데월드 어트랙션5" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'> 자이로드롭</p>
@@ -113,7 +121,9 @@ const LotteworldAttraction = () => {
 
           <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/lotteworld/explain/${6}`}>
             <S.Image src={Image6} alt="롯데월드 어트랙션6" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'>자이로스윙</p>
@@ -123,7 +133,9 @@ const LotteworldAttraction = () => {
 
           <S.ImageWrapper>
           <S.gridItem>
+          <NavLink to={`/attraction/lotteworld/explain/${7}`}>
             <S.Image src={Image7} alt="롯데월드 어트랙션7" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'>자이로스핀</p>
@@ -132,7 +144,9 @@ const LotteworldAttraction = () => {
 
           <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/lotteworld/explain/${8}`}>
             <S.Image src={Image8} alt="롯데월드 어트랙션8" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'>아트란티스</p>
@@ -142,7 +156,7 @@ const LotteworldAttraction = () => {
 
           <S.ImageWrapper>
           <S.gridItem> 
-          <NavLink to={"/attraction/lotteworldattractionexplain9"}>
+          <NavLink to={`/attraction/lotteworld/explain/${9}`}>
             <S.Image src={Image9} alt="롯데월드 어트랙션9" /> 
           </NavLink>
           </S.gridItem>
@@ -154,9 +168,9 @@ const LotteworldAttraction = () => {
 
           <S.ImageWrapper>
           <S.gridItem> 
-          <NavLink to={"/attraction/lotteworldattractionexplain10"}>
+          <NavLink to={`/attraction/lotteworld/explain/${10}`}>
             <S.Image src={Image10} alt="롯데월드 어트랙션10" /> 
-           </NavLink>
+          </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'>번지드롭</p>
@@ -166,7 +180,7 @@ const LotteworldAttraction = () => {
 
           <S.ImageWrapper>
           <S.gridItem> 
-          <NavLink to={"/attraction/lotteworldattractionexplain11"}>
+          <NavLink to={`/attraction/lotteworld/explain/${11}`}>
             <S.Image src={Image11} alt="롯데월드 어트랙션11" /> 
           </NavLink>
           </S.gridItem>
@@ -178,7 +192,7 @@ const LotteworldAttraction = () => {
 
           <S.ImageWrapper>
           <S.gridItem> 
-          <NavLink to={"/attraction/lotteworldattractionexplain12"}>
+          <NavLink to={`/attraction/lotteworld/explain/${12}`}>
             <S.Image src={Image12} alt="롯데월드 어트랙션12" /> 
           </NavLink>
           </S.gridItem>
@@ -484,5 +498,6 @@ const LotteworldAttraction = () => {
 };
 
 export default LotteworldAttraction;
+
 // export const attractionId1 = "슬릭스튜디오";
 

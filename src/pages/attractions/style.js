@@ -23,6 +23,9 @@ left: 30%;
 top : 25%;
 `
 
+
+// AttractionList.jsx
+
 S.gridContainer= styled.div`
 
      display: grid;
@@ -98,7 +101,7 @@ S.Content = styled.div`
   line-height: 1.5; 
   position: absolute;
   top: 70%;
-  left: 35%;
+  left: 50%;
   transform: translate(-50%, -50%);
   display: none; 
 
@@ -111,6 +114,116 @@ S.Content = styled.div`
     display: block; 
   }
 `;
+
+
+
+// AttractionExplain.jsx
+
+
+
+S.Container=styled.div`
+ margin: 100px 0 0 80px;
+ padding-bottom: 500px;
+
+ & h2{
+
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 50px;
+ }
+
+  .description{
+   font-size: 24px;
+   font-weight: bold;
+   text-align: center;
+   margin-bottom: 50px;
+
+ }
+
+ .mainImage{
+   /* width: 1350px;
+   height: 485px; */
+   width : 1200px;
+   height: 400px;
+   border-radius: 20px;
+   margin-left: 100px;
+
+ }
+
+ & p{
+
+  font-size: 16px;
+  margin-top: 20px;
+  text-align: center;
+ }
+
+ & img{
+  border-radius: 20px;
+ }
+
+
+ & .iconWrapper{
+
+  display: flex;
+  margin: 100px 0 0 400px;
+  gap: 200px;
+
+
+  & .limitIcons{
+
+    display: flex;
+  
+
+    & .icon{
+    margin :0 20px;
+  }
+
+  }
+
+
+ }
+
+
+
+
+& .limit{
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+& .limitWrapper{
+  margin-left: 200px;
+  border: 2px solid #1FB1D9;
+  border-radius: 20px;
+  width: 1000px;
+  height: 300px;
+}
+
+& .pBorder{
+  margin-left: 200px;
+  border: 2px solid #1FB1D9;
+  border-radius: 20px;
+  width: 1000px;
+  height: 100px;
+  margin-top: 50px;
+
+}
+
+
+
+ @media (max-width : 727px) {
+        gap: 20px 20px;
+        padding-bottom: 50px;
+ }
+
+
+
+
+`
+
+
+
 
 
 

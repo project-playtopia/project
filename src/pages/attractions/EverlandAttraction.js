@@ -39,6 +39,7 @@ import Image33 from "../../pages/attractions/images/Everland/at33.jpg"
 import Image34 from "../../pages/attractions/images/Everland/at34.jpg"
 import Image35 from "../../pages/attractions/images/Everland/at35.jpg"
 import Image36 from "../../pages/attractions/images/Everland/at36.jpg"
+import { NavLink } from 'react-router-dom';
 
 
 const EverlandAttraction = () => {
@@ -59,7 +60,9 @@ const EverlandAttraction = () => {
 
         <S.ImageWrapper>
           <S.gridItem> 
+            <NavLink to={`/attraction/everland/explain/${1}`}>
             <S.Image src={Image1} alt="에버랜드 어트랙션1" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'> 아마존 익스프레스</p>
@@ -70,7 +73,9 @@ const EverlandAttraction = () => {
       
           <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/everland/explain/${2}`}>
             <S.Image src={Image2} alt="에버랜드 어트랙션2" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'>썬더 폴스</p>
@@ -80,7 +85,9 @@ const EverlandAttraction = () => {
 
           <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/everland/explain/${3}`}>
             <S.Image src={Image3} alt="에버랜드 어트랙션3" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'> 롤링 엑스트레인</p>
@@ -90,7 +97,9 @@ const EverlandAttraction = () => {
 
           <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/everland/explain/${4}`}>
             <S.Image src={Image4} alt="에버랜드 어트랙션4" /> 
+            </NavLink>
           </S.gridItem>
            <S.Content>
             <p className='attName'> 허리케인</p>
@@ -100,7 +109,9 @@ const EverlandAttraction = () => {
 
           <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/everland/explain/${5}`}>
             <S.Image src={Image5} alt="에버랜드 어트랙션5" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'> 키즈 빌리지</p>
@@ -110,7 +121,9 @@ const EverlandAttraction = () => {
 
           <S.ImageWrapper>
           <S.gridItem> 
-            <S.Image src={Image6} alt="에버랜드 어트랙션5" /> 
+          <NavLink to={`/attraction/everland/explain/${6}`}>
+            <S.Image src={Image6} alt="에버랜드 어트랙션6" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'>매직 쿠키 하우스</p>
@@ -120,7 +133,9 @@ const EverlandAttraction = () => {
 
           <S.ImageWrapper>
           <S.gridItem> 
-            <S.Image src={Image7} alt="에버랜드 어트랙션5" /> 
+          <NavLink to={`/attraction/everland/explain/${7}`}>
+            <S.Image src={Image7} alt="에버랜드 어트랙션7" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'> 로얄 쥬빌리 캐로셀</p>
@@ -130,7 +145,9 @@ const EverlandAttraction = () => {
 
           <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/everland/explain/${8}`}>
             <S.Image src={Image8} alt="에버랜드 어트랙션8" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'>자동차왕국</p>
@@ -140,7 +157,9 @@ const EverlandAttraction = () => {
 
           <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/everland/explain/${9}`}>
             <S.Image src={Image9} alt="에버랜드 어트랙션9" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'>플래쉬 팡팡</p>
@@ -150,7 +169,9 @@ const EverlandAttraction = () => {
 
          <S.ImageWrapper>
           <S.gridItem> 
-            <S.Image src={Image10} alt="에버랜드 어트랙션10" /> 
+          <NavLink to={`/attraction/everland/explain/${10}`}>
+            <S.Image src={Image10} alt="에버랜드 어트랙션10" />
+            </NavLink> 
           </S.gridItem>
           <S.Content>
             <p className='attName'>피터팬</p>
@@ -160,7 +181,9 @@ const EverlandAttraction = () => {
 
           <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/everland/explain/${11}`}>
             <S.Image src={Image11} alt="에버랜드 어트랙션11" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'>나는 코끼리</p>
@@ -170,7 +193,9 @@ const EverlandAttraction = () => {
 
           <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/everland/explain/${12}`}>
             <S.Image src={Image12} alt="에버랜드 어트랙션12" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'>범퍼카</p>
