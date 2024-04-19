@@ -1,4 +1,4 @@
-import Signup from './signupschema.js'; 
+import Signup from './signupSchema.js'; 
 
 const signUp = async (req, res) => {
   try {
