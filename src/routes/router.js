@@ -273,7 +273,7 @@ const router = createBrowserRouter([
         element :<EventSeoulland />
       },
       {
-        path : "event/explain",
+        path : "event/explain/:id",
         element :<EventExplain />
       },
       {
