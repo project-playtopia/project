@@ -1,10 +1,19 @@
 import React from 'react';
+import S from './style.js';
+
 
 const BasicCostLotteworld = () => {
   return (
-    <div>
-      롯데월드 기본 요금
-    </div>
+    <S.Background>
+      <S.H1>종합이용권</S.H1>
+      <S.CostWrapper>
+        <S.costboxtop>
+          <S.line></S.line>
+          <p>DAY01</p>
+          <p>After04</p>
+        </S.costboxtop>
+        </S.CostWrapper>
+    </S.Background>
   );
 };
 

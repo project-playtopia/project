@@ -5,8 +5,15 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Modal from './Modal.jsx';
 import { NavLink ,useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+
 
 const SignUp = () => {
+  const {register, handleSubmit, getValues, formState: {isSubmitting, isSubmitted, errors}} = useForm({mode: "onChange"})
+    
+  const idRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]{5,}$/;
+  const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[!@#])[\da-zA-Z!@#]{10,}$/;
+
   const [allAgreed, setAllAgreed] = useState(false);
   const [privacyAgreed, setPrivacyAgreed] = useState(false);
   const [termsAgreed, setTermsAgreed] = useState(false);
@@ -68,66 +75,90 @@ const SignUp = () => {
     setIsPasswordShown(!isPasswordShown);
   };
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-  const handleConfirmPasswordChange = (e) => {
-    setConfirmPassword(e.target.value);
-  };
-  const isPasswordMatch = password && confirmPassword && password === confirmPassword;
   const navigate = useNavigate();
-  const handleSignUpClick = (e) => {
+  const handleSignUpClick = (data) => {
     if (!privacyAgreed || !termsAgreed || !uniqueIdAgreed || !telecomAgreed) {
-      alert("필수 약관에 동의해주세요.")
-      e.preventDefault();
+      alert("필수 약관에 동의해주세요.");
     } else {
-      navigate("/signUpFinish");
-    }
-  };
-  
-
+      fetch('http://localhost:8000/register/signUp', {
+                method : 'POST',
+                credentials:'include',
+                headers : {
+                    'Content-Type': 'application/json',
+                    'Accept':'application/json'
+                },
+                body : JSON.stringify({
+                    id : data.id,
+                    password : data.password,
+                    phonenumber : data.phonenumber
+                })
+            })
+            .then(res => res.json())
+            .then(res => console.log(res))
+            navigate('/signUpFinish')
+      
+  }};
   return (
     <S.Background>
       <S.FormContainer>
       <S.H1>회원가입</S.H1>
+      <form onSubmit={handleSubmit(handleSignUpClick)}>
         <S.IdInputContainer>
-          <S.Input type="text" placeholder=" 아이디 (최소 5글자)" />
+          <S.Input type="text" placeholder=" 아이디 (최소 5글자)" id="id"  
+           {...register("id", {
+                        required : true,
+                        pattern : {
+                            value : idRegex,
+                        }
+                    })}
+                />
           <S.Button>중복확인</S.Button>
         </S.IdInputContainer>
           <S.PasswordContainer>
           <S.PasswordInput type={isPasswordShown ? 'text' : 'password'} 
           placeholder=" 비밀번호 (영문과 숫자를 조합한 10글자 이상 문자)"
-          value={password}
-          onChange={handlePasswordChange} />
+          id="password"
+          {...register("password", {
+            required : true,
+            pattern : {
+                value : passwordRegex,
+            }
+        })}/>
+         {errors?.password?.type === 'pattern' && (
+                    <S.ErrorMessge>소문자, 숫자, 특수문자 각 하나씩 포함한 10자리 이상의 패스워드를 만들어주세요.</S.ErrorMessge>
+                )}
+
           <S.Icon onClick={togglePasswordVisiblity}>
-            <FontAwesomeIcon icon={isPasswordShown ? faEyeSlash : faEye} style={{ fontSize: "18px" }} color='#000000'/>
+            <FontAwesomeIcon icon={isPasswordShown ? faEyeSlash : faEye} style={{ fontSize: "18px" }} color='#9F9F9F'/>
           </S.Icon>
         </S.PasswordContainer>
         <S.PasswordContainer>
         <S.PasswordInput type={isPasswordShown ? 'text' : 'password'} 
         placeholder=" 비밀번호 확인" 
-        value={confirmPassword}
-        onChange={handleConfirmPasswordChange}
-        />
+        {...register("passwordConfirm", {
+          required : true,
+          validate : {
+              matchPassword : (value) => {
+                  const { password } = getValues();
+                  console.log(value, password, password === value)
+                  return password === value;
+              }
+          }
+      })}/>
           <S.Icon onClick={togglePasswordVisiblity}>
-            <FontAwesomeIcon icon={isPasswordShown ? faEyeSlash : faEye} style={{ fontSize: "18px" }} color='#000000'/>
+            <FontAwesomeIcon icon={isPasswordShown ? faEyeSlash : faEye} style={{ fontSize: "18px" }} color='#9F9F9F'/>
           </S.Icon>
-          {!isPasswordMatch && confirmPassword && (
-          <S.ErrorMessge>비밀번호가 일치하지 않습니다</S.ErrorMessge>
-        )}
+          {errors?.passwordConfirm && (
+                    <S.ErrorMessge>비밀번호가 일치하지 않습니다.</S.ErrorMessge>
+                )}
           </S.PasswordContainer>
           <S.IdentificationContainer>
-          <S.Telecommunitacion name='telecommunication'>
-            <option value="skt" >SKT</option> 
-            <option value="kt">KT</option> 
-            <option value="lgu+">LG U+</option>
-          </S.Telecommunitacion>
-          <S.Input type="tel" placeholder="전화번호" />
+          <S.Input type="tel" placeholder="전화번호" id='phonenumber'
+             {...register("phonenumber", {
+              required : true
+          })}
+          />
           </S.IdentificationContainer>
-          <S.ButtonContainer>
-              <S.IdentificationButton>인증번호 발송</S.IdentificationButton>
-              <S.IdentificationButton>인증하기</S.IdentificationButton>
-          </S.ButtonContainer>
           <S.RadioContainer>
             <label style={{fontWeight : 600}}><input type='checkbox' checked={allAgreed} onChange={handleAllAgreeChange} />휴대폰 본인확인 전체동의</label>
             <S.LabelContainer>
@@ -201,14 +232,12 @@ const SignUp = () => {
               </S.LabelContainer>
             </S.RadioContainer>
             <S.ButtonContainer>
-              {/* <NavLink to={"/signUpFinish"}>
-                <S.SubmitButton>회원가입</S.SubmitButton>
-              </NavLink> */}
-              <S.SubmitButton onClick={handleSignUpClick}>회원가입</S.SubmitButton>
+              <S.SubmitButton disabled={isSubmitting}>회원가입</S.SubmitButton>
               <NavLink to={"/"}>
                 <S.CancleButton>취소</S.CancleButton>
               </NavLink>
             </S.ButtonContainer>
+            </form>
       </S.FormContainer>
       </S.Background>
   );
