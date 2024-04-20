@@ -1,0 +1,45 @@
+.table {
+    min-width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    border-spacing: 0;
+    background-color: #D7F2FF;
+    border-radius: 15px 15px 0px 0;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tablerow{
+    display: flex;
+    justify-content: center;
+
+  }
+  
+  .head{ 
+    border-bottom: 1px solid #1FB1D9;
+    padding: 0;
+    padding: 10px 5px;
+    font-weight: bold;
+    margin: auto;
+  }
+  
+
+  .row {
+    background-color: #fff;
+    cursor: pointer;
+    border-bottom: 1px solid #1FB1D9;
+    line-height: 45px;
+  }
+  
+  .column {
+    padding: 10px 5px;
+    color: black;
+    text-align: center;
+    margin: auto;
+  }
+
+
+  .faq-link{
+    color: black;
+  }
