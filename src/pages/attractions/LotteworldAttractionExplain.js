@@ -1,7 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import S from './style';
+import S from './style.js';
 import BasicButton from '../../components/button/BasicButton.jsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {  faBan, faCircleExclamation, faHeartPulse, faMartiniGlass, faPersonPregnant, faWheelchair } from '@fortawesome/free-solid-svg-icons';
+import { NavLink } from 'react-router-dom';
 
 const attractions = {
   1: {
@@ -37,7 +40,7 @@ const attractions = {
 
   6: {
     name: "자이로스윙",
-    description: "40여명이 둘러앉은 거대한 회전기구가 시계추처럼 움직여 회오리바람에 날려가 버리는 듯한 새로운 공포를 느낄 수 있습니다.",
+    description: "40여명이 둘러앉은 거대한 회전기구가 시계추처럼 움직여 새로운 공포를 느낄 수 있습니다.",
     image: "/AttractionsImage/lotte/ex6.jpg"
   },
 
@@ -55,7 +58,7 @@ const attractions = {
 
   9: {
     name: "혜성특급",
-    description: "좌우로 회전하는 롤러코스터를 타고 떠나는 어둠 속 스펙터클 우주여행",
+    description: "좌우로 회전하는 롤러코스터를 타고 떠나는 어둠 속 스펙터클 우주여행 !",
     image: "/AttractionsImage/lotte/ex9.jpg"
   },
 
@@ -67,7 +70,7 @@ const attractions = {
 
   11: {
     name: "회전그네",
-    description: "나뭇잎 의자에 앉아 4.5m 상공에서 시속 50km의 빠른 속도로 빙글빙글 도는 느낌이 금방이라도 하늘로 튕겨져 오르는 기분을 느낄 수 있습니다. 호흡을 가다듬고 하늘로 출발!",
+    description: "나뭇잎 의자에 앉아 4.5m 상공에서 시속 50km의 빠른 속도로 빙글빙글 도는 회전 그네!" ,
     image: "/AttractionsImage/lotte/ex11.jpg",
   },
 
@@ -103,28 +106,53 @@ const LotteworldAttractionExplain = () => {
         </div>
       </div>
 
-      <p className='limit'>탑승 제한</p>
-      <div className='limitWrapper'>
-       <div className='limitIcons'>
-      <img className='icon' src='/AttractionsImage/limitIcon1.png' alt='#' />
-      <img className='icon' src='/AttractionsImage/limitIcon2.png' alt='#' />
-      <img className='icon' src='/AttractionsImage/limitIcon3.png' alt='#' />
-      <img className='icon' src='/AttractionsImage/limitIcon4.png' alt='#' />
-       </div>
+
+      <p className='limit'> 
+       <FontAwesomeIcon icon={faBan}></FontAwesomeIcon>  탑승 제한</p>   <div className='limitWrapper'>
+
+        <S.BigContainer>
+        <S.IconContainer>
+       <FontAwesomeIcon icon={faMartiniGlass} style={{fontSize:"100px"}} color='#000000'/> 
+       <S.IconText>음주</S.IconText>
+       </S.IconContainer>
+       <S.IconContainer>
+       <FontAwesomeIcon icon={faHeartPulse} style={{fontSize:"100px"}} color='#000000'/>
+       <S.IconText>심장질환</S.IconText>
+       </S.IconContainer>
+       <S.IconContainer>
+      <FontAwesomeIcon icon={faPersonPregnant} style={{fontSize:"100px"}} color='#000000'/>
+       <S.IconText>임산부</S.IconText>
+      </S.IconContainer>
+      <S.IconContainer>
+      <FontAwesomeIcon icon={faWheelchair} style={{fontSize:"100px"}} color='#000000'/>
+       <S.IconText>휠체어</S.IconText>
+      </S.IconContainer>
+      </S.BigContainer>
+     </div>
+
+
+    <p className='notice'> 
+        <FontAwesomeIcon icon={faCircleExclamation}></FontAwesomeIcon> 
+        유의 사항</p>
+       <div className='pBorder'>
+        <p >
+           마감 시간과 입장 가능 시간이 다를 수 있으니 양지해 주시기 바랍니다.
+        </p>
       </div>
 
-      <p>유의 사항</p>
-      <div className='pBorder'>
-        <p> 마감 시간과 입장 가능 시간이 다를 수 있으니 양지해 주시기 바랍니다.</p>
-      </div>
 
-     <p>위치 정보</p>
+     <p className='location'>위치 정보</p>
      {/* 지도 */}
-
-
-       <BasicButton/>
-
-      </S.Container>
+      
+     <S.ButtonContainer>
+      <NavLink to ="/attraction/lotteworld">
+       <BasicButton shape={"default"} variant={"main"} size={"medium"} color={"white"} >
+        뒤로가기
+       </BasicButton>
+      </NavLink>
+     </S.ButtonContainer>
+    
+   </S.Container>
     </>  
 
   );

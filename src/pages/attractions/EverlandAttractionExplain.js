@@ -1,7 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import S from './style';
+import S from './style.js';
 import BasicButton from '../../components/button/BasicButton.jsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {  faBan, faCircleExclamation, faHeartPulse, faMartiniGlass, faPersonPregnant, faWheelchair } from '@fortawesome/free-solid-svg-icons';
+import { NavLink } from 'react-router-dom';
 
 const attractions = {
   1: {
@@ -16,12 +19,12 @@ const attractions = {
   },
   3: {
     name: "롤링 엑스트레인",
-    description: "꽈배기처럼 꼬인 스크류 회전과 360도의 찌릿찌릿 공중회전이 두 번씩! 정신을 차릴 수 없는 롤러코스터의 정석,롤링 엑스 트레인!",
+    description: "꽈배기처럼 꼬인 스크류 회전과 360도의 찌릿찌릿 공중회전이 두번씩! 정신을 차릴 수 없는 롤러코스터의 정석, 롤링 엑스 트레인!",
     image:  "/AttractionsImage/everland/ex3.jpg",
   },
   4: {
     name: "허리케인",
-    description: "미국 서부 시대 한 마을을 덮친 허리케인...오늘 초대형 폭풍 허리케인과 함께 하나가 된다!19미터 높이에서 회전하는 메가톤급 회오리 속에 몸을 맡겨 보는거야!",
+    description: "미국 서부 시대 한 마을을 덮친 허리케인... 19미터 높이에서 회전하는 메가톤급 회오리 속에 몸을 맡겨 보는거야!",
     image: "/AttractionsImage/everland/ex4.jpg",
   },
   5: {
@@ -36,7 +39,7 @@ const attractions = {
   },
   7: {
     name: "로얄 쥬빌리 캐로셀",
-    description: "백마 탄 왕자와 공주가 만난 중세 유럽 무도회장의 분위기는 어떨까? 무도회장 행 회전목마가 여러분을 기다립니다.  환상의 꿈결 같은 동화 속 주인공이 되어보세요",
+    description: "백마 탄 왕자와 공주가 만난 중세 유럽 무도회장의 분위기는 어떨까? 환상의 꿈결 같은 동화 속 주인공이 되어보세요!",
     image: "/AttractionsImage/everland/ex5.jpg",
   },
   8: {
@@ -51,12 +54,12 @@ const attractions = {
   },
   10: {
     name: "피터팬",
-    description: "번쩍번쩍 불빛이 빛나는 탐험선을 타고 뒤쫓아오는 무서운 후크 선장을 따돌려라!신나게 돌고도는 피터팬의 대모험이 이제 시작됩니다!",
+    description: "번쩍번쩍 불빛이 빛나는 탐험선을 타고 뒤쫓아오는 무서운 후크 선장을 따돌려라!!",
     image: "/AttractionsImage/everland/ex5.jpg",
   },
   11: {
     name: "나는 코끼리",
-    description: "분홍색, 하늘색 귀여운 생김새로 하늘을 나는 코끼리를 타고 빙글빙글~   하늘을 날고 싶은 코끼리의 소원을 이뤄주세요!",
+    description: "분홍색, 하늘색 귀여운 생김새로 하늘을 나는 코끼리를 타고 빙글빙글~ 하늘을 날고 싶은 코끼리의 소원을 이뤄주세요!",
     image: "/AttractionsImage/everland/ex5.jpg",
   },
   12: {
@@ -94,30 +97,72 @@ const EverlandAttractionExplain = () => {
       </div>
     </div>
 
-    <p className='limit'>탑승 제한</p>
-    <div className='limitWrapper'>
-     <div className='limitIcons'>
-    <img className='icon' src='/AttractionsImage/limitIcon1.png' alt='#' />
-    <img className='icon' src='/AttractionsImage/limitIcon2.png' alt='#' />
-    <img className='icon' src='/AttractionsImage/limitIcon3.png' alt='#' />
-    <img className='icon' src='/AttractionsImage/limitIcon4.png' alt='#' />
+
+    <p className='limit'> 
+       <FontAwesomeIcon icon={faBan}></FontAwesomeIcon>  탑승 제한</p>   <div className='limitWrapper'>
+
+     <S.BigContainer>
+      <S.IconContainer>
+      <FontAwesomeIcon icon={faMartiniGlass} style={{fontSize:"100px"}} color='#000000'/> 
+      <S.IconText>음주</S.IconText>
+     </S.IconContainer>
+      <S.IconContainer>
+      <FontAwesomeIcon icon={faHeartPulse} style={{fontSize:"100px"}} color='#000000'/>
+     <S.IconText>심장질환</S.IconText>
+     </S.IconContainer>
+      <S.IconContainer>
+     <FontAwesomeIcon icon={faPersonPregnant} style={{fontSize:"100px"}} color='#000000'/>
+     <S.IconText>임산부</S.IconText>
+      </S.IconContainer>
+      <S.IconContainer>
+     <FontAwesomeIcon icon={faWheelchair} style={{fontSize:"100px"}} color='#000000'/>
+     <S.IconText>휠체어</S.IconText>
+     </S.IconContainer>
+    </S.BigContainer>
      </div>
-    </div>
-
-    <p>유의 사항</p>
-    <div className='pBorder'>
-      <p> 마감 시간과 입장 가능 시간이 다를 수 있으니 양지해 주시기 바랍니다.</p>
-    </div>
-
-   <p>위치 정보</p>
-   {/* 지도 */}
 
 
-     <BasicButton/>
+      <p className='notice'> 
+        <FontAwesomeIcon icon={faCircleExclamation}></FontAwesomeIcon> 
+        유의 사항</p>
+      <div className='pBorder'>
+        <p >
+           마감 시간과 입장 가능 시간이 다를 수 있으니 양지해 주시기 바랍니다.
+        </p>
+      </div>
 
-    </S.Container>
-  </>  
+
+     <p className='location'>위치 정보</p>
+     {/* 지도 */}
+      
+
+      <S.ButtonContainer>
+      <NavLink to ="/attraction/everland">
+       <BasicButton shape={"default"} variant={"main"} size={"medium"} color={"white"} >
+        뒤로가기
+       </BasicButton>
+      </NavLink>
+       </S.ButtonContainer>
+    
+      </S.Container>
+    </>  
+
   );
 };
 
 export default EverlandAttractionExplain;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

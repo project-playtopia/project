@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import Button from'../../components/button/BasicButton';
+import Button from'../../components/button/BasicButton.jsx';
 import {NavLink} from 'react-router-dom';
 
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import S from "./style";
+import S from "./style.js";
 import LotteWorldImage from './mainImage/lotteworldmain2.jpg'
 import EverlandImage from './mainImage/everlandmain5.jpg'
 import SeoullandImage from './mainImage/seoullandmain.jpg'

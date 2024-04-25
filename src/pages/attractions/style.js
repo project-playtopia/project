@@ -24,7 +24,10 @@ top : 25%;
 `
 
 
-// AttractionList.jsx
+
+
+
+// AttractionList
 
 S.gridContainer= styled.div`
 
@@ -90,7 +93,7 @@ S.ImageWrapper = styled.div`
   position: relative;
   border-radius: 20px;
   
- 
+  
 
 `;
 
@@ -117,11 +120,52 @@ S.Content = styled.div`
 
 
 
-// AttractionExplain.jsx
+
+// Explain
+
+
+S.BigContainer = styled.div`
+  display:  flex;
+  width: 100%;
+  justify-content: space-evenly;
+ 
+`
+
+
+S.IconContainer = styled.div`
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+  align-items: center; 
+  margin: 10px; 
+
+  @media (max-width : 720px) {
+    flex-direction: column; 
+    align-items: center; 
+  }
+`;
+
+
+
+
+
+S.IconText = styled.p`
+  margin-top: 10px; 
+  font-size: 16px; 
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  
+
+`;
+
 
 
 
 S.Container=styled.div`
+width: 90%;
+height: 100vh;
+
  margin: 100px 0 0 80px;
  padding-bottom: 500px;
 
@@ -154,8 +198,12 @@ S.Container=styled.div`
  & p{
 
   font-size: 16px;
-  margin-top: 20px;
   text-align: center;
+  @media (max-width : 720px) {
+    flex-direction: column; // 창의 너비가 727px 이하일 때 세로 정렬
+    align-items: center; // 아이콘들이 중앙에 위치하도록 조정
+  }
+  
  }
 
  & img{
@@ -170,9 +218,6 @@ S.Container=styled.div`
   gap: 200px;
 
 
-  & .limitIcons{
-
-    display: flex;
   
 
     & .icon{
@@ -182,31 +227,59 @@ S.Container=styled.div`
   }
 
 
- }
-
-
-
 
 & .limit{
-  margin-top: 80px;
+  margin-top: 200px;
   margin-bottom: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  justify-content: space-between;
 }
 
 & .limitWrapper{
-  margin-left: 200px;
+  margin: 0 auto;
+  margin-bottom: 200px;
   border: 2px solid #1FB1D9;
   border-radius: 20px;
-  width: 1000px;
+  width: 100%;
   height: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
+
+& .notice{
+
+  font-size: 30px;
+  font-weight: bold;
+
+}
+
+
 & .pBorder{
-  margin-left: 200px;
+ 
   border: 2px solid #1FB1D9;
   border-radius: 20px;
   width: 1000px;
   height: 100px;
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width : 720px) {
+    flex-direction: column; // 창의 너비가 727px 이하일 때 세로 정렬
+    align-items: center; // 아이콘들이 중앙에 위치하도록 조정
+  }
+
+}
+
+& .location{
+  font-size: 30px;
+  font-weight: bold;
 
 }
 
@@ -218,14 +291,14 @@ S.Container=styled.div`
  }
 
 
-
-
 `
 
+S.ButtonContainer = styled.div`
+  position: absolute;
+  margin-top: 200px;
+  left: 42%;
 
-
-
-
+`
 
 
 
