@@ -1,5 +1,7 @@
 import styled from "styled-components";
 const S = {};
+const mainDarkenColor = ({theme}) => theme.PALETTE.primary.main_darken;
+const mainColor = ({theme}) => theme.PALETTE.primary.main;
 
 
 S.Background = styled.div`
@@ -20,8 +22,32 @@ S.H1 = styled.h1`
   color: #000000;
   text-align: center;
   margin-top: 10%;
-  margin-bottom: 5%;
+  margin-bottom: 2%;
 `;
+
+S.PalldayTitle = styled.p`
+  font-size: ${ ({theme}) => theme.FONT_SIZE["h4"]};
+  font-weight: ${({theme})=> theme.FONT_WEIGHT["bold"]};
+  position: absolute;
+  top: 12%;
+  left: 3%;
+`
+
+S.PalldayContent = styled.p`
+  font-size: ${({ theme }) => theme.FONT_SIZE["default"]};
+  font-weight: ${({ theme }) => theme.FONT_WEIGHT["regular"]};
+  position: absolute;
+  top: ${({ top }) => top}%; 
+  left: ${({ left }) => left}%; 
+`
+
+S.Pafter04Title = styled.p`
+  font-size: ${ ({theme}) => theme.FONT_SIZE["h4"]};
+  font-weight: ${({theme})=> theme.FONT_WEIGHT["bold"]};
+  position: absolute;
+  right: 40%;
+  top: 12%;
+`
 
 S.CostWrapper = styled.div`
   width: 100%;
@@ -34,7 +60,7 @@ S.costboxtop = styled.div`
 width: 100%;
 height: 30%;
 background-color: ${({theme})=> theme.PALETTE.primary["main_soft"]};
-border-radius: 30px 0 0 0;
+border-radius: 30px 30px 0 0;
 border-bottom: solid 2px ${({theme})=> theme.PALETTE.primary["main"]};
 `
 S.line = styled.div`
@@ -45,5 +71,41 @@ position: absolute;
 left: 50%;
 `
 
+S.dashedLine = styled.div`
+  width: 200px; 
+  height: 0; 
+  border-top: 1px dashed #1FB1D9;
+  position: absolute;
+  top: ${({ top }) => top}%; 
+  left: ${({ left }) => left}%; 
+`
 
+S.NavParkSelector = styled.nav`
+	font-size: 18px !important;
+	width: 100%;
+	text-align: center;
+  margin-top: 2%;
+	margin-bottom: 3%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	& * {
+		margin: 0 0.5rem;
+		color: #000;
+	}
+
+  & p{
+    font-size : 18px;
+  }
+
+	& *:hover {
+		color: ${mainDarkenColor};
+		font-weight: 500;
+	}
+
+	& .active {
+		color: ${mainColor};
+		font-weight: 600;
+	}
+`;
 export default S;
