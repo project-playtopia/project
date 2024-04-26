@@ -7,6 +7,7 @@ import BenefitItem from './BenefitItem.jsx';
 
 const BenefitSeoulland = () => {
   const [filter, setFilter] =  useState("all");
+  const [orderBy, setOrderBy] = useState("");
   const [benefitList, setBenefitList] = useState([]);
   HTMLCollection.prototype.forEach = Array.prototype.forEach;
 
@@ -26,9 +27,47 @@ const BenefitSeoulland = () => {
       }
     });
   }, [filter]);
+
+  useEffect(()=>{
+    console.log(orderBy);
+    if(orderBy === 'cost'){
+      setBenefitList(benefitList.map((el)=>el).sort((a, b)=>{
+        if(a.price > b.price){ return 1; }
+        else if (a.price < b.price){ return -1; }
+        else{ return 0; }
+      }));
+    }else if(orderBy === 'new'){
+      setBenefitList(benefitList.map((el)=>el).sort((a,b)=>{
+        if(a.start_at < b.start_at){ return 1; }
+        else if(a.start_at > b.start_at){ return -1; }
+        else{
+          if (a.end_at < b.end_at){ return 1; }
+          else if (a.end_at > b.end_at){ return -1; }
+          else{ return 0; }
+        }
+      }))
+    }
+    document.getElementById('order-selector').children.forEach((btn=>{
+      if(btn.id === orderBy){
+        btn.classList.add('active');
+      }else{
+        btn.classList.remove('active');
+      }
+    }))
+  }, [orderBy]);
   
   const onClickToSearch = () => {
-    // console.log("clicked")
+    const keyword = document.getElementById('search-input').value.trim();
+    if(keyword === ''){
+      alert('검색어를 입력해주세요');
+    }else{
+      const temp = benefitList.filter((el, i)=>el.title.includes(keyword));
+      if (temp.length === 0){
+        alert('검색 결과가 없습니다')
+      }else{
+        setBenefitList(temp);
+      }
+    }
   }
 
   return (
@@ -50,12 +89,14 @@ const BenefitSeoulland = () => {
           <S.BtnTypeSelector id='membership' onClick={()=>{setFilter('membership')}} >간편결제/멤버십혜택</S.BtnTypeSelector>
         </S.NavContainer>
         <S.SearchWrapper>
-          <S.SearchInput></S.SearchInput>
+          <S.SearchInput id='search-input'></S.SearchInput>
           <S.SearchBtn onClick={onClickToSearch}><FontAwesomeIcon icon={faSearch} size="2x" color="#1FB1D9" /></S.SearchBtn>
         </S.SearchWrapper>
       </S.NavTypeSelector>
-      <S.OrderSelector>
-        <S.OrderBtn>최저가순</S.OrderBtn> | <S.OrderBtn>할인율순</S.OrderBtn>
+      <S.OrderSelector id='order-selector'>
+        <S.OrderBtn id='cost' onClick={()=>{setOrderBy('cost')}}>최저가순</S.OrderBtn>
+        | 
+        <S.OrderBtn id='new' onClick={()=>{setOrderBy('new')}} >최신순</S.OrderBtn>
       </S.OrderSelector>
       <S.GridWrapper>
         {
