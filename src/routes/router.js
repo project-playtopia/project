@@ -119,8 +119,9 @@ const router = createBrowserRouter([
         path:"/attraction/lotteworld",
         element : <LotteworldAttraction/>
       },  
+   
       {
-        path:"/attraction/lotteworld/explain",
+        path:"/attraction/lotteworld/explain/:id",
         element : <LotteworldAttractionExplain />
       },
       {
@@ -128,7 +129,7 @@ const router = createBrowserRouter([
         element : <EverlandAttraction />
       },
       {
-        path:"/attraction/everland/explain",
+        path:"/attraction/everland/explain/:id",
         element : <EverlandAttractionExplain />
       },
 
@@ -137,7 +138,7 @@ const router = createBrowserRouter([
         element : <SeoullandAtrraction />
       },
       {
-        path:"/attraction/seoulland/explain",
+        path:"/attraction/seoulland/explain/:id",
         element : <SeoullandAttractionExplain />
       },
       {
