@@ -3,7 +3,6 @@ import "./App.css";
 import router from "./routes/router.js";
 import { ThemeProvider } from "styled-components";
 import theme from "./global/theme.js";
-
 import { Provider } from 'react-redux'
 import { legacy_createStore as createStore} from "redux";
 import { devToolsEnhancer } from 'redux-devtools-extension'
