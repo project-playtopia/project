@@ -54,7 +54,7 @@ import EventExplain from "../pages/eventExplain/EventExplain.js";
 import QnaRegister from "../pages/qnaRegister/QnaRegister.js";
 import QnaList from "../pages/qnaList/QnaList.js";
 import QnaExplain from "../pages/qnaExplain/QnaExplain.js";
-import FaqList from "../pages/faqExplain/FaqExplain.js";
+import FaqList from "../pages/faqList/FaqList.js";
 import FaqExplain from "../pages/faqExplain/FaqExplain.js";
 import LostnFoundListEverland from "../pages/lostnfoundList/LostnFoundListEverland.js";
 import LostnFoundListLotteworld from "../pages/lostnfoundList/LostnFoundListLotteworld.js";
@@ -285,7 +285,7 @@ const router = createBrowserRouter([
         element :<QnaList />
       },
       {
-        path:"qna/explain",
+        path:"qna/explain/:id",
         element :<QnaExplain/>
       },
       {
@@ -293,7 +293,7 @@ const router = createBrowserRouter([
         element :<FaqList />
       },
       {
-        path :"faq/explain",
+        path :"faq/explain/:id",
         element :<FaqExplain />
       },
       {
