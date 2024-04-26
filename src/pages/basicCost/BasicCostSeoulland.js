@@ -43,7 +43,6 @@ const BasicCostSeoulland = () => {
    <S.PalldayContent top="45" left="55">어른</S.PalldayContent>
   <S.dashedLine top="47" left = "62"></S.dashedLine>
   <S.PalldayContent top="45" left="82">45,000원</S.PalldayContent>
-이
   <S.PalldayContent top="58" left="55">청소년</S.PalldayContent>
   <S.dashedLine top="60" left = "62"></S.dashedLine>
   <S.PalldayContent top="58" left="82">39,000원</S.PalldayContent>
