@@ -1,3 +1,4 @@
+
 import { Schema, model } from "mongoose";
 
 const userSchema = new Schema({
@@ -5,4 +6,18 @@ const userSchema = new Schema({
   password: { type: String, required: true }
 });
 
-export default model("User", userSchema);
+const User = model("User", userSchema);
+
+export const createUser = async (userData) => {
+  try {
+    const newUser = new User(userData);
+    await newUser.save();
+    console.log("User created successfully");
+    return newUser;
+  } catch (error) {
+    console.error("Error creating user:", error);
+    throw error;
+  }
+};
+
+export default User;
