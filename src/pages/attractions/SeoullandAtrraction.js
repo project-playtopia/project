@@ -56,7 +56,9 @@ const SeoullandAtrraction = () => {
 
      <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/seoulland/explain/${1}`}>
             <S.Image src={Image1} alt="서울랜드 어트랙션1" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'>둥실 비행선</p>
@@ -64,9 +66,11 @@ const SeoullandAtrraction = () => {
             </S.Content>
      </S.ImageWrapper>
 
-     <S.ImageWrapper>
+      <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/seoulland/explain/${2}`}>
             <S.Image src={Image2} alt="서울랜드 어트랙션2" />
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'>빅 회전목마</p>
@@ -76,7 +80,9 @@ const SeoullandAtrraction = () => {
 
      <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/seoulland/explain/${3}`}>
             <S.Image src={Image3} alt="서울랜드 어트랙션3" />
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'>월드컵</p>
@@ -88,7 +94,9 @@ const SeoullandAtrraction = () => {
      
      <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/seoulland/explain/${4}`}>
             <S.Image src={Image4} alt="서울랜드 어트랙션4" />
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'> 도깨비 바람</p>
@@ -99,7 +107,9 @@ const SeoullandAtrraction = () => {
      
      <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/seoulland/explain/${5}`}>
             <S.Image src={Image5} alt="서울랜드 어트랙션5" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'>쥬라기 랜드</p>
@@ -109,7 +119,9 @@ const SeoullandAtrraction = () => {
 
      <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/seoulland/explain/${6}`}>
             <S.Image src={Image6} alt="서울랜드 어트랙션6" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'>킹바이킹</p>
@@ -119,7 +131,9 @@ const SeoullandAtrraction = () => {
 
      <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/seoulland/explain/${7}`}>
             <S.Image src={Image7} alt="서울랜드 어트랙션7" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'>블랙홀 2000</p>
@@ -129,7 +143,9 @@ const SeoullandAtrraction = () => {
 
      <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/seoulland/explain/${8}`}>
             <S.Image src={Image8} alt="서울랜드 어트랙션8" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'>라바 트위스터</p>
@@ -139,7 +155,9 @@ const SeoullandAtrraction = () => {
 
      <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/seoulland/explain/${9}`}>
             <S.Image src={Image9} alt="서울랜드 어트랙션9" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'>은하열차 888</p>
@@ -149,7 +167,9 @@ const SeoullandAtrraction = () => {
 
      <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/seoulland/explain/${10}`}>
             <S.Image src={Image10} alt="서울랜드 어트랙션10" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'>베스트 키즈</p>
@@ -159,7 +179,9 @@ const SeoullandAtrraction = () => {
 
      <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/seoulland/explain/${11}`}>
             <S.Image src={Image11} alt="서울랜드 어트랙션11" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'>시티패럿</p>
@@ -169,7 +191,9 @@ const SeoullandAtrraction = () => {
 
      <S.ImageWrapper>
           <S.gridItem> 
+          <NavLink to={`/attraction/seoulland/explain/${12}`}>
             <S.Image src={Image12} alt="서울랜드 어트랙션12" /> 
+            </NavLink>
           </S.gridItem>
           <S.Content>
             <p className='attName'> 급류타기</p>
