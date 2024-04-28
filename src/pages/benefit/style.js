@@ -19,7 +19,7 @@ S.Header1 = styled.h1`
 	font-size: ${h1FontSize};
 	text-align: center;
 	width: 100%;
-	font-weight: bold;
+	font-weight: ${fontBold};
 `;
 
 S.NavParkSelector = styled.nav`
