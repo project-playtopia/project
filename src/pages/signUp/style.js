@@ -18,8 +18,13 @@ S.H1 = styled.h1`
   font-size: ${ ({theme}) => theme.FONT_SIZE["h1"]};
   font-weight: ${({theme})=> theme.FONT_WEIGHT["bold"]};
   color: #000000;
-  margin-bottom : 30px;
+  margin: 30px 0;
 `;
+
+S.Form = styled.form`
+    width: 100%;
+    height: 100%;
+`
 
 S.FormContainer = styled.div`
   display: flex;
@@ -34,7 +39,8 @@ S.FormContainer = styled.div`
 S.IdInputContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 450px; 
+  width: 450px;
+  margin: 30px 0;
 `;
 
 S.Input = styled.input`
@@ -59,6 +65,7 @@ S.PasswordContainer = styled.div`
   position: relative;
   width: 450px;
   height: 60px;
+  margin: 40px 0;
 `;
 
 S.PasswordInput = styled.input`
@@ -90,12 +97,14 @@ S.IdentificationContainer = styled.div`
   justify-content: space-between;
   width: 450px; 
   gap: 10px;
+  margin: 30px 0;
 `;
 
 S.ButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 450px; 
+  width: 450px;
+  margin: 30px 0;
 `;
 S.IdentificationButton = styled.button`
   width: 250px;
@@ -119,6 +128,7 @@ S.RadioContainer = styled.div`
   margin-top: 20px;
   border: solid 1px #000000;
   border-radius : 50px;
+  margin: 30px 0;
 `;
 
 S.LabelContainer = styled.div`
