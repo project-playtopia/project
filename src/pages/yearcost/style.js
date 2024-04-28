@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const S ={};
+const S = {};
 
 const mainSoftColor = ({theme}) => theme.PALETTE.primary.main_soft;
 const mainLightenColor = ({theme}) => theme.PALETTE.primary.main_lighten;
@@ -46,87 +46,28 @@ S.NavParkSelector = styled.nav`
 	}
 `;
 
-S.NavTypeSelector = styled.div`
-	display: flex;
-	justify-content: space-around;
-	width: 100%;
-	height: 3.5rem;
-	min-height: 50px;
-	background-color: #d7f2ff;
-	align-items: center;
-`;
-
-S.NavContainer = styled.div`
-	display: flex;
-	justify-content: center;
-	height: 100%;
-`;
-
-S.BtnTypeSelector = styled.button`
-	font-size: 0.9rem;
-	border: none;
-	background-color: ${mainSoftColor};
-	min-width: 90px;
-	height: 100%;
-	border-radius: 1rem;
-	margin: 0 0.7rem;
-	padding: 0 1rem;
-	cursor: pointer;
-	&:hover{
-		background-color: ${mainLightenColor};
-	}
-	&.active{
-		background-color: ${mainColor};
-		color: #ffffff;
-	}
-`;
-
-S.SearchWrapper = styled.div`
-	padding: 0;
-	width: 400px;
-	height: 80%;
-	display: flex;
-	align-items: center;
-	margin: 20px;
-`;
-
-S.SearchInput = styled.input`
-	flex-basis: 80%;
-	height: 100%;
-	background-color: #fff;
-	border-color: ${mainColor};
-	border-style: solid;
-	border-width: ${searchBarBorder} 0 ${searchBarBorder} ${searchBarBorder};
-	border-radius: 30px 0 0 30px;
-	outline: none;
-	padding-left: 1rem;
-	font-size: ${basicFontSize};
-`;
-
-S.SearchBtn = styled.button`
-	flex-basis: 20%;
-	height: 100%;
-	background-color: #fff;
-	border-color: ${mainColor};
-	border-style: solid;
-	border-width: ${searchBarBorder} ${searchBarBorder} ${searchBarBorder} 0;
-	border-radius: 0 30px 30px 0;
-	cursor: pointer;
-`;
-
-S.OrderSelector = styled.div`
-	font-size: ${basicFontSize};
-	margin: 20px 30px;
-`;
-
-S.OrderBtn = styled.button`
-	border: none;
-	background: none;	
-	font-size: ${basicFontSize};
-	cursor: pointer;
-	&.active{
+S.TypeSelector = styled.div`
+	width: 70%;
+	margin: 0 auto;
+	height: 3rem;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	& a {
+		line-height: 3rem;
+		border-style: solid;
+		border-color: ${mainColor};
+		border-width: 1px;
 		color: ${mainColor};
-		font-weight: ${fontBold};
+	}
+	& a.explain{
+		border-radius: 3rem 0 0 3rem;
+	}
+	& a.benefit{
+		border-radius: 0 3rem 3rem 0;
+	}
+	& .active{
+		background-color: ${mainColor};
+		color: #fff;
 	}
 `;
 
@@ -161,11 +102,6 @@ S.ItemTitle = styled.p`
 	width: 100%;
 `;
 
-S.ItemPrice = styled.span`
-	font-weight: ${fontSemiBold};
-	color: ${subColor};
-`;
-
 S.ItemImgWrapper = styled.div`
 	width: 100%;
 	text-align: center;
@@ -176,7 +112,5 @@ S.ItemImgWrapper = styled.div`
 	background-position: center;
 	background-size: cover;
 `;
-
-
 
 export default S;
