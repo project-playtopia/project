@@ -1,10 +1,11 @@
 import React from 'react';
+import S from './style.js'
 
 const YearCostBenefitItem = () => {
 	return (
-		<div>
+		<S.GridItem>
 				
-		</div>
+		</S.GridItem>
 	);
 };
 
