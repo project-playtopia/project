@@ -81,42 +81,42 @@ const BenefitLotteworld = () => {
   return (
     <div className='notosanskr'>
       {/* 롯데월드 이달의혜택 */}
-      <S.Header1>이 달의 혜택</S.Header1> 
-      <S.NavParkSelector>
-        <NavLink to={"/benefit/lotteworld"}>롯데월드</NavLink>
-        <span>|</span>
-        <NavLink to={"/benefit/everland"}>에버랜드</NavLink>
-        <span>|</span>
-        <NavLink to={"/benefit/seoulland"}>서울랜드</NavLink>
-      </S.NavParkSelector>
-      <S.NavTypeSelector>
-        <S.NavContainer id='nav-container'>
+      <S.Container>
+        <S.Header1>이 달의 혜택</S.Header1> 
+        <S.NavParkSelector>
+          <NavLink to={"/benefit/lotteworld"}>롯데월드</NavLink>
+          <span>|</span>
+          <NavLink to={"/benefit/everland"}>에버랜드</NavLink>
+          <span>|</span>
+          <NavLink to={"/benefit/seoulland"}>서울랜드</NavLink>
+        </S.NavParkSelector>
+        <S.NavTypeSelector id='nav-container'>
           <S.BtnTypeSelector id='all' onClick={()=>{setFilter('all')}}>전체</S.BtnTypeSelector>
           <S.BtnTypeSelector id='normal' onClick={()=>{setFilter('normal')}} >일반혜택</S.BtnTypeSelector>
           <S.BtnTypeSelector id='card' onClick={()=>{setFilter('card')}} >카드혜택</S.BtnTypeSelector>
           <S.BtnTypeSelector id='membership' onClick={()=>{setFilter('membership')}} >간편결제/멤버십혜택</S.BtnTypeSelector>
-        </S.NavContainer>
-        <S.SearchWrapper>
-          <S.SearchInput id='search-input'></S.SearchInput>
-          <S.SearchBtn onClick={onClickToSearch}><FontAwesomeIcon icon={faSearch} size="2x" color="#1FB1D9" /></S.SearchBtn>
-        </S.SearchWrapper>
-      </S.NavTypeSelector>
-      <S.OrderSelector id='order-selector'>
-        <S.OrderBtn id='cost' onClick={()=>{setOrderBy('cost')}}>최저가순</S.OrderBtn>
-        | 
-        <S.OrderBtn id='new' onClick={()=>{setOrderBy('new')}} >최신순</S.OrderBtn>
-      </S.OrderSelector>
-      <S.GridWrapper>
-        {
-          benefitList.map((item)=>(
-            <BenefitItem
-              itemId={item._id} title={item.title}
-              startAt={item.start_at} endAt={item.end_at} price={item.price}
-              img={item.img}
-            />
-          ))
-        }
-      </S.GridWrapper>
+          <S.SearchWrapper>
+            <S.SearchInput id='search-input'></S.SearchInput>
+            <S.SearchBtn onClick={onClickToSearch}><FontAwesomeIcon icon={faSearch} size="2x" color="#1FB1D9" /></S.SearchBtn>
+          </S.SearchWrapper>
+        </S.NavTypeSelector>
+        <S.OrderSelector id='order-selector'>
+          <S.OrderBtn id='cost' onClick={()=>{setOrderBy('cost')}}>최저가순</S.OrderBtn>
+          | 
+          <S.OrderBtn id='new' onClick={()=>{setOrderBy('new')}} >최신순</S.OrderBtn>
+        </S.OrderSelector>
+        <S.GridWrapper>
+          {
+            benefitList.map((item)=>(
+              <BenefitItem
+                itemId={item._id} title={item.title}
+                startAt={item.start_at} endAt={item.end_at} price={item.price}
+                img={item.img}
+              />
+            ))
+          }
+        </S.GridWrapper>
+      </S.Container>
     </div>
   );
 };

@@ -14,12 +14,21 @@ const searchBarBorder = '0.2rem';
 const h1FontSize = "40px";
 const basicFontSize = '0.9rem';
 
+S.Container = styled.div`
+	width: 90%;
+	margin: 0 auto;
+`;
+
 S.Header1 = styled.h1`
 	margin: 100px auto 10px auto;
 	font-size: ${h1FontSize};
 	text-align: center;
 	width: 100%;
 	font-weight: ${fontBold};
+	@media (max-width: 727px) {
+		margin: 80px auto 10px auto;
+		font-size: 35px;
+	}
 `;
 
 S.NavParkSelector = styled.nav`
@@ -34,42 +43,39 @@ S.NavParkSelector = styled.nav`
 		margin: 0 0.5rem;
 		color: #000;
 	}
-
 	& *:hover {
 		color: ${mainDarkenColor};
 		font-weight: 500;
 	}
-
 	& .active {
 		color: ${mainColor};
 		font-weight: 600;
 	}
+	@media (max-width: 727px){
+		font-size: 0.9rem;
+	}
 `;
 
 S.NavTypeSelector = styled.div`
-	display: flex;
-	justify-content: space-around;
-	width: 100%;
-	height: 3.5rem;
-	min-height: 50px;
-	background-color: #d7f2ff;
-	align-items: center;
-`;
-
-S.NavContainer = styled.div`
-	display: flex;
-	justify-content: center;
-	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(6, 1fr) ;
+	grid-auto-rows: minmax(3rem, auto);
+	column-gap: 1rem;
+	background-color: ${mainSoftColor};
+	padding: 0 2rem;
+	@media (max-width: 727px){
+		column-gap: 0.5rem;
+		padding-top: 0.3rem;
+		grid-template-columns: repeat(4, 1fr);
+		grid-auto-rows: minmax(3rem, auto);
+	}
 `;
 
 S.BtnTypeSelector = styled.button`
 	font-size: 0.9rem;
 	border: none;
 	background-color: ${mainSoftColor};
-	min-width: 90px;
-	height: 100%;
 	border-radius: 1rem;
-	margin: 0 0.7rem;
 	padding: 0 1rem;
 	cursor: pointer;
 	&:hover{
@@ -79,19 +85,26 @@ S.BtnTypeSelector = styled.button`
 		background-color: ${mainColor};
 		color: #ffffff;
 	}
+	@media (max-width: 727px) {
+		padding: 0 0.5rem;
+		font-size: 0.8rem;
+	}
 `;
 
 S.SearchWrapper = styled.div`
 	padding: 0;
-	width: 400px;
-	height: 80%;
-	display: flex;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr auto;
 	align-items: center;
-	margin: 20px;
+	margin: 0.5rem auto;
+	grid-column: 5 / 7;
+	@media (max-width: 727px){
+		grid-column: 1 / 5;
+	}
 `;
 
 S.SearchInput = styled.input`
-	flex-basis: 80%;
 	height: 100%;
 	background-color: #fff;
 	border-color: ${mainColor};
@@ -104,7 +117,6 @@ S.SearchInput = styled.input`
 `;
 
 S.SearchBtn = styled.button`
-	flex-basis: 20%;
 	height: 100%;
 	background-color: #fff;
 	border-color: ${mainColor};
@@ -117,6 +129,9 @@ S.SearchBtn = styled.button`
 S.OrderSelector = styled.div`
 	font-size: ${basicFontSize};
 	margin: 20px 30px;
+	@media (max-width: 727px) {
+		margin: 10px 20px;
+	}
 `;
 
 S.OrderBtn = styled.button`
@@ -136,6 +151,10 @@ S.GridWrapper = styled.div`
 	grid-auto-rows: minmax(20rem, auto);
 	gap: 2vw;
 	justify-content: space-between;
+	@media (max-width: 727px){
+		grid-template-columns: repeat(2, 48%);
+		grid-auto-rows: minmax(15rem, auto);
+	}
 `;
 
 S.GridItem = styled.div`
@@ -149,21 +168,34 @@ S.GridItem = styled.div`
 	color: #000;
 	height: 100%;
 	cursor: pointer;
+	line-height: 1.2rem;
 	&:hover{
 		box-shadow: 0 0 10px 2px ${mainLightenColor};
 	}
-	line-height: 2rem;
+	@media (max-width: 727px){
+		font-size: 0.7rem;	
+		padding: 1rem;
+		line-height: 1.5rem;
+	}
 `;
 
 S.ItemTitle = styled.p`
-	font-size: 1rem;
+	/* font-size: 1rem; */
+	padding: 0.3rem 0;
 	font-weight: ${fontBold};
 	width: 100%;
+	line-height: 1.2rem;
+	@media (max-width: 727px) {
+		font-size: 0.9rem;
+	}
 `;
 
 S.ItemPrice = styled.span`
 	font-weight: ${fontSemiBold};
 	color: ${subColor};
+	@media (max-width: 727px) {
+		font-size: 0.9rem;
+	}
 `;
 
 S.ItemImgWrapper = styled.div`
@@ -175,6 +207,9 @@ S.ItemImgWrapper = styled.div`
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+	@media (max-width: 727px){
+		height: 9rem;
+	}
 `;
 
 
