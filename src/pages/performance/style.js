@@ -39,7 +39,17 @@ align-items: center;
 
 `
 
+S.Centerul = styled.div`
+  list-style: none; // 기본 리스트 스타일 제거
+  padding: 0;
+  margin: 0 0 100px -400px; 
+  display: flex;
+  flex-direction: column; // 아이템들을 세로로 나열
+  align-items: center;
+  
+`
 
 
 
-export default S;
+
+export default  S;
