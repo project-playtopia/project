@@ -16,4 +16,9 @@ const list = async (req, res) => {
 	}
 }
 
-export {list};
+const find = async (req, res)	=> {
+	const { benefitId } = req.query;
+	res.json(await BenefitSchema.findOne({_id: benefitId}));
+}
+
+export { list, find };
