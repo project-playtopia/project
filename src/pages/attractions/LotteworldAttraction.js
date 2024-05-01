@@ -1,9 +1,8 @@
-import React from 'react';
+import React  from 'react';
 import ThreeButtons from '../../components/ThreeButtons/ThreeButtons.jsx';
 import BasicSearch from '../../components/search/BasicSearch.jsx';
 import S from './style.js'
 import { NavLink } from 'react-router-dom';
-
 
 import Image1 from "../../pages/attractions/images/Lotteworld/at1.jpg"
 import Image2 from "../../pages/attractions/images/Lotteworld/at2.jpg"
@@ -43,10 +42,7 @@ import Image35 from "../../pages/attractions/images/Lotteworld/at35.jpg"
 import Image36 from "../../pages/attractions/images/Lotteworld/at36.jpg"
 
 
-
 const LotteworldAttraction = () => {
-  
- 
 
   return (
     <div>

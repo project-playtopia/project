@@ -5,9 +5,8 @@ import S from './style.js';
 
 const Performance = () => {
   let dayNow = new Date();
-  let today = dayNow.getDate()
   const [selectedDate, setSelectedDate] = useState(null);
-  let temp = 0;
+
 
   const dateLists = {
     "4/21": [
@@ -217,13 +216,35 @@ const Performance = () => {
     <div >
       <S.Title>공연일정</S.Title>
       <S.Div>
-        {Object.keys(dateLists).map((date, i) => (
+
+      {Object.keys(dateLists).map((date, i) => {
+        
+          let buttonDate = new Date(dayNow);
+          buttonDate.setDate(buttonDate.getDate() + i);
+
+
+          let displayDate = `${buttonDate.getMonth() + 1}.${buttonDate.getDate()}`;
+
+          return (
+            <S.Button
+              key={date}
+              onClick={() => handleButtonClick(date)}
+              isSelected={selectedDate === date}
+            >
+              {displayDate}
+            </S.Button>
+          );
+        })}
+
+
+
+
+        {/* {Object.keys(dateLists).map((date, i) => (
           <S.Button
             key={date}
             onClick={() => handleButtonClick(date)}
-            isSelected={selectedDate === date} 
-          >
-            {/* {date} */}
+            isSelected={selectedDate === date}  >
+          
             {today + i > 30 ? `5.` : `4.`}
             {today + i > 30 ? (
               ++temp
@@ -231,7 +252,10 @@ const Performance = () => {
               today + i
             )}
           </S.Button>
-        ))}
+        ))} */}
+
+
+
       </S.Div>
 
       

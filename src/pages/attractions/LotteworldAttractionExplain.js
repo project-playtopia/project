@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
 const attractions = {
   1: {
     name: "슬릭스튜디오",
-    description: "슬릭스튜디오에서 미디어 아트를 통해 가장 매력적인 나를 발견해보세요.",
+    description: "슬릭스튜디오에서 미디어 아트를 통해 가장 매력적인 나를 발견해보세요. ertertet",
     image: "/AttractionsImage/lotte/ex1.jpg",
   },
 
