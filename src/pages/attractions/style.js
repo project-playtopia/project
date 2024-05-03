@@ -1,7 +1,59 @@
 import styled from "styled-components";
+const mainDarkenColor = ({theme}) => theme.PALETTE.primary.main_darken;
+const mainColor = ({theme}) => theme.PALETTE.primary.main;
 
 const S = {};
 
+S.Background = styled.div`
+  width: 90%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+  margin-bottom: 10%;
+
+`;
+
+S.AttractionsContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // 4열로 나누기
+  grid-gap: 30px; // 그리드 사이의 간격
+  margin-top: 110px;
+`;
+
+
+S.NavParkSelector = styled.nav`
+   font-size: 18px !important;
+   width: 100%;
+   text-align: center;
+  margin-top: 2%;
+   margin-bottom: 3%;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   & * {
+      margin: 0 0.5rem;
+      color: #000;
+   }
+
+  & p{
+    font-size : 18px;
+  }
+
+   & *:hover {
+      color: ${mainDarkenColor};
+      font-weight: 500;
+   }
+
+   & .active {
+      color: ${mainColor};
+      font-weight: 600;
+   }
+`;
 
 S.Button = styled.button`
 color: #000000;
@@ -61,37 +113,70 @@ S.gridContainer= styled.div`
 
      `
 
-S.ImageWrapper = styled.div`
+// 롯데월드용
+
+ S.ImageWrapper = styled.div`
+  position: relative;
   width: 250px;
   height: 250px;
-  position: relative;
   overflow: hidden;
-  gap : 10px;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
 
-
-  &:hover img {
-    filter: brightness(70%);
-  }
-
-  &:hover::after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+  &:hover div {
     display: block;
   }
-  
+
+  div {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); // 반투명 배경
+    color: white;
+    width: 100%;
+    text-align: center;
+  }
 `;
+
+S.Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover; // 이미지 비율 유지하며 컨테이너에 맞춰 잘림
+`;
+
+
+
+// 에버랜드, 서울랜드
+// S.ImageWrapper = styled.div`
+//   width: 250px;
+//   height: 250px;
+//   position: relative;
+//   overflow: hidden;
+//   gap : 10px;
+//   display: flex;
+//   justify-content: center;
+//   cursor: pointer;
+
+
+//   &:hover img {
+//     filter: brightness(70%);
+//   }
+
+//   &:hover::after {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+
+//     display: block;
+//   }
+  
+// `;
 
   S.Image = styled.img`
   width: 250px;
   height: 250px;
   position: relative;
   border-radius: 20px;
+  object-fit: cover;
   
   
 
