@@ -57,18 +57,18 @@ S.CostWrapper = styled.div`
 `
 
 S.costboxtop = styled.div`
-width: 100%;
-height: 30%;
-background-color: ${({theme})=> theme.PALETTE.primary["main_soft"]};
-border-radius: 30px 30px 0 0;
-border-bottom: solid 2px ${({theme})=> theme.PALETTE.primary["main"]};
+  width: 100%; 
+  height: 30%;
+  background-color: ${({theme})=> theme.PALETTE.primary["main_soft"]};
+  border-radius: 30px 30px 0 0;
+  border-bottom: solid 2px ${({theme})=> theme.PALETTE.primary["main"]};
 `
 S.line = styled.div`
-width: 2px;
-height: 100%;
-background-color: ${({theme})=> theme.PALETTE.primary["main"]} ;
-position: absolute;
-left: 50%;
+  width: 2px;
+  height: 100%;
+  background-color: ${({theme})=> theme.PALETTE.primary["main"]} ;
+  position: absolute;
+  left: 50%;
 `
 
 S.dashedLine = styled.div`
@@ -108,4 +108,7 @@ S.NavParkSelector = styled.nav`
 		font-weight: 600;
 	}
 `;
+
+
+
 export default S;
