@@ -148,9 +148,10 @@ S.OrderBtn = styled.button`
 S.GridWrapper = styled.div`
 	display: grid;
 	grid-template-columns: repeat(4, 20%);
-	grid-auto-rows: minmax(20rem, auto);
+	grid-auto-rows: minmax(18rem, auto);
 	gap: 2vw;
 	justify-content: space-between;
+	margin-bottom: 4rem;
 	@media (max-width: 727px){
 		grid-template-columns: repeat(2, 48%);
 		grid-auto-rows: minmax(15rem, auto);
@@ -163,7 +164,7 @@ S.GridItem = styled.div`
 	border-style: solid;
 	border-radius: 30px;
 	border-width: 1px;
-	font-size: ${basicFontSize};
+	font-size: 0.9rem;
 	padding: 1.2rem;
 	color: #000;
 	height: 100%;
@@ -179,9 +180,13 @@ S.GridItem = styled.div`
 	}
 `;
 
+S.ItemPeriod = styled.p`
+	padding-top: 0.4rem;
+`;
+
 S.ItemTitle = styled.p`
-	/* font-size: 1rem; */
-	padding: 0.3rem 0;
+	font-size: 1rem;
+	padding: 0.5rem 0;
 	font-weight: ${fontBold};
 	width: 100%;
 	line-height: 1.2rem;
@@ -211,7 +216,5 @@ S.ItemImgWrapper = styled.div`
 		height: 9rem;
 	}
 `;
-
-
 
 export default S;

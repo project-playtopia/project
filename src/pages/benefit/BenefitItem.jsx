@@ -10,7 +10,7 @@ const BenefitItem = ({itemId, title, startAt, endAt, price, img}) => {
 			<S.GridItem>
 				<S.ItemImgWrapper imgSrc = {img}>
 				</S.ItemImgWrapper>
-				<p>{period}</p>
+				<S.ItemPeriod>{period}</S.ItemPeriod>
 				<S.ItemTitle>{title}</S.ItemTitle>
 				<p>
 					<S.ItemPrice>{priceFormat}</S.ItemPrice>원
