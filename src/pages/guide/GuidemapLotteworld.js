@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import S from './style.js';
 import { NavLink } from 'react-router-dom';
 import Lotteworldmap from './Lotteworldmap.jsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCloudRain, faSnowflake, faScrewdriverWrench, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+
+
 
 
 const GuidemapLotteworld = () => {
@@ -52,25 +56,52 @@ const GuidemapLotteworld = () => {
 
 
       <Lotteworldmap />
-
      <S.H3>운휴시설</S.H3>
+     <S.Facility>
      <S.line></S.line>
-     <p>어트랙션</p>
-     {
-  attract.attraction && attract.attraction.length > 0 &&
-  attract.attraction.map((att) => (
-    <h1>{att.title}{att.content}</h1>
-  ))
-}
-
-     <S.line></S.line>
-     {/* {
-  attract.attraction && attract.attraction.length > 0 &&
-  attract.attraction.map((att) => (
-    <h1>{att.title} {att.content}</h1>
-  ))
-} */}
-
+     {attract.attraction && attract.attraction.length > 0 && (
+  <>
+    <h1 style={{ display: 'flex', alignItems: 'center' }}>
+      {attract.attraction[0].content === "동계운휴" && (
+        <S.Icon icon={faSnowflake}/>
+      )}
+      {attract.attraction[0].content === "정기 점검" && (
+        <S.Icon icon={faScrewdriverWrench}/>
+      )}
+      {attract.attraction[0].content === "정기 운휴" && (
+        <S.Icon icon={faCircleXmark}/>
+      )}
+      {attract.attraction[0].content === "우천 운휴" && (
+        <S.Icon icon={faCloudRain} />
+      )}
+       <p>{attract.attraction[0].title}</p>
+      <div className='facilityContent'> {attract.attraction[0].content}</div>
+    </h1>
+  </>
+)}
+<S.line></S.line>
+{attract.attraction && attract.attraction.length > 0 && (
+  <>
+    <h1 style={{ display: 'flex', alignItems: 'center' }}>
+      {attract.attraction[1].content === "동계운휴" && (
+        <S.Icon icon={faSnowflake} />
+      )}
+      {attract.attraction[1].content === "정기 점검" && (
+        <S.Icon icon={faScrewdriverWrench}/>
+      )}
+      {attract.attraction[1].content === "정기 운휴" && (
+        <S.Icon icon={faCircleXmark}/>
+      )}
+      {attract.attraction[1].content === "우천 운휴" && (
+        <S.Icon icon={faCloudRain}/>
+      )}
+      <p>{attract.attraction[1].title}</p>
+      <div className='facilityContent'> {attract.attraction[1].content}</div>
+    </h1>
+  </>
+)}
+<S.line></S.line>
+</S.Facility>
 
       <S.H3>주차 안내</S.H3>
     <S.StyledTable>
@@ -87,12 +118,12 @@ const GuidemapLotteworld = () => {
         </tr>
         <tr>
           <S.StyledTd width="15%" height="200px"><p>3시간~</p></S.StyledTd>
-          <S.StyledTd width="45%" height="200px" >
+          <S.StyledTd width="45%" height="200px">
             <p className='parkhour'>
-            1,000원/10분 최대 3,000원<br />
-            예시) 3시간 10분: 1,000원<br />
-            3시간 20분: 2,000원<br />
-            3시간 30분~: 3,000원
+              1,000원/10분 최대 3,000원<br />
+              예시) 3시간 10분: 1,000원<br />
+              3시간 20분: 2,000원<br />
+              3시간 30분~: 3,000원
             </p>
           </S.StyledTd>
         </tr>

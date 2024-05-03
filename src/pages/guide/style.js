@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 
 const S = {};
@@ -81,7 +82,7 @@ S.BusinessHour = styled.div`
 `
 
 S.line = styled.div`
-  width: 740px;
+  width: 500px;
   height: 1px;
   background-color: ${mainColor} ;
   /* position: absolute;
@@ -120,11 +121,11 @@ S.StyledTd = styled.td`
   padding: 5px;
   border-top: none;
   border-bottom: solid 1.75px ${mainColor};
-  /* border-left: solid 1.75px ${mainColor}; */
   border-right: solid 1.75px ${mainColor};
+  border-left: solid 1.75px ${mainColor};;
   position: relative;
 
-  & p{
+  & p {
     position: absolute;
     top: 45%;
     left: 30%;
@@ -141,6 +142,8 @@ S.StyledTd = styled.td`
   }
 `;
 
+
+
 S.footerP = styled.p`
       color : #000000;
       font-size : ${ ({theme}) => theme.FONT_SIZE["footer"]};
@@ -148,7 +151,43 @@ S.footerP = styled.p`
       margin-bottom: 50px;
       text-align: left;
       margin-right: 43%;
+`;
+
+S.Icon = styled(FontAwesomeIcon)`
+margin: 15px;
+font-size: 35px; 
+color: ${mainColor};
+`;
+
+S.Facility = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  & h1 {
+    display: flex;
+    justify-content: space-between; /* h1 내부 요소들을 양 끝으로 분산 배치 */
+    width: 100%; /* h1을 S.Facility의 전체 너비로 확장 */
+  }
+
+  & p {
+    margin-left: 20px;
+  }
+
+  & .facilityContent {
+    height: 80%;
+    width: 100px;
+    text-align: center;
+    border: solid 2px ${mainColor};
+    border-radius: 35px;
+    margin-left: auto; /* 왼쪽 마진을 자동으로 설정하여 오른쪽으로 이동 */
+    display: flex;
+    align-items: center; /* 내용을 수직 중앙으로 정렬 */
+    justify-content: center; /* 내용을 수평 중앙으로 정렬 */
+  }
 `
+
 
 
 

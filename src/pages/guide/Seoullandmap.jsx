@@ -5,7 +5,7 @@ const Seoullandmap = () => {
   return (
     <Map
     center={{ lat:  37.4341563, lng: 127.0201267 }}
-    style={{ width: "60%", height: "360px", margin : "60px"}}
+    style={{ width: "60%", height: "360px", margin : "60px",position:"sticky"}}
   >
 
     <MapMarker 

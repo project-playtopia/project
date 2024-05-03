@@ -9,4 +9,4 @@ const guidemapSchema = new Schema({
 
 
 
-export default model('GuideMapSchema', guidemapSchema);;
+export default model('GuideMapSchema', guidemapSchema);
