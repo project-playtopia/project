@@ -6,8 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudRain, faSnowflake, faScrewdriverWrench, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
 
-
-
 const GuidemapLotteworld = () => {
   const [attract, setAttract] = useState([])
   const now = new Date().getDate()
