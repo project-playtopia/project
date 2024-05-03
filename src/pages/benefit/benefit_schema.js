@@ -28,7 +28,7 @@ const benefitSchema = new Schema(
 		},
 		img: {
 			type: String,
-		}
+		},
 	}
 );
 

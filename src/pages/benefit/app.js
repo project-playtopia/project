@@ -19,59 +19,65 @@ app.listen(port, ()=>{
 	console.log(`server start on ${port}`);
 })
 
+// const benefitInfoUpdate = await BenefitInfoSchema.findOne({ref_id: "661cab5770f2928aa8a761cc"}).populate("contents");
+// console.log(benefitInfoUpdate);
+// await BenefitInfoSchema.updateOne(benefitInfoUpdate, {description: "* 본인 40% 및 동반 3인 20~30%",});
+
+// const benefitUpdate = await BenefitSchema.findOne({_id: "6620b40363a5cfa7de482366"});
+// console.log(benefitUpdate);
+// await BenefitSchema.updateOne(benefitUpdate, {start_at: "2024-05-01", end_at: "2024-05-31"});
+
 // const benefitInfoInserted = await BenefitInfoSchema.create(
 // 	{
-// 		ref_id: '661b8b01e2d89c8c164e28e3',
+// 		ref_id: '6620b1bff1604fe85d8e3d59',
+// 		title: "KT 멤버십(기본제휴)",
+// 		start_at: "2024-05-01",
+// 		end_at: "2024-05-31",
+// 		description: "* KT멤버십 회원 본인 40% + 동반 3인 30%",
 // 		contents : [
 // 			[			
 // 				{
 // 					title: '1일권 어른',
 // 					original_price: 62000,
-// 					discounted_price: 34100,
-// 					companion: 34100,
+// 					discounted_price: 37200,
+// 					companion: 43400,
 // 				},
 // 				{
 // 					title: '1일권 청소년',
 // 					original_price: 54000,
-// 					discounted_price: 34100,
-// 					companion: 29700,
+// 					discounted_price: 32400,
+// 					companion: 37800,
 // 				},
 // 				{
 // 					title: '1일권 어린이',
 // 					original_price: 47000,
-// 					discounted_price: 34100,
-// 					companion: 25850,
+// 					discounted_price: 28200,
+// 					companion: 32900,
 // 				},
 // 			],
 // 			[
 // 				{
 // 					title: '야간권 어른',
 // 					original_price: 50000,
-// 					discounted_price: 27500,
-// 					companion: 27500,
+// 					discounted_price: 30000,
+// 					companion: 35000,
 // 				},
 // 				{
 // 					title: '야간권 청소년',
 // 					original_price: 43000,
-// 					discounted_price: 27500,
-// 					companion: 23650,
+// 					discounted_price: 25800,
+// 					companion: 30100,
 // 				},
 // 				{
 // 					title: '야간권 어린이',
 // 					original_price: 36000,
-// 					discounted_price: 27500,
-// 					companion: 19800,
+// 					discounted_price: 21600,
+// 					companion: 25200,
 // 				},
 // 			],
 // 		]
 // 	}
 // )
-
-// const benefitModify = await BenefitSchema.findOne({_id: '661cab5770f2928aa8a761d1'});
-// await BenefitSchema.updateOne(benefitModify, {
-// 	img: 'https://seoulland.co.kr/_File/operate/saleProgram//listImgFile_1682499760_0.webp'
-// });
-
 
 // const benfitInserted = await BenefitSchema.create(
 	// {
