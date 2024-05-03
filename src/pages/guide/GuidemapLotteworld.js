@@ -1,9 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import S from './style.js';
 import { NavLink } from 'react-router-dom';
 import Lotteworldmap from './Lotteworldmap.jsx';
 
+
 const GuidemapLotteworld = () => {
+  const [attract, setAttract] = useState([])
+  const now = new Date().getDate()
+
+  const randomData = (now * 3 % 10)
+ 
+  useEffect(()=>{
+    const getAttract = async () => {
+        try {
+            const response = await fetch(`http://localhost:8000/guide/guideMap/${randomData}`)
+            const datas = await response.json()
+            return datas;
+        } catch (error) {
+            console.error("데이터를 찾지 못함", error);
+        }
+    }
+    getAttract().then(data => {
+        if (data) {
+            setAttract(data);
+        }
+    })
+}, [])
+
   return (
     <S.Background>
       <S.H1>가이드맵</S.H1>
@@ -22,12 +45,33 @@ const GuidemapLotteworld = () => {
      </S.NavParkSelector>
      <S.H3>운영시간</S.H3>
      <S.BusinessHour>
-      <p>10:00 - 22:00</p>
-     </S.BusinessHour>
+      {attract.startTime && attract.endTime && (
+      <p>{attract.startTime} - {attract.endTime}</p>
+        )}
+      </S.BusinessHour>
+
 
       <Lotteworldmap />
 
      <S.H3>운휴시설</S.H3>
+     <S.line></S.line>
+     <p>어트랙션</p>
+     {
+  attract.attraction && attract.attraction.length > 0 &&
+  attract.attraction.map((att) => (
+    <h1>{att.title}{att.content}</h1>
+  ))
+}
+
+     <S.line></S.line>
+     {/* {
+  attract.attraction && attract.attraction.length > 0 &&
+  attract.attraction.map((att) => (
+    <h1>{att.title} {att.content}</h1>
+  ))
+} */}
+
+
       <S.H3>주차 안내</S.H3>
     <S.StyledTable>
         <S.parkboxtop>
@@ -35,7 +79,7 @@ const GuidemapLotteworld = () => {
         </S.parkboxtop>
       <tbody>
         <tr>
-          <S.StyledTd width="25%" rowSpan={2} >
+          <S.StyledTd width="25%" rowSpan={2}>
             <p className='buyticket'>종합이용권 및 파크이용권 <br />구매시</p>
           </S.StyledTd>
           <S.StyledTd width="15%"><p>~3시간</p></S.StyledTd>
@@ -43,7 +87,7 @@ const GuidemapLotteworld = () => {
         </tr>
         <tr>
           <S.StyledTd width="15%" height="200px"><p>3시간~</p></S.StyledTd>
-          <S.StyledTd width="45%" height="200px">
+          <S.StyledTd width="45%" height="200px" >
             <p className='parkhour'>
             1,000원/10분 최대 3,000원<br />
             예시) 3시간 10분: 1,000원<br />
@@ -54,6 +98,11 @@ const GuidemapLotteworld = () => {
         </tr>
       </tbody>
     </S.StyledTable>
+
+    <S.footerP>
+      ※ 롯데월드 내ㆍ외 레스토랑/ 기프트샵 이용시 이용 금액에 따라 최대 3시간까지 무료 주차 가능합니다.
+      <br />3만원 이상 ~ 5만원 미만 1시간 /5만원 이상 ~ 7만원 미만 2시간 /7만원 이상 3시간 
+    </S.footerP>
 
 
 

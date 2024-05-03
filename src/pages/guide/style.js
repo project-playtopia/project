@@ -84,8 +84,8 @@ S.line = styled.div`
   width: 740px;
   height: 1px;
   background-color: ${mainColor} ;
-  position: absolute;
-  top: 110%;
+  /* position: absolute;
+  top: 110%; */
 `
 S.parkboxtop = styled.div`
   width: 340%;
@@ -115,12 +115,15 @@ S.StyledTd = styled.td`
   width: ${props => props.width || "100%"};
   height: ${props => props.height || "100px"};
   background-color: #fff; 
-  border: solid 1px #000;
   text-align: center;
   font-size: 18px;
   padding: 5px;
-  border: solid 1.5px ${mainColor};
+  border-top: none;
+  border-bottom: solid 1.75px ${mainColor};
+  /* border-left: solid 1.75px ${mainColor}; */
+  border-right: solid 1.75px ${mainColor};
   position: relative;
+
   & p{
     position: absolute;
     top: 45%;
@@ -138,6 +141,14 @@ S.StyledTd = styled.td`
   }
 `;
 
+S.footerP = styled.p`
+      color : #000000;
+      font-size : ${ ({theme}) => theme.FONT_SIZE["footer"]};
+      font-weight:${({theme})=> theme.FONT_WEIGHT["thin"]};
+      margin-bottom: 50px;
+      text-align: left;
+      margin-right: 43%;
+`
 
 
 
