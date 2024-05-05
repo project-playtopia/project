@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import connect from "./connect.js";
 import yearCostRouter from './yearcost_router.js';
 import YearCostBenefitSchema from './yearCostBenefitSchema.js';
-import yearCostBenefitExplainRouter from '../yearcostBenefitExplain/yearcostBenefitExplain_router.js';
+import yearcostBenefitExplainRouter from '../yearcostBenefitExplain/yearcostBenefitExplain_router.js';
 import YearcostBenefitExplainSchema from '../yearcostBenefitExplain/yearcostBenefitExplain_schema.js';
 
 
@@ -15,7 +15,7 @@ connect();
 app.use(bodyParser.json());
 app.use(cors());
 app.use('/yearcost', yearCostRouter);
-app.use('yearcostBenefit/explain', yearCostBenefitExplainRouter);
+app.use('/yearcostBenefitExplain', yearcostBenefitExplainRouter);
 app.listen(port, ()=>{
 	console.log(`server start on ${port}`);
 });

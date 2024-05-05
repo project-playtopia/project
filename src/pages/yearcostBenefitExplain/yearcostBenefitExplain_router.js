@@ -1,8 +1,8 @@
 import express from 'express';
 import { find } from './yearcostBenefitExplain_controller.js';
 
-const yearCostBenefitExplainRouter = express.Router();
+const yearcostBenefitExplainRouter = express.Router();
 
-yearCostBenefitExplainRouter.get('/find/', find);
+yearcostBenefitExplainRouter.get('/find/', find);
 
-export default yearCostBenefitExplainRouter;
+export default yearcostBenefitExplainRouter;
