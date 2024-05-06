@@ -75,8 +75,13 @@ const SignIn = () => {
           <NavLink to={"/signUp"}>
             <S.SignInButton>회원가입</S.SignInButton>
           </NavLink>
+          <S.LinksContainer>
+              <NavLink to={"/searchId"}><p>아이디 찾기</p></NavLink>
+              <NavLink to={"/changePassword"}><p>비밀번호 찾기</p></NavLink>
+          </S.LinksContainer>
           </form>
       </S.Container>
+      
     </S.Background>
   );
 };
