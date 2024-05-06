@@ -15,10 +15,6 @@ const YearCostExplainSeoulland = () => {
           <span>|</span>
           <NavLink to={'/yearcost/explain/seoulland'}>서울랜드</NavLink>
         </S.NavParkSelector>
-        <S.TypeSelector>
-          <NavLink to={'/yearcost/explain/seoulland'} className='explain'>이용권 안내</NavLink>
-          <NavLink to={'/yearcost/benefit/seoland'} className='benefit'>할인 정보</NavLink>
-        </S.TypeSelector>
         <S.CostExplainContainer>
           <S.CostExplainName>서울랜드 연간이용권 {"("}서울랜드 + 코끼리열차{")"}</S.CostExplainName>
           <S.CostExplainName>신규 가입</S.CostExplainName>
