@@ -15,10 +15,6 @@ const YearCostExplainEverland = () => {
           <span>|</span>
           <NavLink to={'/yearcost/explain/seoulland'}>서울랜드</NavLink>
         </S.NavParkSelector>
-        <S.TypeSelector>
-          <NavLink to={'/yearcost/explain/everland'} className='explain'>이용권 안내</NavLink>
-          <NavLink to={'/yearcost/benefit/everland'} className='benefit'>할인 정보</NavLink>
-        </S.TypeSelector>
         <S.CostExplainContainer>
           <S.CostExplainName>365 스탠다드</S.CostExplainName>
           <S.CostExplainGrid>
