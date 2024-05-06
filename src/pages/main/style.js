@@ -75,6 +75,7 @@ S.buttonWrapper = styled.div`
     background-color: ${ ({theme}) => theme.PALETTE.primary["main"]};
     border: none;
     border-radius : 50px;
+    cursor: pointer;
     @media (max-width: 726px) {
       display: none; 
     }
@@ -91,6 +92,7 @@ S.MobileButtonFirst = styled.button`
     width: 20%;
     overflow: hidden;
     background-color: ${ ({theme}) => theme.PALETTE.primary["main"]}; 
+    cursor: pointer;
     border: solid  0.1px rgba(231, 231, 231,0.3);
     z-index: 1;
     color: #fff;

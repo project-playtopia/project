@@ -37,7 +37,7 @@ theme.FONT_WEIGHT = {
   thin: "100",
   regular: "400",
   semibold:"600",
-  bold: "700",
+  bold: "800",
 }
 
 theme.FONT_LINE = {
