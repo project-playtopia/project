@@ -5,12 +5,12 @@ import S from './style.js';
 
 const SeroullandAttraction = () => {
     // lotteWorld, seoulLand, everland
-    const [currentValue, setCurrentValue] = useState('lotteWorld')
+    const [currentValue, setCurrentValue] = useState('seoulland')
 
     // 클릭하면 currentValue를 바꿔 fetch 경로를 바꾼다.
-    // const onClickToLotte = () => { setCurrentValue('lotteWorld') }
-    // const onClickToSeoul = () => { setCurrentValue('seoulLand') }
-    // const onClickToEver = () => { setCurrentValue('everland') }
+    const onClickToLotte = () => { setCurrentValue('lotteWorld') }
+    const onClickToSeoul = () => { setCurrentValue('seoulLand') }
+    const onClickToEver = () => { setCurrentValue('everland') }
 
     // currentValue에 맞는 데이터를 fetch로 불러온다.
     // 의존성 배열에 [currentValue]를 넣어 onClick으로 바뀌었을 때 새로 불러온다.
@@ -36,7 +36,7 @@ const SeroullandAttraction = () => {
         <S.ImageWrapper>
         <NavLink key={i} to={`/attraction/seoulland/explain/${att.id}`}>
             {/* <img src={`process.env.PUBLIC_URL/pages/attractions/lotte/blahblah${att.id}.jpg`} /> */}
-             <S.Image src={`${process.env.PUBLIC_URL}/AttractionsImage/Seoulland/at${att.id}.jpg`} alt="attraction" />
+             <S.Image src={`${process.env.PUBLIC_URL}/AttractionsImage/seoulland/at${att.id}.jpg`} alt="attraction" />
             <div>
                 <p>{att.title}</p>
                 <span>{att.location}</span>
@@ -49,7 +49,16 @@ const SeroullandAttraction = () => {
 
     return (
         <S.Background>
-            <S.NavParkSelector>
+
+          <S.NavParkSelector>
+            <button onClick={onClickToLotte}>롯데월드</button>
+             <span>|</span>
+             <button onClick={onClickToEver}>에버랜드</button>
+             <span>|</span>
+             <button onClick={onClickToSeoul}>서울랜드</button>
+             </S.NavParkSelector>
+
+            {/* <S.NavParkSelector>
             <NavLink to={"/attraction/lotteworld"}>
                 <p>롯데월드</p>
             </NavLink>
@@ -61,7 +70,9 @@ const SeroullandAttraction = () => {
             <NavLink to={"/attraction/seoulland"}>
                 <p>서울랜드</p>
             </NavLink>
-            </S.NavParkSelector>
+            </S.NavParkSelector> */}
+
+
             <S.search className='searchbar'>
               <BasicSearch  shape={"default"} variant={"main"} size={"default"} />
              </S.search>

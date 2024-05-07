@@ -10,7 +10,7 @@ import { NavLink } from 'react-router-dom';
 const attractions = {
   1: {
     name: "둥실 비행선",
-    description: "파스텔톤 비행선을 타고 둥실~ 둥실~ 바람 따라 구름 따라 여행을 떠나요. 친구들이 많아도 모두 함께 이용할 수 있답니다.",
+    description: "파스텔톤 비행선을 타고 둥실~ 둥실~ 바람 따라 구름 따라 여행을 떠나요. ",
     image:"/AttractionsImage/seoulland/ex1.jpg",
   },
 
@@ -41,13 +41,13 @@ const attractions = {
 
   6: {
     name: "킹바이킹",
-    description: "가족, 친구들과 함께 삼삼오오 짝을 이루어 배의 양쪽으로 나누어 타고 소리쳐 보세요.  더 이상 말이 필요 없는 국민적인 놀이기구!",
+    description: "  더 이상 말이 필요 없는 국민적인 놀이기구!",
     image:  "/AttractionsImage/seoulland/ex3.jpg",
   },
 
   7: {
     name: "블랙홀 2000",
-    description: "트위스트 2번! 곤두박질 7번! 초특급 우주열차! 은하계의 블랙홀을 “2번 트위스트, 7번 곤두박질”치며 통과하는 초특급 우주열차! ",
+    description: "트위스트 2번! 초특급 우주열차! 은하계의 블랙홀을 통과하는 초특급 우주열차! ",
     image: "/AttractionsImage/seoulland/ex3.jpg",
   },
 

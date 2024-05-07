@@ -24,6 +24,10 @@ app.use(cors({
 // 라우팅을 가로채어 localhost:8000/attractions/작성한 라우팅
 app.use('/attraction', router)
 
+
+
+
+
 // 서버 실행
 app.listen(port, () => {
   console.log(`server is on ${port}`)

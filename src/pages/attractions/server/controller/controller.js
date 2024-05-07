@@ -1,4 +1,4 @@
-import LotteWorld from '../schemas/lotteWordlSchemas.js'
+import LotteWorld from '../schemas/lotteWorldSchemas.js'
 import EverLand from '../schemas/everLandSchemas.js';
 import SeoulLand from '../schemas/seoulLandSchemas.js';
 

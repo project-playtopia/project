@@ -26,46 +26,89 @@ S.AttractionsContainer = styled.div`
 `;
 
 
+// 긁어온거
 S.NavParkSelector = styled.nav`
    font-size: 18px !important;
    width: 100%;
    text-align: center;
-  margin-top: 2%;
+   margin-top: 2%;
    margin-bottom: 3%;
    display: flex;
    flex-direction: row;
    justify-content: center;
+
+   // 모든 자식 요소에 대한 스타일
    & * {
       margin: 0 0.5rem;
       color: #000;
+      font-size: 18px !important;
+      
    }
 
-  & p{
-    font-size : 18px;
-  }
+   // button 태그에 대한 스타일을 명시적으로 추가
+   & button {
+      background-color: transparent !important; // 예시로 추가한 스타일
+      border: none; // 예시로 추가한 스타일
+      cursor: pointer;
+      
+   }
 
-   & *:hover {
-      color: ${mainDarkenColor};
+   & p{
+    font-size: 18px !important;
+   }
+
+   // button에 hover 스타일 적용
+   & button:hover {
+    color: ${mainColor}; // props를 통해 색상 지정
       font-weight: 500;
    }
 
-   & .active {
-      color: ${mainColor};
-      font-weight: 600;
+   // button이 active 상태일 때의 스타일
+   & button.active {
+      color: ${mainColor}; // props를 통해 색상 지정
+      font-weight: 600 !important; // font-weight 적용 문제 해결을 위해 !important 사용
    }
-`;
+// 정준님꺼
+// S.NavParkSelector = styled.nav`
+//    font-size: 18px !important;
+//    width: 100%;
+//    text-align: center;
+//   margin-top: 2%;
+//    margin-bottom: 3%;
+//    display: flex;
+//    flex-direction: row;
+//    justify-content: center;
+//    & * {
+//       margin: 0 0.5rem;
+//       color: #000;
+//    }
 
-S.Button = styled.button`
-color: #000000;
+//   & p{
+//     font-size : 18px;
+//   }
 
-`
+//    & *:hover {
+//       color: ${mainDarkenColor};
+//       font-weight: 500;
+//    }
 
-S.Threebutton = styled.div`
-position:absolute;
-left: 38%;
-top : 15%;
-font-size: 16px;
-`
+//    & .active {
+//       color: ${mainColor};
+//       font-weight: 600;
+//    }
+// `;
+
+// S.Button = styled.button`
+// color: #000000;
+
+// `
+
+// S.Threebutton = styled.div`
+// position:absolute;
+// left: 38%;
+// top : 15%;
+// font-size: 16px;
+// `
 
 
 // BasicSearch.jsx 검색창
