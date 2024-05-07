@@ -2,6 +2,9 @@
 
 import React, { useState } from 'react';
 import S from './style.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+
 
 const Performance = () => {
   let dayNow = new Date();
@@ -264,12 +267,12 @@ const Performance = () => {
       <S.Centerul>
       {selectedDate && getSortedPerformancesByTime(selectedDate).map((item) => (
         <li key={item.id} style={{ display: 'flex', alignItems: 'center', marginBottom: '20px', flexDirection: 'row' }}>
-          <img src={item.image} alt="공연 이미지" style={{ width: '200px', height: '160px', marginRight: '20px' }} />
-          <div>
-            <p><strong>{item.parkName}</strong> {item.time}</p>
+          <S.Img src={item.image} alt="공연 이미지"  />
+          <S.List>
+            <p> <FontAwesomeIcon icon={faLocationDot} style={{color: '#FE78C0'}}></FontAwesomeIcon>  {item.parkName}{item.time}</p>
             <p>{item.performanceName}</p>
             <p>{item.location}</p>
-          </div>
+          </S.List>
         </li>
       ))}
       </S.Centerul>

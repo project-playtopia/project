@@ -46,9 +46,20 @@ S.Centerul = styled.div`
   display: flex;
   flex-direction: column; // 아이템들을 세로로 나열
   align-items: center;
+  border-bottom: 1px solid #9f9f9f;
   
 `
+S.List = styled.div`
 
+margin-left: 30px;
+
+`
+
+S.Img = styled.img`
+  width: 200px;
+  height: 160px;
+  border-radius: 20px;
+`
 
 
 
