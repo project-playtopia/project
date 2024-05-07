@@ -33,4 +33,4 @@ S.NavParkSelector = styled.nav`
 	}
 `;
 
-export
+export default S;
