@@ -96,7 +96,6 @@ const SignUp = () => {
             .then(res => res.json())
             .then(res => console.log(res))
             navigate('/signUpFinish')
-      
   }};
   return (
     <S.Background>

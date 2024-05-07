@@ -1,8 +1,10 @@
 import express from 'express';
-import { list } from './yearcost_controller.js';
+import { find, list } from './yearcost_controller.js';
 
 const yearCostRouter = express.Router();
 
 yearCostRouter.get('/list/', list);
+
+yearCostRouter.get('/find/', find);
 
 export default yearCostRouter;

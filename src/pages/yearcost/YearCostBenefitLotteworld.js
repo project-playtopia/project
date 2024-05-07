@@ -25,9 +25,9 @@ const YearCostBenefitLotteworld = () => {
         <S.NavParkSelector>
           <NavLink to={'/yearcost/benefit/lotteworld'}>롯데월드</NavLink>
           <span>|</span>
-          <NavLink to={'/yearcost/benefit/everland'}>에버랜드</NavLink>
+          <NavLink to={'/yearcost/explain/everland'}>에버랜드</NavLink>
           <span>|</span>
-          <NavLink to={'/yearcost/benefit/seoulland'}>서울랜드</NavLink>
+          <NavLink to={'/yearcost/explain/seoulland'}>서울랜드</NavLink>
         </S.NavParkSelector>
         <S.TypeSelector>
           <NavLink to={'/yearcost/explain/lotteworld'} className='explain'>이용권 안내</NavLink>
