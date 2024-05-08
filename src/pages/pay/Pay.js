@@ -38,7 +38,7 @@ const Pay = () => {
       return alert('구매할 이용권을 선택하세요');
     }else if (window.confirm('결제하시겠습니까?')){
       alert('결제를 완료하였습니다.')
-      navigate(`/benefit/benefit/explain?itemId=${itemId}`, {
+      navigate(`/benefit/explain?itemId=${itemId}`, {
         state: {
           itemId: itemId,
           price: entirePrice,
