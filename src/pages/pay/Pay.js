@@ -26,19 +26,19 @@ const Pay = () => {
   const [entireDiscountedPrice, setEntireDiscountedPrice] = useState(0);
 
   const onClickToAdd = (index) => {
-    setCountArr(countArr.map((e, i)=> (index == i) ? ++countArr[i] : countArr[i]));
+    setCountArr(countArr.map((e, i)=> (index == i) ? ++e : e));
   }
 
   const onClickToMinus = (index) => {
-    setCountArr(countArr.map((e, i)=> (countArr[i] && index == i) ? --countArr[i] : countArr[i]));
+    setCountArr(countArr.map((e, i)=> (e && index == i) ? --e : e));
   }
 
   const onClickToPay = () => {
     if(countArr.filter(e => e === 0).length === countArr.length){
       return alert('구매할 이용권을 선택하세요');
-    }else if (window.confirm('구매하시겠습니까?')){
-      alert('구매를 완료하였습니다.')
-      navigate('/', {
+    }else if (window.confirm('결제하시겠습니까?')){
+      alert('결제를 완료하였습니다.')
+      navigate(`/benefit/benefit/explain?itemId=${itemId}`, {
         state: {
           itemId: itemId,
           price: entirePrice,
