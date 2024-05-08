@@ -152,7 +152,7 @@ const SignUp = () => {
                 )}
           </S.PasswordContainer>
           <S.IdentificationContainer>
-          <S.Input type="tel" placeholder="전화번호" id='phonenumber'
+          <S.Input type="tel" placeholder="전화번호 010-****-****" id='phonenumber'
              {...register("phonenumber", {
               required : true
           })}
