@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import S from './style.js';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import BenefitExplainTable from './BenefitExplainTable.jsx';
 
 const BenefitExplain = () => {
@@ -10,6 +10,18 @@ const BenefitExplain = () => {
   const [period, setPeriod] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+
+  const navigate = useNavigate();
+
+  const onClickToPay = () => {
+    navigate('/pay', {
+      state: {
+        itemId: itemId,
+        period: period,
+        explainInfo: explainInfo,
+      }
+    })
+  }
 
   const getExplainInfo = async () => {
     try{
@@ -25,7 +37,7 @@ const BenefitExplain = () => {
   }
 
   useEffect(()=>{
-    getExplainInfo().then(()=>{console.log(explainInfo);});
+    getExplainInfo();
   }, []);
   
 
@@ -58,7 +70,8 @@ const BenefitExplain = () => {
         }
         <S.BtnContainer>
           <Link to={'/benefit/lotteworld'} className='to-list'>목록으로</Link>
-          <Link to={'/pay'} className='to-pay'>결제하기</Link>
+          {/* <Link to={'/pay'} className='to-pay'>결제하기</Link> */}
+          <button onClick={onClickToPay} className='to-pay'>결제하기</button>
         </S.BtnContainer>
       </S.Container>
     </div>
