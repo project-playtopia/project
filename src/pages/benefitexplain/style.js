@@ -96,27 +96,29 @@ S.BtnContainer = styled.div`
 		grid-template-rows: 3rem 3rem;
 		row-gap: 1rem;
 	}
-	& a{
+	& a, button{
 		border-style: solid;
 		border-color: ${mainColor};
 		border-width: 1px;
-		line-height: 3rem;
+		font-size: 1rem;
 		border-radius: 30px;
+		cursor: pointer;
 		@media (max-width: 727px) {
-		line-height: 3rem;
-	}
+			font-size: 0.9rem;
+		}
 	}
 	& a.to-list {
+		padding: 1rem 0;
 		color: ${mainColor};
 	}
 	& a.to-list:hover{
 		background-color: ${mainSoftColor};
 	}
-	& a.to-pay {
+	& .to-pay {
 		color: #fff;
 		background-color: ${mainColor};
 	}
-	& a.to-pay:hover{
+	& .to-pay:hover{
 		background-color: ${mainDarkenColor};
 		border-color: ${mainDarkenColor};
 		color: #eee;
