@@ -44,6 +44,7 @@ S.PayGrid	 = styled.div`
 	@media (max-width: 727px) {
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr auto;
+		margin: 2rem 0;
 	}
 `;
 
@@ -57,12 +58,16 @@ S.ItemImg = styled.div`
 	border-width: 1px;
 	border-style: solid;
 	width: 15vw;
-	height: 15vw;
+	aspect-ratio: 1 / 1;
 	margin: 0 auto;
 	background-image: url(${(props)=>props.src});
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cotain;
+	@media (max-width: 727px){
+		width: 60%;
+		aspect-ratio: 1 / 1;
+	}
 `; 
 
 
@@ -75,9 +80,7 @@ S.ItemTitle = styled.div`
 	
 `;
 
-S.PayWrapper = styled.div`
-
-`;
+S.PayWrapper = styled.div``;
 
 S.Section = styled.div`
 	border-bottom: 1px solid ${mainColor};
@@ -106,6 +109,11 @@ S.TicketSelector = styled.div`
 	grid-template-columns: 1fr 2fr 1fr;
 	grid-template-rows: 2rem;
 	gap: 2rem;
+	@media (max-width: 727px){
+		grid-template-columns: auto 1fr 1fr;
+		font-size: 0.8rem;
+		gap: 1rem;
+	}
 `;
 
 S.TicketTitle = styled.div`
@@ -136,7 +144,12 @@ S.Original = styled.div`
 S.TicketBtnContainer = styled.div`
 	display: grid;
 	grid-template-columns: 2rem 2rem 2rem;
+	grid-template-rows: 2rem;
 	margin: 0 auto;
+	@media (max-width: 727px) {
+		grid-template-columns: repeat(3, 1.5rem);
+		grid-template-rows: 1.6rem;
+	}
 `;
 
 S.TicketCntBtn = styled.button`
@@ -146,7 +159,12 @@ S.TicketCntBtn = styled.button`
 	border-width: 1px;
 	cursor: pointer;
 	font-size: 1rem;
+	padding: 0.5rem;
 	font-weight: ${fontSemiBold};
+	@media (max-width: 727px){
+		font-size: 0.9rem;
+		padding: 0;
+	}
 `;
 S.TicketCnt = styled.div`
 	border-color: #9f9f9f;
@@ -155,6 +173,10 @@ S.TicketCnt = styled.div`
 	font-size: 1rem;
 	padding: 0.5rem;
 	text-align: center;
+	@media (max-width: 727px){
+		font-size: 0.9rem;
+		padding: 0.3rem;
+	}
 `;
 
 S.TicketSummary = styled.div`
@@ -183,9 +205,10 @@ S.PriceSummary = styled.div`
 	border-style: solid;
 	border-radius: 30px;
 	padding: 2rem;
-	margin-bottom: 1rem;
+	width: 100%;
+	/* margin-bottom: 1rem; */
 	@media (max-width: 727px){
-		width: 90%;
+		/* width: 90%; */
 		padding: 1.6rem;
 	}
 	
@@ -243,6 +266,30 @@ S.ButtonToPay = styled.button`
 	&:hover{
 		background-color: ${mainDarkenColor};
 		color: #ccc;
+	}
+	@media (max-width: 727px){
+		width: 90%;
+	}
+`;
+S.SelectorWrapper = styled.div`
+	padding: 1rem;
+	@media (max-width: 727px){
+		padding: 1rem 0.5rem;
+	}
+`;
+
+S.PayWaySelector = styled.select`
+	width: 100%;
+	padding: 1rem;
+	border-radius: 50px;
+	font-size: 1rem;
+	font-weight: ${fontRegular};
+	& option{
+		font-size: 0.9rem;
+	}
+	@media (max-width: 727px){
+		padding: 0.8rem;
+		font-size: 0.9rem;
 	}
 `;
 
