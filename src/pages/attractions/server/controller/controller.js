@@ -27,4 +27,23 @@ const seoulLand = async (req, res) => {
     res.json(datas)  
 };
 
-export { lotteWorld, everland, seoulLand };
+
+// controller.js
+
+const fetchAttractionDetail = async (req, res) => {
+    try {
+        const { id } = req.params; // URL로부터 id를 추출합니다.
+        const detail = await LotteWorld.findById(id); // LotteWorld 모델을 사용하여 ID에 해당하는 문서를 조회합니다.
+        if (!detail) {
+            return res.status(404).send({ message: "Attraction not found" });
+        }
+        res.status(200).json(detail);
+    } catch (error) {
+        res.status(500).send(error);
+    }
+};
+
+export { lotteWorld, everland, seoulLand, fetchAttractionDetail };
+
+
+

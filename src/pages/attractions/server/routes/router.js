@@ -1,5 +1,6 @@
 import express from 'express'
 import { everland, lotteWorld, seoulLand } from '../controller/controller.js';
+import {fetchAttractionDetail } from '../controller/controller.js'
 
 const router = express.Router();
 // 경로가 들어왔을때, 함수를 보여줘
@@ -11,6 +12,11 @@ const router = express.Router();
 router.post('/lotteWorld', lotteWorld);
 router.post('/everland', everland);
 router.post('/seoulLand', seoulLand);
+
+// GET 요청을 처리하기 위한 경로 추가
+// router.js
+
+router.get('/attraction/lotteworld/explain/:id', fetchAttractionDetail);
 
 
 

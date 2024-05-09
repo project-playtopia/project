@@ -37,7 +37,11 @@ const EverLandAttraction = () => {
     const attractionsList = attractions.map((att, i) => (
         <S.ImageWrapper key={i} >
         <NavLink to={`/attraction/everland/explain/${att.id}`}>
-             <S.Image src={`${process.env.PUBLIC_URL}/AttractionsImage/Everland/at${att.id}.jpg`} alt="attraction" />
+      
+
+               {/* public폴더안의 이미지폴더 이름이 Everland라 onClick함수 이름을 Everland로 바꿨는데 
+               explain fetch경로에서는 소문자 써야한다해서 일단 다시 바꿈 */}
+               <S.Image src={`${process.env.PUBLIC_URL}/AttractionsImage/${currentValue}/at${att.id}.jpg`} alt="attraction" />
             <div>
                 <p>{att.title}</p>
                 <span>{att.location}</span>
