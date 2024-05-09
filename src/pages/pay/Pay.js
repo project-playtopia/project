@@ -36,6 +36,8 @@ const Pay = () => {
   const onClickToPay = () => {
     if(countArr.filter(e => e === 0).length === countArr.length){
       return alert('구매할 이용권을 선택하세요');
+    }else if (document.getElementById("paywayselector").value === "none"){
+      return alert('결제 방법을 선택해주세요');
     }else if (window.confirm('결제하시겠습니까?')){
       alert('결제를 완료하였습니다.')
       navigate(`/benefit/explain?itemId=${itemId}`, {
@@ -134,6 +136,15 @@ const Pay = () => {
                     <S.CostExplainPrice><span className="subcolor">{entirePrice.toLocaleString('ko-KR')}</span>원</S.CostExplainPrice>
                   </S.CostExplainGrid>
                 </S.PriceSummary>
+                <S.SelectorWrapper>
+                  <S.PayWaySelector id="paywayselector">
+                    <option defaultChecked="true" hidden="ture" value="none">결제 수단을 선택해주세요</option>
+                    <option value="creditcard">신용카드</option>
+                    <option value="naverpay">네이버페이</option>
+                    <option value="kakaopay">카카오페이</option>
+                    <option value="deposit">무통장입금</option>
+                  </S.PayWaySelector>
+                </S.SelectorWrapper>
               </S.Section>
               <S.BtnWrapper>
                 <S.ButtonToPay onClick={onClickToPay}>결제하기</S.ButtonToPay>
