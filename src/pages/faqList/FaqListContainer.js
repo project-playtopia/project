@@ -43,7 +43,7 @@ const FaqListContainer = (props) => {
   return (
     <>
     
-      <FaqTable headersName={['No', '제목', '내용', '등록일']} >
+      <FaqTable headersName={['No', '카테고리', '제목', '등록일']} >
         {faqlist.map((item, i) => (
           <FaqRow key={i} className="tablerow" >
             <Faqcolumn>{item.no}</Faqcolumn>
