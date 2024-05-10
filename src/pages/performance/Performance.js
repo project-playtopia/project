@@ -214,7 +214,7 @@ const Performance = () => {
       return timeA.localeCompare(timeB); 
     });
   };
-
+  
   return (
     <div >
       <S.Title>공연일정</S.Title>

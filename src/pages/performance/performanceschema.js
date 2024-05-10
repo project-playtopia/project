@@ -1,5 +1,4 @@
 
-
 import mongoose from 'mongoose';
 
 const performanceSchema = new mongoose.Schema({
@@ -37,6 +36,6 @@ const performanceSchema = new mongoose.Schema({
 
 
 
-const Performance = mongoose.model('Performance', performanceSchema);
 
-module.exports = Performance;
+
+export const Performance = mongoose.model('Performance', performanceSchema);

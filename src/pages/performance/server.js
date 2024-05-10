@@ -1,15 +1,34 @@
 import express from 'express';
+import router from './router.js';
 import connect from './connect.js';
-import performanceRouter from './router.js';
+import cors from 'cors'
+import bodyParser from 'body-parser'
+
+
+
+
+// 커넥트 사용, 즉 몽고DB 연결
+connect();
 
 const app = express();
-const PORT = 3000;
+const port = 8000;
 
-connect(); // MongoDB에 연결
+// 데이터와 관련 되어있는 디폴트 설정
+app.use(bodyParser.json());
+app.use(express.urlencoded({extended : false}));
 
-app.use(express.json()); // JSON 요청 본문 파싱
-app.use('/api', performanceRouter); // 라우팅
+// Cross-Origin-Resoruce 설정 브라우저에서 누가 서버에 요청했는지 정확하게 확인하여 허용해주기 위한 설정
+app.use(cors({
+  origin : 'http://localhost:3000',
+  method : ['GET', 'POST', 'DELETE', 'PUT'],
+  credentials : true,
+}));
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+
+app.use(express.json());
+// 라우팅을 가로채어 localhost:8000/attractions/작성한 라우팅
+app.use('/performance', router)
+
+// 서버 실행
+app.listen(port, () => {
+  console.log(`server is on ${port}`) });
