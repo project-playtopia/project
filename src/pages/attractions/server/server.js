@@ -28,7 +28,7 @@ app.use('/attraction', router)
 
 
 
-// 서버 실행
+// // 서버 실행
 app.listen(port, () => {
   console.log(`server is on ${port}`)
 })

@@ -57,11 +57,11 @@ const LotteworldAttraction = () => {
 
       
             <S.NavParkSelector>
-            <button onClick={onClickToLotte}>롯데월드</button>
+            <button onClick={onClickToLotte}><p>롯데월드</p></button>
              <span>|</span>
-             <button onClick={onClickToEver}>에버랜드</button>
+             <button onClick={onClickToEver}><p>에버랜드</p></button>
              <span>|</span>
-             <button onClick={onClickToSeoul}>서울랜드</button>
+             <button onClick={onClickToSeoul}><p>서울랜드</p></button>
              </S.NavParkSelector>
 
 
