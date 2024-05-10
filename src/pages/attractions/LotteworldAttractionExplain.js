@@ -53,7 +53,25 @@ const LotteworldAttractionExplain = () => {
     const { id } = useParams(); 
     const [attractions, setAttractions] = useState("");
 
-    useEffect(() => {
+    // useEffect(() => {
+    //     const fetchAttractionDetail = async () => {
+    //         try {
+    //             const response = await fetch(`http://localhost:8000/attraction/lotteworld/explain/${id}`)
+    //             const data = await response.json()
+    //             return data;
+    //         } catch (error) {
+    //             console.error("Fetching attraction explain failed:", error);
+    //         }
+
+    //     }
+    //     fetchAttractionDetail().then(data => {
+    //         if(data){
+    //             setAttractions(data);
+    //         }
+    //     })
+    // }, []); // id가 변경될 때마다 새로운 정보를 불러온다
+
+     useEffect(() => {
         const fetchAttractionDetail = async () => {
             try {
                 const response = await fetch(`http://localhost:8000/attraction/lotteworld/explain/${id}`, {

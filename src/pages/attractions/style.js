@@ -26,7 +26,7 @@ S.AttractionsContainer = styled.div`
 `;
 
 
-// 긁어온거
+// // 긁어온거
 S.NavParkSelector = styled.nav`
    font-size: 18px !important;
    width: 100%;
@@ -65,38 +65,14 @@ S.NavParkSelector = styled.nav`
 
    // button이 active 상태일 때의 스타일
    & button.active {
-      color: ${mainColor}; // props를 통해 색상 지정
+      color: ${mainColor} !important; // props를 통해 색상 지정
       font-weight: 600 !important; // font-weight 적용 문제 해결을 위해 !important 사용
    }
-// 정준님꺼
-// S.NavParkSelector = styled.nav`
-//    font-size: 18px !important;
-//    width: 100%;
-//    text-align: center;
-//   margin-top: 2%;
-//    margin-bottom: 3%;
-//    display: flex;
-//    flex-direction: row;
-//    justify-content: center;
-//    & * {
-//       margin: 0 0.5rem;
-//       color: #000;
-//    }
 
-//   & p{
-//     font-size : 18px;
-//   }
 
-//    & *:hover {
-//       color: ${mainDarkenColor};
-//       font-weight: 500;
-//    }
 
-//    & .active {
-//       color: ${mainColor};
-//       font-weight: 600;
-//    }
-// `;
+
+
 
 // S.Button = styled.button`
 // color: #000000;

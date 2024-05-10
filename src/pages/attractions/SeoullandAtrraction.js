@@ -36,7 +36,7 @@ const SeroullandAttraction = () => {
         <S.ImageWrapper>
         <NavLink key={i} to={`/attraction/seoulland/explain/${att.id}`}>
             {/* <img src={`process.env.PUBLIC_URL/pages/attractions/lotte/blahblah${att.id}.jpg`} /> */}
-             <S.Image src={`${process.env.PUBLIC_URL}/AttractionsImage/seoulland/at${att.id}.jpg`} alt="attraction" />
+             <S.Image src={`${process.env.PUBLIC_URL}/AttractionsImage/${currentValue}/at${att.id}.jpg`} alt="attraction" />
             <div>
                 <p>{att.title}</p>
                 <span>{att.location}</span>
