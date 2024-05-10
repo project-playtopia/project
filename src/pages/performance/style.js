@@ -59,6 +59,7 @@ S.Img = styled.img`
   width: 200px;
   height: 160px;
   border-radius: 20px;
+  text-align: center;
 `
 
 

@@ -26,43 +26,43 @@ const Performance = () => {
         image: "/lotte_19275_main.jpg", 
         parkName: "에버랜드", 
         time: "12:00", 
-        performanceName: "런런런! 스노우 프렌즈", 
+        performanceName: "레니와 라라의 매지컬 스케치북", 
         location: "알파인스테이지" 
       },
       { 
         id: 3, 
-        image: "/lotte_19275_main.jpg", 
+        image: "/AttractionsImage/performance/seoul1.jpg", 
         parkName: "서울랜드", 
         time: "10:00", 
-        performanceName: "런런런! 스노우 프렌즈", 
-        location: "알파인스테이지" 
+        performanceName: "뮤직 로드쇼", 
+        location: "통나무 소극장" 
       },
     ],
 
     "4/22": [
       { 
         id: 4, 
-        image: "/lotte_19275_main.jpg", 
+        image: "/AttractionsImage/performance/lotte2.jpg", 
         parkName: "롯데월드", 
         time: "11:00", 
-        performanceName: "런런런! 스노우 프렌즈", 
-        location: "알파인스테이지" 
+        performanceName: "키디밴드", 
+        location: "키디존" 
       },
       { 
         id: 5, 
         image: "/lotte_19275_main.jpg", 
         parkName: "에버랜드", 
         time: "12:00", 
-        performanceName: "런런런! 스노우 프렌즈", 
+        performanceName: "슈퍼윙스 애니멀 톡", 
         location: "알파인스테이지" 
       },
       { 
         id: 6, 
-        image: "/lotte_19275_main.jpg", 
+        image: "/AttractionsImage/performance/seoul2.jpg", 
         parkName: "서울랜드", 
         time: "18:00", 
-        performanceName: "런런런! 스노우 프렌즈", 
-        location: "알파인스테이지" 
+        performanceName: "플라워즈 스트릿 저글링 쇼!", 
+        location: "세계의 광장" 
       },
     ],
     "4/23": [
@@ -71,15 +71,15 @@ const Performance = () => {
         image: "/lotte_19275_main.jpg", 
         parkName: "롯데월드", 
         time: "15:00", 
-        performanceName: "런런런! 스노우 프렌즈", 
-        location: "알파인스테이지" 
+        performanceName: "로티스 어드벤처 퍼레이드", 
+        location: "어드벤처 1층 퍼레이드 코스" 
       },
       { 
         id: 8, 
         image: "/lotte_19275_main.jpg", 
         parkName: "에버랜드", 
         time: "12:00", 
-        performanceName: "런런런! 스노우 프렌즈", 
+        performanceName: "레니의 컬러풀 드림", 
         location: "알파인스테이지" 
       },
       { 
@@ -87,8 +87,8 @@ const Performance = () => {
         image: "/lotte_19275_main.jpg", 
         parkName: "서울랜드", 
         time: "20:00", 
-        performanceName: "런런런! 스노우 프렌즈", 
-        location: "알파인스테이지" 
+        performanceName: "키즈 나이트 파티", 
+        location: "세계의 광장" 
       },
     ],
     "4/24": [
@@ -97,15 +97,15 @@ const Performance = () => {
         image: "/lotte_19275_main.jpg", 
         parkName: "롯데월드", 
         time: "11:00", 
-        performanceName: "런런런! 스노우 프렌즈", 
-        location: "알파인스테이지" 
+        performanceName: "월드 팝 밴드 쇼", 
+        location: "어드벤처 1층 만남의 광장" 
       },
       { 
         id: 11, 
         image: "/lotte_19275_main.jpg", 
         parkName: "에버랜드", 
         time: "14:00", 
-        performanceName: "런런런! 스노우 프렌즈", 
+        performanceName: "카니발 판타지 퍼레이드", 
         location: "알파인스테이지" 
       },
       { 
@@ -113,8 +113,8 @@ const Performance = () => {
         image: "/lotte_19275_main.jpg", 
         parkName: "서울랜드", 
         time: "17:00", 
-        performanceName: "런런런! 스노우 프렌즈", 
-        location: "알파인스테이지" 
+        performanceName: "애니멀킹덤", 
+        location: "이벤트홀" 
       },
     ],
     "4/25": [
@@ -123,15 +123,15 @@ const Performance = () => {
         image: "/lotte_19275_main.jpg", 
         parkName: "롯데월드", 
         time: "19:00", 
-        performanceName: "런런런! 스노우 프렌즈", 
-        location: "알파인스테이지" 
+        performanceName: "못말리는 그리피", 
+        location: "어린이 동화극장" 
       },
       { 
         id: 14, 
         image: "/lotte_19275_main.jpg", 
         parkName: "에버랜드", 
         time: "12:00", 
-        performanceName: "런런런! 스노우 프렌즈", 
+        performanceName: "뿌빠 카피바라 애니멀톡", 
         location: "알파인스테이지" 
       },
       {
@@ -139,8 +139,8 @@ const Performance = () => {
       image: "/lotte_19275_main.jpg", 
       parkName: "서울랜드", 
       time: "15:00", 
-      performanceName: "런런런! 스노우 프렌즈", 
-      location: "알파인스테이지" 
+      performanceName: "플라워즈업! 로드쇼", 
+      location: "서울랜드 전역" 
       },
     ],
     "4/26": [
@@ -148,24 +148,24 @@ const Performance = () => {
         id: 16, 
         image: "/lotte_19275_main.jpg", 
         parkName: "롯데월드", 
-        time: "13:00", 
-        performanceName: "런런런! 스노우 프렌즈", 
-        location: "알파인스테이지" 
+        time: "14:00", 
+        performanceName: "신비의 가면 동화나라", 
+        location: "어드벤처 1층 가든 스테이지" 
       },
       { 
         id: 17, 
         image: "/lotte_19275_main.jpg", 
         parkName: "에버랜드", 
-        time: "12:00", 
-        performanceName: "런런런! 스노우 프렌즈", 
+        time: "16:00", 
+        performanceName: "타이거 밸리 애니멀톡", 
         location: "알파인스테이지" 
       },
       { 
         id: 18, 
         image: "/lotte_19275_main.jpg", 
         parkName: "서울랜드", 
-        time: "11:00", 
-        performanceName: "런런런! 스노우 프렌즈", 
+        time: "20:00", 
+        performanceName: "레이저쇼", 
         location: "알파인스테이지" 
       },
     ],
@@ -175,15 +175,15 @@ const Performance = () => {
         image: "/lotte_19275_main.jpg", 
         parkName: "롯데월드", 
         time: "12:00", 
-        performanceName: "런런런! 스노우 프렌즈", 
-        location: "알파인스테이지" 
+        performanceName: "모던 재즈 앙상블", 
+        location: "어드벤처 1층 만남의 광장" 
       },
       { 
         id: 20, 
         image: "/lotte_19275_main.jpg", 
         parkName: "에버랜드", 
-        time: "17:00", 
-        performanceName: "런런런! 스노우 프렌즈", 
+        time: "18:00", 
+        performanceName: "주크박스(Let's Dance)", 
         location: "알파인스테이지" 
       },
       { 
@@ -191,8 +191,8 @@ const Performance = () => {
         image: "/lotte_19275_main.jpg", 
         parkName: "서울랜드", 
         time: "21:00", 
-        performanceName: "런런런! 스노우 프렌즈", 
-        location: "알파인스테이지" 
+        performanceName: "루나-빛의전설", 
+        location: "지구별무대" 
       },
     ],
     
@@ -239,23 +239,6 @@ const Performance = () => {
           );
         })}
 
-
-
-
-        {/* {Object.keys(dateLists).map((date, i) => (
-          <S.Button
-            key={date}
-            onClick={() => handleButtonClick(date)}
-            isSelected={selectedDate === date}  >
-          
-            {today + i > 30 ? `5.` : `4.`}
-            {today + i > 30 ? (
-              ++temp
-            ) : (
-              today + i
-            )}
-          </S.Button>
-        ))} */}
 
 
 
