@@ -322,11 +322,11 @@ const router = createBrowserRouter([
         element :<LostnFoundRegisterSeoulland />
       },
       {
-        path :"lostnfound/explain",
+        path :"lostnfound/explain/:id/:company",
         element :<LostnFoundExplain />
       },
       {
-        path :"lostnfound/search",
+        path :"lostnfound/search/:id/:company",
         element :<LostnFoundSearch />
       }
     ]},
