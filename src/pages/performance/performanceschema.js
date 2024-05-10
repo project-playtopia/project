@@ -4,19 +4,38 @@ import mongoose from 'mongoose';
 
 const performanceSchema = new mongoose.Schema({
   date: {
-    type: String,
-    required: true,
+    type: Date,
+    required: true
   },
-  performances: [
-    {
-      parkName: String,
-      time: String,
-      performanceName: String,
-      location: String,
-      image: String,
+  performances: [{
+    id: {
+      type: Number,
+      required: true
     },
-  ],
+    image: {
+      type: String,
+      required: true
+    },
+    parkName: {
+      type: String,
+      required: true
+    },
+    time: {
+      type: String,
+      required: true
+    },
+    performanceName: {
+      type: String,
+      required: true
+    },
+    location: {
+      type: String,
+      required: true
+    }
+  }]
 });
+
+
 
 const Performance = mongoose.model('Performance', performanceSchema);
 

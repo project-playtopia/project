@@ -17,4 +17,6 @@ const connect = () => {
   })
 }
 
+connect();
+
 export default connect
