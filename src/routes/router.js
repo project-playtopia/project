@@ -112,15 +112,16 @@ const router = createBrowserRouter([
         element : <Identification />
       },  
       {
-        path : "/changepassword",
+        path : "/changePassword",
         element : <ChangePw />
       },
       {
         path:"/attraction/lotteworld",
         element : <LotteworldAttraction/>
       },  
+   
       {
-        path:"/attraction/lotteworld/explain",
+        path:"/attraction/lotteworld/explain/:id",
         element : <LotteworldAttractionExplain />
       },
       {
@@ -128,7 +129,7 @@ const router = createBrowserRouter([
         element : <EverlandAttraction />
       },
       {
-        path:"/attraction/everland/explain",
+        path:"/attraction/everland/explain/:id",
         element : <EverlandAttractionExplain />
       },
 
@@ -137,7 +138,7 @@ const router = createBrowserRouter([
         element : <SeoullandAtrraction />
       },
       {
-        path:"/attraction/seoulland/explain",
+        path:"/attraction/seoulland/explain/:id",
         element : <SeoullandAttractionExplain />
       },
       {
@@ -321,11 +322,11 @@ const router = createBrowserRouter([
         element :<LostnFoundRegisterSeoulland />
       },
       {
-        path :"lostnfound/explain",
+        path :"lostnfound/explain/:id/:company",
         element :<LostnFoundExplain />
       },
       {
-        path :"lostnfound/search",
+        path :"lostnfound/search/:id/:company",
         element :<LostnFoundSearch />
       }
     ]},
