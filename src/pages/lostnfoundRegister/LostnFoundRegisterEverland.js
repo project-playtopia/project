@@ -83,7 +83,7 @@ const LostnFoundRegisterEverland = () => {
 
         <S.inputbox>
           <S.StyledInput type='text' name='item' placeholder="종류" value={lostneverland.item} onChange={handleChange} />
-          <S.StyledInput style={{ marginLeft: '250px' }} type='text' name='found' placeholder="장소"value={lostneverland.found} onChange={handleChange} />
+          <S.StyledInput style={{ marginLeft: '250px' }} type='text' name='found' placeholder="장소" value={lostneverland.found} onChange={handleChange} />
         </S.inputbox>
       </div>
 

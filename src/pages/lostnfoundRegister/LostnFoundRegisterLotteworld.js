@@ -82,8 +82,8 @@ const LostnFoundRegisterLotteworld = () => {
         </S.subtitle>
 
         <S.inputbox>
-          <S.StyledInput type='text' name='item' value={lostnlotteworld.item} onChange={handleChange} />
-          <S.StyledInput style={{ marginLeft: '250px' }} type='text' name='found' value={lostnlotteworld.found} onChange={handleChange} />
+          <S.StyledInput type='text' name='item' placeholder="종류" value={lostnlotteworld.item} onChange={handleChange} />
+          <S.StyledInput style={{ marginLeft: '250px' }} type='text' name='found'placeholder="장소"  value={lostnlotteworld.found} onChange={handleChange} />
         </S.inputbox>
       </div>
 
@@ -93,7 +93,7 @@ const LostnFoundRegisterLotteworld = () => {
         </S.subtitle>
 
         <S.inputbox>
-          <S.StyledInput style={{ width: '850px', height: '300px' }} type="text" name="content" value={lostnlotteworld.content} onChange={handleChange} />
+          <S.StyledInput style={{ width: '850px', height: '300px' }} type="text" name="content" placeholder="내용을 입력해주세요." value={lostnlotteworld.content} onChange={handleChange} />
         </S.inputbox>
       </div>
 
