@@ -17,12 +17,14 @@ const LostnFoundListEverland = () => {
   const [lostlist, setLostList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1); 
+  const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
     fetch(`http://localhost:8010/lostnfoundlist/?page=${currentPage}&company=everland`)
       .then((res) => res.json())
       .then(({ lostnfoundlist,totalPages }) => {
         if (Array.isArray(lostnfoundlist)) {
+          lostlist.sort((a, b) => a.no - b.no);
           setLostList(lostnfoundlist);
           setTotalPages(totalPages); 
         }
@@ -32,6 +34,14 @@ const LostnFoundListEverland = () => {
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
+
+  const handleSearchChange = (e) => {
+    setSearchInput(e.target.value);
+  };
+
+  const searcheverland  = lostlist.filter((everland) => {
+    return everland.item.toLowerCase().includes(searchInput.toLowerCase());
+  });
 
   return (
     <>
@@ -48,7 +58,7 @@ const LostnFoundListEverland = () => {
           <Link to={"/lostnfound/list/seoulland"}><S.seoulland>서울랜드</S.seoulland></Link>
         </S.title>
         <S.basicbox>
-        <BasicSearch size={"default"} shape={"default"} classname="serach"/>
+        <BasicSearch size={"default"} shape={"default"} classname="serach" placeholder="검색어를 입력하세요." onChange={handleSearchChange}/>
         
         <BasicButton size={"small"} shape={"default"} variant={"main"} color={"white"}>
         <Link to={`/lostnfound/register/everland`}>글쓰기</Link></BasicButton>
@@ -60,7 +70,7 @@ const LostnFoundListEverland = () => {
       
         
       <LostnFoundTable headersName={['No', '습득물', '습득장소', '습득날짜', '처리결과']} >
-        {lostlist
+        {searcheverland
           .filter(item => item.company === "everland")
           .map((item, i) => (
             <LostnFoundTableRow key={i} className="tablerow" >
@@ -81,7 +91,13 @@ const LostnFoundListEverland = () => {
         
       <S.pagebutton>
         {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
-          <BasicButton color={"white"} variant={"main"} className="pagebutton" key={pageNumber}
+          <BasicButton
+            color={pageNumber === currentPage ? "#FE78C0" : "black"} 
+            style={{background:"#fff",borderBottom: pageNumber === currentPage ? "2px solid #FE78C0" : "none"
+            , color: pageNumber === currentPage ? "#FE78C0" : "black" 
+            }}
+            className="pagebutton"
+            key={pageNumber}
             onClick={() => handlePageChange(pageNumber)}
           >
             {pageNumber}

@@ -6,12 +6,14 @@ import Qnacolumn from './Qnacolumn.js';
 import BasicButton from '../../components/button/BasicButton.jsx';
 import S from './style.js';
 import './qna.css'
+import BasicSearch from '../../components/search/BasicSearch.jsx';
 
 
 const QnaListContainer = (props) => { 
   const [qnalist, setQnaList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1); 
+  const [searchInput, setSearchInput] = useState("");
 
  
 
@@ -26,6 +28,7 @@ const QnaListContainer = (props) => {
       .then(({qnalist, totalPages }) => {
         console.log('데이터쪽', qnalist);
         if (Array.isArray(qnalist)) {
+          qnalist.sort((a, b) => a.no - b.no);
           setQnaList(qnalist);
           setTotalPages(totalPages); 
         } else {
@@ -39,12 +42,25 @@ const QnaListContainer = (props) => {
     setCurrentPage(pageNumber);
   };
 
+  const handleSearchChange = (e) => {
+    setSearchInput(e.target.value);
+  };
+
+  const searchqnas = qnalist.filter((qna) => {
+    return qna.title.toLowerCase().includes(searchInput.toLowerCase());
+  });
+
 
   return (
     <>
+    <S.header>
+      <h1>QnA</h1>
+      <BasicSearch size={"default"} shape={"default"} classname="serach" placeholder="검색어를 입력하세요." onChange={handleSearchChange}/>
+      </S.header>
+
       <S.contanier>
       <QnaTable headersName={['No', '카테고리', '제목', '등록일']} >
-        {qnalist.map((item, i) => (
+        {searchqnas.map((item, i) => (
           <QnaRow key={i} className="tablerow" >
             <Qnacolumn>{item.no}</Qnacolumn>
             <Qnacolumn className="qna-title">{item.title}</Qnacolumn>
@@ -59,8 +75,10 @@ const QnaListContainer = (props) => {
       <S.pagebutton>
         {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
           <BasicButton
-            color={"white"}
-            variant={"main"}
+            color={pageNumber === currentPage ? "#FE78C0" : "black"} 
+            style={{background:"#fff",borderBottom: pageNumber === currentPage ? "2px solid #FE78C0" : "none"
+            , color: pageNumber === currentPage ? "#FE78C0" : "black" 
+            }}
             className="pagebutton"
             key={pageNumber}
             onClick={() => handlePageChange(pageNumber)}
