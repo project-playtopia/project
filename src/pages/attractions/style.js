@@ -5,8 +5,9 @@ const mainColor = ({theme}) => theme.PALETTE.primary.main;
 const S = {};
 
 S.Background = styled.div`
-  width: 90%;
+  width: 100%;
   height: 100%;
+  
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -90,6 +91,7 @@ S.NavParkSelector = styled.nav`
 // BasicSearch.jsx 검색창
 S.search = styled.div`
 position:absolute;
+width: 60%;
 left: 30%;
 top : 25%;
 `
@@ -140,6 +142,10 @@ S.gridContainer= styled.div`
   height: 250px;
   overflow: hidden;
 
+  @media (max-width: 727px){
+    grid-template-columns: repeat(2,1fr);
+  }
+
   &:hover div {
     display: block;
   }
@@ -152,14 +158,16 @@ S.gridContainer= styled.div`
     color: white;
     width: 100%;
     text-align: center;
+
   }
+  
 `;
 
-S.Image = styled.img`
+/* S.Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover; // 이미지 비율 유지하며 컨테이너에 맞춰 잘림
-`;
+`; */
 
 
 
@@ -262,8 +270,6 @@ S.IconText = styled.p`
   
 
 `;
-
-
 
 
 S.Container=styled.div`

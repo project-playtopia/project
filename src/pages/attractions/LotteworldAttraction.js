@@ -64,7 +64,6 @@ const LotteworldAttraction = () => {
              <button onClick={onClickToSeoul}><p>서울랜드</p></button>
              </S.NavParkSelector>
 
-
             
             {/* <S.NavParkSelector>
             <NavLink to={"/attraction/lotteworld"}>
@@ -80,6 +79,7 @@ const LotteworldAttraction = () => {
             </NavLink>
             </S.NavParkSelector> */}
 
+
             <S.search className='searchbar'>
               <BasicSearch  shape={"default"} variant={"main"} size={"default"} />
              </S.search>
@@ -93,4 +93,8 @@ const LotteworldAttraction = () => {
     );
 };
 
+
+
+
 export default LotteworldAttraction;
+
