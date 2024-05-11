@@ -43,7 +43,7 @@ const GuidemapEverland = () => {
           <p>에버랜드</p>
        </NavLink>
       <span>|</span>
-      <NavLink to={"/guidemap/seoulland"}>
+      <NavLink to={"/course/seoulland"}>
        <p>서울랜드</p>
       </NavLink>
      </S.NavParkSelector>
