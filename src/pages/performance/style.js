@@ -59,10 +59,11 @@ p {
 
 span{
   width: 100px;
+  color: #1FB1D9;
   border: 1px solid  #1FB1D9;
-  border-radius: 10px;
+  border-radius: 20px;
   background-color :#fff;
-  padding: 3px;
+  padding: 4px;
   margin-left: 10px;
 }
 
