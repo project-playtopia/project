@@ -7,7 +7,7 @@ import logoImage from './logo/logo.png';
 import mobileImage from './logo/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus, faHorse, faCircleDollarToSlot,  faUtensils, faMapLocationDot, faPenToSquare, faBars, faCircleUser } from '@fortawesome/free-solid-svg-icons';
-
+import { useUser } from '../myPage/UserContext.js';
 
 const Layout = () => {
   const location = useLocation();
@@ -25,13 +25,7 @@ const Layout = () => {
   const [showSignin, setshowSignin] = useState(false);
   const [showSignup, setshowSignup] = useState(false);
 
-
-  // console.log(path);
-  
-
-  // if (path !== "/my") {
-  //   dispatch(setPreviousUrl(path));
-  // }
+  const { user ,setUser } = useUser();
 
   return (
     <S.Background>
@@ -247,17 +241,38 @@ const Layout = () => {
             )}
           </S.MenuItemWrapper>
 
-          <S.MenuItemWrapper className="auth-item" onClick={()=>{setshowSignin(!showSignin)}}>
-            <NavLink to={"/signIn"} className="authLink">
-              <p>로그인</p>
-            </NavLink>
-          </S.MenuItemWrapper>
+          {user ? ( 
+            <>
+              <S.MenuItemWrapper className="auth-item">
+                <NavLink to={"/myPage"} className="authLink">
+                  <p>마이페이지</p>
+                </NavLink>
+              </S.MenuItemWrapper>
 
-          <S.MenuItemWrapper className="menu-item" onClick={()=>{setshowSignup(!showSignup)}}>
-            <NavLink to={"/signUp"} className="authLink">
-              <p>회원가입</p>
-            </NavLink>
-          </S.MenuItemWrapper>
+              <S.MenuItemWrapper className="menu-item" onClick={()=>{
+                 setUser(null); 
+                 alert("로그아웃 되었습니다.");
+              }}>
+                <NavLink to={"/"} className="authLink">
+                  <p>로그아웃</p>
+                </NavLink>
+              </S.MenuItemWrapper>
+            </>
+          ) : (
+            <>
+              <S.MenuItemWrapper className="auth-item" onClick={()=>{setshowSignin(!showSignin)}}>
+                <NavLink to={"/signIn"} className="authLink">
+                  <p>로그인</p>
+                </NavLink>
+              </S.MenuItemWrapper>
+
+              <S.MenuItemWrapper className="menu-item" onClick={()=>{setshowSignup(!showSignup)}}>
+                <NavLink to={"/signUp"} className="authLink">
+                  <p>회원가입</p>
+                </NavLink>
+              </S.MenuItemWrapper>
+            </>
+          )}
         </S.NavPc>
 
       </S.Wrapper>

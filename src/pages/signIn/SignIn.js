@@ -5,6 +5,7 @@ import { faEyeSlash } from '@fortawesome/free-solid-svg-icons/faEyeSlash';
 import { faEye } from '@fortawesome/free-solid-svg-icons/faEye';
 import { useForm } from 'react-hook-form';
 import { NavLink, useNavigate} from 'react-router-dom';
+import { useUser } from '../myPage/UserContext.js';
 
 const SignIn = () => {
   const [isPasswordShown, setIsPasswordShown] = useState(false);
@@ -14,46 +15,45 @@ const SignIn = () => {
   const {register, handleSubmit, getValues, formState: {isSubmitting, isSubmitted, errors}} = useForm({mode: "onChange"})
   const navigate = useNavigate();
 
+  const { setUser } = useUser();
+
   return (
     <S.Background>
       <S.Container>
         <S.H1>로그인</S.H1>
         <S.P>회원 아이디와 비밀번호로 로그인하세요</S.P>
-        <form onSubmit={handleSubmit((data) => {
-            console.log(data, "데이터 보내짐")
-            fetch('http://localhost:8000/getuser/signIn', {
-                method : 'POST',
-                credentials : 'include',
-                headers : {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body : JSON.stringify({
-                    id : data.id,
-                    password : data.password
-                })
-            })
+        <form onSubmit={handleSubmit(async (data) => { 
+        console.log(data, "데이터 보내짐")
+    try {
+      const response = await fetch('http://localhost:8000/getuser/signIn', {
+          method : 'POST',
+          credentials : 'include',
+          headers : {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+          },
+          body : JSON.stringify({
+              id : data.id,
+              password : data.password
+          })
+      });
 
-            .then(res => {
-              if(res.ok) {
-                return res.json();
-              } else {
-                return res.json().then(err => {
-                  throw new Error(err.message || "로그인 처리 중 문제가 발생했습니다.");
-                });
-              }
-            })
-            .then(res => {
-              console.log(res)
-              alert("로그인 성공")
-              navigate('/')
-            })
-            .catch(err => {
-              console.error("Error occurred during login request", err);
-              alert(err.message || "로그인 처리 중 문제가 발생했습니다.");
-            });
-  })}
-  >
+      if(response.ok) {
+        const result = await response.json(); 
+        setUser(result.user); 
+        alert("로그인 성공");
+        console.log(result.user)
+        navigate('/');
+      } else {
+        const err = await response.json(); 
+        throw new Error(err.message || "로그인 처리 중 문제가 발생했습니다.");
+      }
+    } catch (err) {
+      console.error("Error occurred during login request", err);
+      alert(err.message || "로그인 처리 중 문제가 발생했습니다.");
+    }
+})}>
+
         <S.IdInputContainer>
           <S.Input type="text" placeholder=" 아이디" id="id"
            {...register("id", {
