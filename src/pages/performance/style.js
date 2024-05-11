@@ -58,8 +58,12 @@ p {
   /* text-align: center; */
 
 span{
-
- 
+  width: 100px;
+  border: 1px solid  #1FB1D9;
+  border-radius: 10px;
+  background-color :#fff;
+  padding: 3px;
+  margin-left: 10px;
 }
 
 }

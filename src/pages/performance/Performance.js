@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import S from './style.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faClock, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
 
 const Performance = () => {
@@ -253,10 +253,10 @@ const Performance = () => {
           <S.Img src={item.image} alt="공연 이미지"  />
           <S.List>
             <p> <FontAwesomeIcon icon={faLocationDot} style={{color: '#FE78C0'}}></FontAwesomeIcon>  {item.parkName}
-            <span>{item.time}</span></p>
-            <p>{item.performanceName}</p>
+            <span>  <FontAwesomeIcon icon = {faClock}></FontAwesomeIcon>  {item.time} </span></p>
+            <p>{item.performanceName}</p> 
             <p>{item.location}</p>
-          </S.List>
+          </S.List> 
         </li>
       ))}
       </S.Centerul>
