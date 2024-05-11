@@ -18,7 +18,7 @@ const Performance = () => {
         image: "/lotte_19275_main.jpg", 
         parkName: "롯데월드", 
         time: "15:00", 
-        performanceName: "런런런! 스노우 프렌즈", 
+        performanceName: "런런 !프렌즈", 
         location: "알파인스테이지" 
       },
       { 
@@ -26,7 +26,7 @@ const Performance = () => {
         image: "/lotte_19275_main.jpg", 
         parkName: "에버랜드", 
         time: "12:00", 
-        performanceName: "레니와 라라의 매지컬 스케치북", 
+        performanceName: "매지컬 스케치북", 
         location: "알파인스테이지" 
       },
       { 
@@ -61,7 +61,7 @@ const Performance = () => {
         image: "/AttractionsImage/performance/seoul2.jpg", 
         parkName: "서울랜드", 
         time: "18:00", 
-        performanceName: "플라워즈 스트릿 저글링 쇼!", 
+        performanceName: " 스트릿 저글링 쇼!", 
         location: "세계의 광장" 
       },
     ],
@@ -71,15 +71,15 @@ const Performance = () => {
         image: "/lotte_19275_main.jpg", 
         parkName: "롯데월드", 
         time: "15:00", 
-        performanceName: "로티스 어드벤처 퍼레이드", 
-        location: "어드벤처 1층 퍼레이드 코스" 
+        performanceName: "로티스 퍼레이드", 
+        location: "어드벤처 1층 " 
       },
       { 
         id: 8, 
         image: "/lotte_19275_main.jpg", 
         parkName: "에버랜드", 
         time: "12:00", 
-        performanceName: "레니의 컬러풀 드림", 
+        performanceName: "레니의 컬러풀드림", 
         location: "알파인스테이지" 
       },
       { 
@@ -87,7 +87,7 @@ const Performance = () => {
         image: "/lotte_19275_main.jpg", 
         parkName: "서울랜드", 
         time: "20:00", 
-        performanceName: "키즈 나이트 파티", 
+        performanceName: "키즈 나이트파티", 
         location: "세계의 광장" 
       },
     ],
@@ -97,15 +97,15 @@ const Performance = () => {
         image: "/lotte_19275_main.jpg", 
         parkName: "롯데월드", 
         time: "11:00", 
-        performanceName: "월드 팝 밴드 쇼", 
-        location: "어드벤처 1층 만남의 광장" 
+        performanceName: "월드팝 밴드 쇼", 
+        location: "만남의 광장" 
       },
       { 
         id: 11, 
         image: "/lotte_19275_main.jpg", 
         parkName: "에버랜드", 
         time: "14:00", 
-        performanceName: "카니발 판타지 퍼레이드", 
+        performanceName: "카니발 판타지", 
         location: "알파인스테이지" 
       },
       { 
@@ -131,7 +131,7 @@ const Performance = () => {
         image: "/lotte_19275_main.jpg", 
         parkName: "에버랜드", 
         time: "12:00", 
-        performanceName: "뿌빠 카피바라 애니멀톡", 
+        performanceName: "카피바라 애니멀톡", 
         location: "알파인스테이지" 
       },
       {
@@ -149,15 +149,15 @@ const Performance = () => {
         image: "/lotte_19275_main.jpg", 
         parkName: "롯데월드", 
         time: "14:00", 
-        performanceName: "신비의 가면 동화나라", 
-        location: "어드벤처 1층 가든 스테이지" 
+        performanceName: "신비의 동화나라", 
+        location: "가든 스테이지" 
       },
       { 
         id: 17, 
         image: "/lotte_19275_main.jpg", 
         parkName: "에버랜드", 
         time: "16:00", 
-        performanceName: "타이거 밸리 애니멀톡", 
+        performanceName: "애니멀톡", 
         location: "알파인스테이지" 
       },
       { 
@@ -175,15 +175,15 @@ const Performance = () => {
         image: "/lotte_19275_main.jpg", 
         parkName: "롯데월드", 
         time: "12:00", 
-        performanceName: "모던 재즈 앙상블", 
-        location: "어드벤처 1층 만남의 광장" 
+        performanceName: "재즈 앙상블", 
+        location: "만남의 광장" 
       },
       { 
         id: 20, 
         image: "/lotte_19275_main.jpg", 
         parkName: "에버랜드", 
         time: "18:00", 
-        performanceName: "주크박스(Let's Dance)", 
+        performanceName: "주크박스", 
         location: "알파인스테이지" 
       },
       { 
@@ -252,7 +252,8 @@ const Performance = () => {
         <li key={item.id} style={{ display: 'flex', alignItems: 'center', marginBottom: '20px', flexDirection: 'row' }}>
           <S.Img src={item.image} alt="공연 이미지"  />
           <S.List>
-            <p> <FontAwesomeIcon icon={faLocationDot} style={{color: '#FE78C0'}}></FontAwesomeIcon>  {item.parkName}{item.time}</p>
+            <p> <FontAwesomeIcon icon={faLocationDot} style={{color: '#FE78C0'}}></FontAwesomeIcon>  {item.parkName}
+            <span>{item.time}</span></p>
             <p>{item.performanceName}</p>
             <p>{item.location}</p>
           </S.List>

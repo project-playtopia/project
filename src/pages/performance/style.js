@@ -53,6 +53,19 @@ S.List = styled.div`
 
 margin-left: 30px;
 
+p {
+  margin: 8px 0;
+  /* text-align: center; */
+
+span{
+
+ 
+}
+
+}
+
+
+
 `
 
 S.Img = styled.img`
