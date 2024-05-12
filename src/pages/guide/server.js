@@ -53,7 +53,7 @@ app.use(cors({
 //     "attraction": [
 //       {
 //         "title": "플라이벤처",
-//         "content": "정기점검"
+//         "content": "정기 점검"
 //       },
 //       {
 //         "title": "슬릭스튜디오",
@@ -178,8 +178,6 @@ app.use(cors({
 //     .catch((err) => {
 //       console.error('등록에러', err);
 //     });
-
-
 
 
 app.use(bodyParser.json())

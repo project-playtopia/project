@@ -8,6 +8,7 @@ import { legacy_createStore as createStore} from "redux";
 import { devToolsEnhancer } from 'redux-devtools-extension'
 import themepark from "./modules/themepark.js";
 import GlobalStyle from "./global/global.js";
+import { UserProvider } from "./pages/myPage/UserContext.js";
 
 const store = createStore(themepark , devToolsEnhancer())
 
@@ -15,10 +16,12 @@ const store = createStore(themepark , devToolsEnhancer())
 function App() {
   return (
     <>
-      <Provider store={store}>
+      <Provider store={store} >
         <ThemeProvider theme={theme}>
-          <RouterProvider router={router} />
-          <GlobalStyle />
+          <UserProvider>
+            <RouterProvider router={router} />
+            <GlobalStyle/>
+          </UserProvider>
         </ThemeProvider>
       </Provider>
    

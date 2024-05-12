@@ -10,7 +10,7 @@ const connect = () => {
 
     mongoose
         .connect(connect_url, {
-            dbName : "FaqExplainData"
+            dbName : "QnaData"
         })
         .then(() => {
             console.log('연결')
