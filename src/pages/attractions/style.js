@@ -226,17 +226,24 @@ S.ExplainWrapper = styled.div`
 
   & .iconWrapper{
     display: flex;
-    margin: 100px 0 0 400px;
+    margin-top: 80px;
     gap: 200px;
     text-align: center;
-    & .icon{
+    text-align: center;
+    justify-content: flex-end;
+    max-width: 1055px;
+    &.icon{
       margin :0 20px;
+    }
+    &.span{
+      font-weight: bold;
     }
   }
 
   & .notice {
     font-size: 30px;
     font-weight: bold;
+    padding-top: 100px;
   }
 `;
 
@@ -252,7 +259,7 @@ S.ExplainDescription = styled.div`
  margin-top: 30px;
  margin-bottom : 40px;
 
-`
+`;
 
 S.ExplainImage = styled.img`
   width: 1200px; // 원하는 너비로 설정
@@ -277,33 +284,39 @@ S.BigContainer = styled.div`
 
 
   & .limit{
-    margin-top: 300px;
+    padding-top: 50px;
     margin-bottom: 50px;
     margin: 40px;
     font-size: 30px;
     font-weight: bold;
     text-align: center;
     align-items: center;  
+    margin-left: 120px;
   };
 
 
   & .limitWrapper{
-    margin: 100px auto;
-    /* margin-top: 100px; */
+    
     border: 2px solid #1FB1D9;
     border-radius: 20px;
     width: 90%;
     height: 300px;
     position: relative;
-    gap: 20px;
+    
+    gap: 70px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    text-align: center;
+    
+    justify-content: space-evenly;
   };
 
-
+   
 
 `;
+
+
+
 
 S.IconContainer = styled.div`
   display: flex;
@@ -343,7 +356,7 @@ S.Container=styled.div`
     font-weight: bold;
     text-align: center;
     margin-bottom: 50px;
-  }
+  };
 
   .description{
     font-size: 24px;
@@ -351,7 +364,7 @@ S.Container=styled.div`
     text-align: center;
     margin-bottom: 50px;
 
-  }
+  };
 
  .mainImage{
    /* width: 1350px;
@@ -361,56 +374,26 @@ S.Container=styled.div`
    border-radius: 20px;
    margin-left: 100px;
 
- }
+ };
 
- & p{
-
+ & .p{
+ 
   font-size: 16px;
-  text-align: center;
-  @media (max-width : 720px) {
-    flex-direction: column; // 창의 너비가 727px 이하일 때 세로 정렬
-    align-items: center; // 아이콘들이 중앙에 위치하도록 조정
-  }
+
+
   
- }
+ };
 
  & img{
   border-radius: 20px;
- }
+ };
 
-
-
-
-
-
-
-
-
-& .pBorder{
- 
-  border: 2px solid #1FB1D9;
-  border-radius: 20px;
-  width: 1000px;
-  height: 100px;
-  margin-top: 30px;
-  margin-bottom: 200px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media (max-width : 720px) {
-    flex-direction: column; // 창의 너비가 727px 이하일 때 세로 정렬
-    align-items: center; // 아이콘들이 중앙에 위치하도록 조정
-  }
-
-}
 
 & .location{
   font-size: 30px;
   font-weight: bold;
 
-}
+};
 
 
 
@@ -418,9 +401,29 @@ S.Container=styled.div`
         gap: 20px 20px;
         padding-bottom: 50px;
  }
-
-
 `;
+
+
+
+S.Notice= styled.div`
+   border: 2px solid ${mainColor};
+   margin: 100px auto;
+    border: 2px solid #1FB1D9;
+    border-radius: 20px;
+    width: 90%;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+
+  p{
+    text-align: center;
+  }
+`;
+
+
 
 S.ButtonContainer = styled.div`
   position: absolute;

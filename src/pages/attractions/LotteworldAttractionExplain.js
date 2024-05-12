@@ -49,13 +49,13 @@ const LotteworldAttractionExplain = () => {
 
             <div className='iconWrapper'>
                 <div className='icon1'>
-                    <p><img src='/AttractionsImage/at_icon1.png' alt='#' /></p>
-                    <p><span>탑승인원</span></p>
+                    <img src='/AttractionsImage/at_icon1.png' alt='#' />
+                    <p> 탑승인원 </p> 
                     <p>{attractions.people}</p>
                 </div>
                 <div className='icon2'>
-                    <p> <img src='/AttractionsImage/at_icon2.png' alt='#' /> </p>
-                    <p><span>이용 정보</span></p>
+                 <img src='/AttractionsImage/at_icon2.png' alt='#' />
+                    <p>이용 정보</p>
                     <p>{attractions.height}</p>
                 </div>
             </div>
@@ -83,15 +83,17 @@ const LotteworldAttractionExplain = () => {
                         <S.IconText>휠체어</S.IconText>
                     </S.IconContainer>
                 </div>
-            </S.BigContainer>
+         </S.BigContainer>
+
+         
             <p className='notice'> 
                 <FontAwesomeIcon icon={faCircleExclamation}></FontAwesomeIcon> 유의사항
             </p>
-            <div className='pBorder'>
-                <p>
-                    마감 시간과 입장 가능 시간이 다를 수 있으니 양지해 주시기 바랍니다.
-                </p>
-            </div>  
+            
+           <S.Notice>
+                    <p>마감 시간과 입장 가능 시간이 다를 수 있으니 양지해 주시기 바랍니다.</p>
+            </S.Notice>
+           
             <S.ButtonContainer>
                 <NavLink to ="/attraction/lotteworld">
                     <BasicButton shape={"default"} variant={"main"} size={"medium"} color={"white"} >

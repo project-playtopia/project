@@ -86,31 +86,22 @@ const SeoulLandAttractionExplain = () => {
      </div>
     </S.BigContainer>
 
-      <p className='notice'> 
-        <FontAwesomeIcon icon={faCircleExclamation}></FontAwesomeIcon> 
-        유의 사항</p>
-      <div className='pBorder'>
-        <p>
-           마감 시간과 입장 가능 시간이 다를 수 있으니 양지해 주시기 바랍니다.
-        </p>
-      </div>
-
-
-      
-
-      <S.ButtonContainer>
-      <NavLink to ="/attraction/lotteworld">
-       <BasicButton shape={"default"} variant={"main"} size={"medium"} color={"white"} >
-        뒤로가기
-       </BasicButton>
-      </NavLink>
-       </S.ButtonContainer>
-                  
-                  
-      </S.ExplainWrapper>
-
-
-
+    <p className='notice'> 
+                <FontAwesomeIcon icon={faCircleExclamation}></FontAwesomeIcon> 유의사항
+            </p>
+            
+           <S.Notice>
+                    <p>마감 시간과 입장 가능 시간이 다를 수 있으니 양지해 주시기 바랍니다.</p>
+            </S.Notice>
+           
+            <S.ButtonContainer>
+                <NavLink to ="/attraction/lotteworld">
+                    <BasicButton shape={"default"} variant={"main"} size={"medium"} color={"white"} >
+                        뒤로가기
+                    </BasicButton>
+                </NavLink>
+            </S.ButtonContainer>
+        </S.ExplainWrapper>
        
     );
 };
