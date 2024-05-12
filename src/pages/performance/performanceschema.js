@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 
 const performanceSchema = new mongoose.Schema({
   date: {
-    type: Date,
+    type: String,
     required: true
   },
   performances: [{
