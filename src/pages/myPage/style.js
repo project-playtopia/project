@@ -88,40 +88,7 @@ background-color: ${ ({theme}) => theme.PALETTE.primary["main_lighten"]};
 `
 
 
-S.StyledTable = styled.table`
-  width: 85%;
-  margin-top: 5%;
-`;
 
-
-S.StyledTRTop = styled.tr`
-background-color:  ${ ({theme}) => theme.PALETTE.primary["main_soft"]};
-height: 60px;
-width: 80%;
-text-align: center;
-line-height: 60px;`
-
-S.styledTR = styled.td`
-height: 60px;
-text-align: center;
-line-height: 60px;
-border-top: solid 1px #000;
-border-bottom: solid 1px #000;
-`
-S.StyledLeftTD = styled.td`
-border-radius: 30px 0 0 0;
-`
-
-S.styledTD = styled.td`
-height: 60px;
-text-align: center;
-line-height: 60px;
-`
-
-
-S.StyledRightTD = styled.td`
-border-radius: 0 30px 0 0;
-`
 
 
 

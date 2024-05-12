@@ -8,6 +8,11 @@ connect();
 const app = express();
 const port = 8000;
 
+app.use((req,res,next)=>{
+  res.setHeader('Access-Control-Allow-Origin','*')
+  next()
+})
+
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended : false}));
 app.use(cors({
@@ -16,8 +21,8 @@ app.use(cors({
   credentials : true,
 }));
 
+
 app.use('/getuser', router)
- 
 
 app.listen(port,()=>{
   console.log(`server is on ${port}`)
