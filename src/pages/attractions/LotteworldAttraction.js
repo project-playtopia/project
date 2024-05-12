@@ -1,36 +1,34 @@
 import React, { useEffect, useState } from 'react';
-import {  Link } from 'react-router-dom';
+import {  Link, NavLink } from 'react-router-dom';
 import BasicSearch from '../../components/search/BasicSearch.jsx';
 import S from './style.js';
 
 const LotteworldAttraction = () => {
-    // lotteWorld, seoulLand, everland
-    const [currentValue, setCurrentValue] = useState('lotteWorld')
-
-    // 클릭하면 currentValue를 바꿔 fetch 경로를 바꾼다.
-    const onClickToLotte = () => { setCurrentValue('lotteWorld') }
-    const onClickToSeoul = () => { setCurrentValue('seoulLand') }
-    const onClickToEver = () => { setCurrentValue('everland') }
 
 
     // currentValue에 맞는 데이터를 fetch로 불러온다.
     // 의존성 배열에 [currentValue]를 넣어 onClick으로 바뀌었을 때 새로 불러온다.
-    const [attractions, setAttractions] = useState([])
+    const [attractions, setAttractions] = useState([]);
+
     useEffect(() => {
         const getAttractions = async () => {
-            const response = await fetch(`http://localhost:8000/attraction/${currentValue}`, {
+            const response = await fetch(`http://localhost:8000/attraction/lotteworld`, {
                 method : 'POST',
                 credentials : 'include',
                 headers : {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 }
-            })
+            });
             const datas = await response.json()
+            console.log(datas)
             return datas;
-        }
-        getAttractions().then(setAttractions)
-    }, [currentValue])
+        };
+        getAttractions().then((datas)=>{
+            // console.log(datas);
+            setAttractions(datas);
+        });
+    }, []);
   
     
 
@@ -53,32 +51,16 @@ const LotteworldAttraction = () => {
    
     return (
         <S.Background>
-
-
-      
-            <S.NavParkSelector>
-            <button onClick={onClickToLotte}><p>롯데월드</p></button>
-             <span>|</span>
-             <button onClick={onClickToEver}><p>에버랜드</p></button>
-             <span>|</span>
-             <button onClick={onClickToSeoul}><p>서울랜드</p></button>
-             </S.NavParkSelector>
-
             
-            {/* <S.NavParkSelector>
-            <NavLink to={"/attraction/lotteworld"}>
-                <p>롯데월드</p>
-            </NavLink>
-            <span>|</span>
-            <NavLink to={"/attraction/everland"}>
-                <p>에버랜드</p>
-            </NavLink>
-            <span>|</span>
-            <NavLink to={"/attraction/seoulland"}>
-                <p>서울랜드</p>
-            </NavLink>
-            </S.NavParkSelector> */}
+            
 
+            <S.NavParkSelector>
+                <NavLink to={"/attraction/lotteworld"}>롯데월드</NavLink>
+                <span>|</span>
+                <NavLink to={"/attraction/everland"}>에버랜드</NavLink>
+                <span>|</span>
+                <NavLink to={"/attraction/seoulland"}>서울랜드</NavLink>
+            </S.NavParkSelector>
 
             <S.search className='searchbar'>
               <BasicSearch  shape={"default"} variant={"main"} size={"default"} />

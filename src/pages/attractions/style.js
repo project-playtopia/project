@@ -27,53 +27,30 @@ S.AttractionsContainer = styled.div`
 `;
 
 
-// // 긁어온거
+
 S.NavParkSelector = styled.nav`
-   font-size: 18px !important;
-   width: 100%;
-   text-align: center;
-   margin-top: 2%;
-   margin-bottom: 3%;
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
+	font-size: 1rem;
+	width: 100%;
+	text-align: center;
+	margin: 30px auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	& * {
+		margin: 0 0.5rem;
+		color: #000;
+	}
 
-   // 모든 자식 요소에 대한 스타일
-   & * {
-      margin: 0 0.5rem;
-      color: #000;
-      font-size: 18px !important;
-      
-   }
+	& *:hover {
+		color: ${mainDarkenColor};
+		font-weight: 500;
+	}
 
-   // button 태그에 대한 스타일을 명시적으로 추가
-   & button {
-      background-color: transparent !important; // 예시로 추가한 스타일
-      border: none; // 예시로 추가한 스타일
-      cursor: pointer;
-      
-   }
-
-   & p{
-    font-size: 18px !important;
-   }
-
-   // button에 hover 스타일 적용
-   & button:hover {
-    color: ${mainColor}; // props를 통해 색상 지정
-      font-weight: 500;
-   }
-
-   // button이 active 상태일 때의 스타일
-   & button.active {
-      color: ${mainColor} !important; // props를 통해 색상 지정
-      font-weight: 600 !important; // font-weight 적용 문제 해결을 위해 !important 사용
-   }
-
-
-
-
-
+	& .active {
+		color: ${mainColor};
+		font-weight: 600;
+	}
+`;
 
 // S.Button = styled.button`
 // color: #000000;
@@ -104,39 +81,34 @@ top : 25%;
 
 S.gridContainer= styled.div`
 
-     display: grid;
-     position:absolute;
-     left: 13%;     
-     top: 40%;
-     grid-template-columns: repeat(4,1fr);
-     gap: 40px 40px;
-     padding-bottom: 150px;
+  display: grid;
+  position:absolute;
+  left: 13%;     
+  top: 40%;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 40px;
+  padding-bottom: 150px;
 
-     @media (max-width : 727px) {
-        grid-template-columns: repeat(2,1fr);
-        gap: 20px 20px;
-        padding-bottom: 50px;
-     }
-    
+  @media (max-width : 727px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 20px;
+    padding-bottom: 50px;
+  }
+`;
 
-      `
-
-    S.gridItem = styled.div`
-
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     height: 100%;
-     @media (max-width : 727px) {
-        border: solid 1px blue;
-     }
-    
-
-     `
+S.gridItem = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  @media (max-width : 727px) {
+    border: solid 1px blue;
+  }
+`;
 
 // 롯데월드용
 
- S.ImageWrapper = styled.div`
+S.ImageWrapper = styled.div`
   position: relative;
   width: 250px;
   height: 250px;
@@ -162,6 +134,15 @@ S.gridContainer= styled.div`
   }
   
 `;
+
+
+
+
+
+
+
+
+
 
 /* S.Image = styled.img`
   width: 100%;
@@ -233,21 +214,101 @@ S.Content = styled.div`
 
 
 
-// Explain
+
+
+
+// Explain.js
+S.ExplainWrapper = styled.div`
+    width: 100%;
+  height: 100%;
+  margin-top: 150px;
+  text-align: center;
+
+  & .iconWrapper{
+    display: flex;
+    margin: 100px 0 0 400px;
+    gap: 200px;
+    text-align: center;
+    & .icon{
+      margin :0 20px;
+    }
+  }
+
+  & .notice {
+    font-size: 30px;
+    font-weight: bold;
+  }
+`;
+
+S.ExplainH1 = styled.div`
+ font-size: 50px;
+ font-weight: bold;
+ /* margin-top: 30px; */
+`;
+
+S.ExplainDescription = styled.div`
+ font-size: 24px;
+ font-weight: bold;
+ margin-top: 30px;
+ margin-bottom : 40px;
+
+`
+
+S.ExplainImage = styled.img`
+  width: 1200px; // 원하는 너비로 설정
+  height: 400px; // 원하는 높이로 설정
+  border-radius: 20px;
+
+`;
+
+
 
 
 S.BigContainer = styled.div`
   display:  flex;
+  flex-direction: column;
   width: 100%;
-  justify-content: space-evenly;
+  align-items: center; 
+  /* justify-content: space-evenly; */
+  justify-content: center;
+  text-align: center;
  
-`
 
+
+
+  & .limit{
+    margin-top: 300px;
+    margin-bottom: 50px;
+    margin: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;  
+  };
+
+
+  & .limitWrapper{
+    margin: 100px auto;
+    /* margin-top: 100px; */
+    border: 2px solid #1FB1D9;
+    border-radius: 20px;
+    width: 90%;
+    height: 300px;
+    position: relative;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  };
+
+
+
+`;
 
 S.IconContainer = styled.div`
   display: flex;
   flex-direction: column; 
-  justify-content: space-between;
+  
   align-items: center; 
   margin: 10px; 
 
@@ -256,8 +317,6 @@ S.IconContainer = styled.div`
     align-items: center; 
   }
 `;
-
-
 
 
 
@@ -273,27 +332,26 @@ S.IconText = styled.p`
 
 
 S.Container=styled.div`
-width: 90%;
-height: 100vh;
+  width: 90%;
+  height: 100vh;
 
- margin: 100px 0 0 80px;
- padding-bottom: 500px;
+  margin: 100px 0 0 80px;
+  padding-bottom: 500px;
 
- & h2{
-
-  font-size: 50px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 50px;
- }
+  & h2{
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+  }
 
   .description{
-   font-size: 24px;
-   font-weight: bold;
-   text-align: center;
-   margin-bottom: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
 
- }
+  }
 
  .mainImage{
    /* width: 1350px;
@@ -321,50 +379,11 @@ height: 100vh;
  }
 
 
- & .iconWrapper{
-
-  display: flex;
-  margin: 100px 0 0 400px;
-  gap: 200px;
-
-
-  
-
-    & .icon{
-    margin :0 20px;
-  }
-
-  }
 
 
 
-& .limit{
-  margin-top: 200px;
-  margin-bottom: 50px;
-  font-size: 30px;
-  font-weight: bold;
-  justify-content: space-between;
-}
-
-& .limitWrapper{
-  margin: 0 auto;
-  margin-bottom: 200px;
-  border: 2px solid #1FB1D9;
-  border-radius: 20px;
-  width: 100%;
-  height: 300px;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
 
 
-& .notice{
-
-  font-size: 30px;
-  font-weight: bold;
-
-}
 
 
 & .pBorder{
@@ -401,14 +420,14 @@ height: 100vh;
  }
 
 
-`
+`;
 
 S.ButtonContainer = styled.div`
   position: absolute;
   margin-top: 200px;
   left: 42%;
 
-`
+`;
 
 
 

@@ -10,7 +10,7 @@ const connect = () => {
 
     mongoose
         .connect(connection_url, {
-            dbName: "attractions", // 컬렉션을 관리하는 database 이름 설정
+            dbName: "playtopia", // 컬렉션을 관리하는 database 이름 설정
         })
         .then(() => {
             console.log("Connected to MongoDB"); // 연결 성공

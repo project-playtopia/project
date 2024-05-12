@@ -4,22 +4,14 @@ import BasicSearch from '../../components/search/BasicSearch.jsx';
 import S from './style.js';
 
 const EverLandAttraction = () => {
-    // lotteWorld, seoulLand, everland
-    const [currentValue, setCurrentValue] = useState('everland')
-
-    // 클릭하면 currentValue를 바꿔 fetch 경로를 바꾼다.
-    const onClickToLotte = () => { setCurrentValue('lotteWorld') }
-    const onClickToSeoul = () => { setCurrentValue('seoulLand') }
-    const onClickToEver = () => { setCurrentValue('everland') }
+   
 
 
 
-    // currentValue에 맞는 데이터를 fetch로 불러온다.
-    // 의존성 배열에 [currentValue]를 넣어 onClick으로 바뀌었을 때 새로 불러온다.
     const [attractions, setAttractions] = useState([])
     useEffect(() => {
         const getAttractions = async () => {
-            const response = await fetch(`http://localhost:8000/attraction/${currentValue}`, {
+            const response = await fetch(`http://localhost:8000/attraction/everland`, {
                 method : 'POST',
                 credentials : 'include',
                 headers : {
@@ -31,7 +23,7 @@ const EverLandAttraction = () => {
             return datas;
         }
         getAttractions().then(setAttractions)
-    }, [currentValue])
+    }, [])
 
     // 화면에 뿌리기 위해 리스트를 구현한다.
     const attractionsList = attractions.map((att, i) => (
@@ -41,7 +33,7 @@ const EverLandAttraction = () => {
 
                {/* public폴더안의 이미지폴더 이름이 Everland라 onClick함수 이름을 Everland로 바꿨는데 
                explain fetch경로에서는 소문자 써야한다해서 일단 다시 바꿈 */}
-               <S.Image src={`${process.env.PUBLIC_URL}/AttractionsImage/${currentValue}/at${att.id}.jpg`} alt="attraction" />
+               <S.Image src={`${process.env.PUBLIC_URL}/AttractionsImage/everland/at${att.id}.jpg`} alt="attraction" />
             <div>
                 <p>{att.title}</p>
                 <span>{att.location}</span>
@@ -56,32 +48,13 @@ const EverLandAttraction = () => {
         <S.Background>
 
         
-          <S.NavParkSelector>
-            <button onClick={onClickToLotte}>롯데월드</button>
-             <span>|</span>
-             <button onClick={onClickToEver}>에버랜드</button>
-             <span>|</span>
-             <button onClick={onClickToSeoul}>서울랜드</button>
-             </S.NavParkSelector>
-
-
-
-
-
-{/* 
             <S.NavParkSelector>
-            <NavLink to={"/attraction/lotteworld"} onClick={() => setCurrentValue('lotteworld')}>
-                <p>롯데월드</p>
-            </NavLink>
-            <span>|</span>
-            <NavLink to={"/attraction/everland"}  onClick={() => setCurrentValue('everland')}>
-                <p>에버랜드</p>
-            </NavLink>
-            <span>|</span>
-            <NavLink to={"/attraction/seoulland"}  onClick={() => setCurrentValue('seoulland')}>
-                <p>서울랜드</p>
-            </NavLink>
-            </S.NavParkSelector> */}
+                <NavLink to={"/attraction/lotteworld"}>롯데월드</NavLink>
+                <span>|</span>
+                <NavLink to={"/attraction/everland"}>에버랜드</NavLink>
+                <span>|</span>
+                <NavLink to={"/attraction/seoulland"}>서울랜드</NavLink>
+            </S.NavParkSelector>
 
             <S.search className='searchbar'>
               <BasicSearch  shape={"default"} variant={"main"} size={"default"} />
