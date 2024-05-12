@@ -3,6 +3,7 @@ import S from './style.js'
 import { NavLink } from 'react-router-dom';
 import { faMapPin } from '@fortawesome/free-solid-svg-icons';
 
+
 const CourseLotteworld = () => {
 
   const courses = ["#우산코스", "#어린이코스", "#스릴코스", "#멀미코스"];

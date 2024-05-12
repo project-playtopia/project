@@ -1,154 +1,280 @@
-import React , {useState} from 'react';
+
+import React, { useState } from 'react';
 import S from './style.js';
 
 const Performance = () => {
-
+  let dayNow = new Date();
+  let today = dayNow.getDate()
   const [selectedDate, setSelectedDate] = useState(null);
+  let temp = 0;
 
   const dateLists = {
     "4/21": [
       { 
         id: 1, 
         image: "/lotte_19275_main.jpg", 
-        parkName: "파크A", 
+        parkName: "롯데월드", 
+        time: "15:00", 
+        performanceName: "런런런! 스노우 프렌즈", 
+        location: "알파인스테이지" 
+      },
+      { 
+        id: 2, 
+        image: "/lotte_19275_main.jpg", 
+        parkName: "에버랜드", 
+        time: "12:00", 
+        performanceName: "런런런! 스노우 프렌즈", 
+        location: "알파인스테이지" 
+      },
+      { 
+        id: 3, 
+        image: "/lotte_19275_main.jpg", 
+        parkName: "서울랜드", 
+        time: "10:00", 
+        performanceName: "런런런! 스노우 프렌즈", 
+        location: "알파인스테이지" 
+      },
+    ],
+
+    "4/22": [
+      { 
+        id: 4, 
+        image: "/lotte_19275_main.jpg", 
+        parkName: "롯데월드", 
+        time: "11:00", 
+        performanceName: "런런런! 스노우 프렌즈", 
+        location: "알파인스테이지" 
+      },
+      { 
+        id: 5, 
+        image: "/lotte_19275_main.jpg", 
+        parkName: "에버랜드", 
+        time: "12:00", 
+        performanceName: "런런런! 스노우 프렌즈", 
+        location: "알파인스테이지" 
+      },
+      { 
+        id: 6, 
+        image: "/lotte_19275_main.jpg", 
+        parkName: "서울랜드", 
+        time: "18:00", 
+        performanceName: "런런런! 스노우 프렌즈", 
+        location: "알파인스테이지" 
+      },
+    ],
+    "4/23": [
+      { 
+        id: 7, 
+        image: "/lotte_19275_main.jpg", 
+        parkName: "롯데월드", 
+        time: "15:00", 
+        performanceName: "런런런! 스노우 프렌즈", 
+        location: "알파인스테이지" 
+      },
+      { 
+        id: 8, 
+        image: "/lotte_19275_main.jpg", 
+        parkName: "에버랜드", 
+        time: "12:00", 
+        performanceName: "런런런! 스노우 프렌즈", 
+        location: "알파인스테이지" 
+      },
+      { 
+        id: 9, 
+        image: "/lotte_19275_main.jpg", 
+        parkName: "서울랜드", 
+        time: "20:00", 
+        performanceName: "런런런! 스노우 프렌즈", 
+        location: "알파인스테이지" 
+      },
+    ],
+    "4/24": [
+      { 
+        id: 10, 
+        image: "/lotte_19275_main.jpg", 
+        parkName: "롯데월드", 
+        time: "11:00", 
+        performanceName: "런런런! 스노우 프렌즈", 
+        location: "알파인스테이지" 
+      },
+      { 
+        id: 11, 
+        image: "/lotte_19275_main.jpg", 
+        parkName: "에버랜드", 
         time: "14:00", 
         performanceName: "런런런! 스노우 프렌즈", 
         location: "알파인스테이지" 
       },
-      // 다른 공연 정보도 같은 형식으로 추가...
-    ],
-    "4/22": [
       { 
-        id: 1, 
-        image: "/path/to/imageB.jpg", 
-        parkName: "파크B", 
-        time: "16:00", 
-        performanceName: "매직 쇼", 
-        location: "메인 광장" 
+        id: 12, 
+        image: "/lotte_19275_main.jpg", 
+        parkName: "서울랜드", 
+        time: "17:00", 
+        performanceName: "런런런! 스노우 프렌즈", 
+        location: "알파인스테이지" 
       },
-
-    ],
-    "4/23": [
-      { 
-        id: 1, 
-        image: "/path/to/imageB.jpg", 
-        parkName: "파크B", 
-        time: "16:00", 
-        performanceName: "매직 쇼", 
-        location: "메인 광장" 
-      },
-
-    ],
-    "4/24": [
-      { 
-        id: 1, 
-        image: "/path/to/imageB.jpg", 
-        parkName: "파크B", 
-        time: "16:00", 
-        performanceName: "매직 쇼", 
-        location: "메인 광장" 
-      },
-
     ],
     "4/25": [
       { 
-        id: 1, 
-        image: "/path/to/imageB.jpg", 
-        parkName: "파크B", 
-        time: "16:00", 
-        performanceName: "매직 쇼", 
-        location: "메인 광장" 
+        id: 13, 
+        image: "/lotte_19275_main.jpg", 
+        parkName: "롯데월드", 
+        time: "19:00", 
+        performanceName: "런런런! 스노우 프렌즈", 
+        location: "알파인스테이지" 
       },
-
+      { 
+        id: 14, 
+        image: "/lotte_19275_main.jpg", 
+        parkName: "에버랜드", 
+        time: "12:00", 
+        performanceName: "런런런! 스노우 프렌즈", 
+        location: "알파인스테이지" 
+      },
+      {
+      id: 15, 
+      image: "/lotte_19275_main.jpg", 
+      parkName: "서울랜드", 
+      time: "15:00", 
+      performanceName: "런런런! 스노우 프렌즈", 
+      location: "알파인스테이지" 
+      },
     ],
     "4/26": [
       { 
-        id: 1, 
-        image: "/path/to/imageB.jpg", 
-        parkName: "파크B", 
-        time: "16:00", 
-        performanceName: "매직 쇼", 
-        location: "메인 광장" 
+        id: 16, 
+        image: "/lotte_19275_main.jpg", 
+        parkName: "롯데월드", 
+        time: "13:00", 
+        performanceName: "런런런! 스노우 프렌즈", 
+        location: "알파인스테이지" 
       },
-
+      { 
+        id: 17, 
+        image: "/lotte_19275_main.jpg", 
+        parkName: "에버랜드", 
+        time: "12:00", 
+        performanceName: "런런런! 스노우 프렌즈", 
+        location: "알파인스테이지" 
+      },
+      { 
+        id: 18, 
+        image: "/lotte_19275_main.jpg", 
+        parkName: "서울랜드", 
+        time: "11:00", 
+        performanceName: "런런런! 스노우 프렌즈", 
+        location: "알파인스테이지" 
+      },
     ],
     "4/27": [
       { 
-        id: 1, 
-        image: "/path/to/imageB.jpg", 
-        parkName: "파크B", 
-        time: "16:00", 
-        performanceName: "매직 쇼", 
-        location: "메인 광장" 
+        id: 19, 
+        image: "/lotte_19275_main.jpg", 
+        parkName: "롯데월드", 
+        time: "12:00", 
+        performanceName: "런런런! 스노우 프렌즈", 
+        location: "알파인스테이지" 
       },
-
-    ]
-
-
-
+      { 
+        id: 20, 
+        image: "/lotte_19275_main.jpg", 
+        parkName: "에버랜드", 
+        time: "17:00", 
+        performanceName: "런런런! 스노우 프렌즈", 
+        location: "알파인스테이지" 
+      },
+      { 
+        id: 21, 
+        image: "/lotte_19275_main.jpg", 
+        parkName: "서울랜드", 
+        time: "21:00", 
+        performanceName: "런런런! 스노우 프렌즈", 
+        location: "알파인스테이지" 
+      },
+    ],
+    
   };
 
   const handleButtonClick = (date) => {
     setSelectedDate(date); // 선택된 날짜 상태 업데이트
   };
+  
+  // 선택된 날짜에 따른 공연 리스트를 시간 순으로 정렬
+  const getSortedPerformancesByTime = (date) => {
+    const performances = dateLists[date];
+    if (!performances) {
+      return [];
+    }
+    return performances.sort((a, b) => {
+      const timeA = a.time.split(':').join(''); 
+      const timeB = b.time.split(':').join(''); 
+      return timeA.localeCompare(timeB); 
+    });
+  };
 
   return (
-
     <div >
-       공연 일정
-
-       <S.Div>
-        {Object.keys(dateLists).map((date) => (
+      <S.Title>공연일정</S.Title>
+      <S.Div>
+        {Object.keys(dateLists).map((date, i) => (
           <S.Button
             key={date}
             onClick={() => handleButtonClick(date)}
-            isSelected={selectedDate === date} // 선택된 버튼 스타일 적용을 위한 prop
+            isSelected={selectedDate === date} 
           >
-            {date}
+            {/* {date} */}
+            {today + i > 30 ? `5.` : `4.`}
+            {today + i > 30 ? (
+              ++temp
+            ) : (
+              today + i
+            )}
           </S.Button>
         ))}
       </S.Div>
 
+      
 
-      {/* 선택된 날짜에 따른 리스트 보여주기 */}
-      <ul>
-      {selectedDate && dateLists[selectedDate].map((item) => (
-        <li key={item.id} style={{ display: 'flex', alignItems: 'center', marginBottom: '20px'  , flex_direction :'row'}}>
-          <img src={item.image} alt="공연 이미지" style={{ width: '200px', height: '160px', marginRight: '100px' }} />
-          <div>
-            <p><strong>{item.parkName}</strong> {item.time}</p>
-            <p>{item.performanceName}</p>
-            <p>{item.location}</p>
-          </div>
-
-          <img src={item.image} alt="공연 이미지" style={{ width: '200px', height: '160px', marginRight: '100px' }} />
+      {/*퍼포먼스 리스트*/}
+      <S.Centerul>
+      {selectedDate && getSortedPerformancesByTime(selectedDate).map((item) => (
+        <li key={item.id} style={{ display: 'flex', alignItems: 'center', marginBottom: '20px', flexDirection: 'row' }}>
+          <img src={item.image} alt="공연 이미지" style={{ width: '200px', height: '160px', marginRight: '20px' }} />
           <div>
             <p><strong>{item.parkName}</strong> {item.time}</p>
             <p>{item.performanceName}</p>
             <p>{item.location}</p>
           </div>
         </li>
-
-        
       ))}
-      </ul>
+      </S.Centerul>
     </div>
-
-
-
-
-
-
-
-
-
-   
-      
-
   );
 };
 
-
-
-
 export default Performance;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
