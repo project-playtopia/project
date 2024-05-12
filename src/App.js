@@ -16,11 +16,11 @@ const store = createStore(themepark , devToolsEnhancer())
 function App() {
   return (
     <>
-      <Provider store={store}>
+      <Provider store={store} >
         <ThemeProvider theme={theme}>
           <UserProvider>
             <RouterProvider router={router} />
-            <GlobalStyle />
+            <GlobalStyle/>
           </UserProvider>
         </ThemeProvider>
       </Provider>
