@@ -72,7 +72,6 @@ S.ItemTitle = styled.div`
 	width: 100%;
 	text-align: center;
 	padding: 1rem;
-	
 `;
 
 S.PayWrapper = styled.div`
