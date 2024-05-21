@@ -1,6 +1,4 @@
-
 import { Schema, model } from "mongoose";
-
 
 const LostnFoundSchema = new Schema({
     no: Number,
@@ -10,6 +8,5 @@ const LostnFoundSchema = new Schema({
     result : String,
     company : String
 });
-
 
 export default model("lostnfounddata", LostnFoundSchema);

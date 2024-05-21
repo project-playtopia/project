@@ -7,6 +7,4 @@ const guidemapSchema = new Schema({
   endTime: String
 });
 
-
-
 export default model('GuideMapSchema', guidemapSchema);
