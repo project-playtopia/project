@@ -6,7 +6,7 @@ import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
 const GiftshopItem = ({itemId, title, img, location, description}) => {
 	return (
-		<Link to={`/giftshop/explain/itemId=${itemId}`} style={{display: "block"}}>
+		<Link to={`/giftshop/explain?itemId=${itemId}`} style={{display: "block"}}>
 			<S.GridItem>
 				<S.ItemImgWrapper imgSrc={img}></S.ItemImgWrapper>
 				<S.ItemTitle>{title}</S.ItemTitle>
