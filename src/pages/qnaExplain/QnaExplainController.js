@@ -14,10 +14,11 @@ const list = async (req, res) => {
 };
 
 const post = async (req, res) => {
-    const { title, category, content } = req.body;
+    const { title, name, content,company } = req.body;
     const date = new Date().toISOString().split('T')[0]; 
+    const lastRecord = await QnaExplainShema.findOne({ company: company }).sort({ no: -1 });
     const currentNo = lastRecord ? lastRecord.no + 1 : 1;
-    const newQnaExplain = new QnaExplainShema({ no: currentNo++, category, title, content, date });
+    const newQnaExplain = new QnaExplainShema({ no: currentNo, name, title, content, company });
     await newQnaExplain.save();
 
     res.status(201).json({

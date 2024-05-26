@@ -9,17 +9,10 @@ const QnaExplain = () => {
 
    useEffect(() => {
     fetch(`http://localhost:8004/qnaexplain/list`)
-    .then((res) => {
-      if(!res.ok){
-        throw new Error(`HTTP error ${res.status}`);
-      }
-      return res.json();
-    }).then((data) => {
-      setQnaExplain(data.qnaexplain);
-    }).catch((error) => {
-      console.error('Fetch error:', error);
-    })
-   }, []);
+      .then((res) => res.json())
+      .then((data) => setQnaExplain(data.qnaexplain));
+  }, []);
+
 
    
   return (
