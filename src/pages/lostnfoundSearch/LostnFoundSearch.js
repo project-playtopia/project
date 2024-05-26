@@ -7,22 +7,19 @@ const LostnFoundSearch = () => {
   const { id, company } = useParams();
   const [lostnfoundlist, setLostList] = useState([]);
   const [isChecked, setIsChecked] = useState(false);
-  
   useEffect(() => {
     fetch('http://localhost:8010/lostnfoundlist/list/all/')
       .then((res) => res.json())
       .then((data) => {
-        const filteredList = data.lostnfoundlist.filter(item => {
-          return parseInt(item.no) === parseInt(id) && item.company.trim() === company.trim();
-        });
-        
-
+        const filteredList = data.lostnfoundlist.filter(item => 
+          parseInt(item.no) === parseInt(id) && item.company.trim() === company.trim()
+        );
         setLostList(filteredList);
       })
       .catch((error) => {
         console.error('Error:', error);
       });
-  }, [id, company]); 
+  }, [id, company]);
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
@@ -35,31 +32,39 @@ const LostnFoundSearch = () => {
           ...item,
           result: "처리중"
         };
-      } else {
-        return item;
       }
+      return item;
     });
     setLostList(updatedList);
 
-
-    fetch(`http://localhost:8010/lostnfoundlist/post`, {
+    fetch('http://localhost:8010/lostnfoundlist/update', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
+        no: parseInt(id),
+        company: company.trim(),
         result: '처리중'
       })
     })
-    .then(response => response.json())
-    alert("분실물 찾기 신청이 완료되었습니다.");
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(() => {
+      alert("분실물 찾기 신청이 완료되었습니다.");
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      alert("문제가 발생했습니다. 다시 시도해주세요.");
+    });
   };
 
-  function addSevenDays(dateString) {
-
+  const addSevenDays = (dateString) => {
     const originalDate = new Date(dateString);
-    
-
     const newDate = new Date(originalDate);
     newDate.setDate(newDate.getDate() + 7);
 
@@ -67,8 +72,8 @@ const LostnFoundSearch = () => {
     const month = ("0" + (newDate.getMonth() + 1)).slice(-2);
     const day = ("0" + newDate.getDate()).slice(-2);
 
-    return year + "-" + month + "-" + day;
-  }
+    return `${year}-${month}-${day}`;
+  };
 
 
   return (

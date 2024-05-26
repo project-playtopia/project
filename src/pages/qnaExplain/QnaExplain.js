@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import S from './style.js';
 
-let currentNo = 22; 
+
 const QnaExplain = () => {
   const { id } = useParams();
    const [qnaexplain , setQnaExplain] = useState([])

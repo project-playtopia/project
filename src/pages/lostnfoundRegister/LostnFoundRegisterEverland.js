@@ -18,24 +18,28 @@ const LostnFoundRegisterEverland = () => {
     fetch('http://localhost:8010/lostnfoundlist/list/')
       .then((res) => res.json())
       .then((data) => {
+        const everlandEntries = data.lostnfoundlist.filter(entry => entry.company === 'everland');
+        const highestNo = everlandEntries.reduce((max, item) => (item.no > max ? item.no : max), 0);
         setLostnEverland((prev) => ({
           ...prev,
-          no: data.no + 1, 
-          date: data.date, 
+          no: highestNo + 1,
         }));
       })
+      .catch((error) => console.error('Error fetching lost and found list:', error));
   }, []);
 
   useEffect(() => {
     fetch('http://localhost:8010/lostnfoundexplain/list/')
       .then((res) => res.json())
       .then((data) => {
+        const everlandEntries = data.lostnfoundlist.filter(entry => entry.company === 'everland');
+        const highestNo = everlandEntries.reduce((max, item) => (item.no > max ? item.no : max), 0);
         setLostnEverland((prev) => ({
           ...prev,
-          no: data.no + 1, 
-          date: data.date, 
+          no: highestNo + 1,
         }));
       })
+      .catch((error) => console.error('Error fetching lost and found list:', error));
   }, []);
 
   const handleChange = (e) => {
@@ -60,6 +64,7 @@ const LostnFoundRegisterEverland = () => {
       return res.json();
     })
 
+
     fetch('http://localhost:8010/lostnfoundlist/post/', {
       method: 'POST',
       headers: {
@@ -67,12 +72,10 @@ const LostnFoundRegisterEverland = () => {
       },
       body: JSON.stringify({
         ...lostneverland,
-        date: new Date().toISOString(), 
+        date: new Date().toISOString(),
       }),
     })
-    .then((res) => {
-      return res.json();
-    })
+    .then((res) => res.json())
     .then((data) => {
       setLostnEverland((prevState) => ({
         ...prevState,
@@ -90,20 +93,18 @@ const LostnFoundRegisterEverland = () => {
     <>
       <S.margin></S.margin>
       <S.head>
-      <S.header>
-      <h1>분실물 센터</h1>
-      
-      </S.header>
+        <S.header>
+          <h1>분실물 센터</h1>
+        </S.header>
         <S.title>
           <Link to={"/lostnfound/register/lotteworld"}><S.lotteworld>롯데월드</S.lotteworld></Link>
-          <S.everland color='#1FB1D9' >에버랜드</S.everland >
+          <S.everland color='#1FB1D9'>에버랜드</S.everland>
           <Link to={"/lostnfound/register/seoulland"}><S.seoulland>서울랜드</S.seoulland></Link>
         </S.title>
       </S.head>
 
       <S.header>
-      <h1 style={{marginRight:"600px", marginBottom:"60px"}}>분실물 등록</h1>
-      
+        <h1 style={{ marginRight: "600px", marginBottom: "60px" }}>분실물 등록</h1>
       </S.header>
 
       <div>
@@ -129,22 +130,18 @@ const LostnFoundRegisterEverland = () => {
       </div>
 
       <S.buttonbox>
-
-        
-          <BasicButton style={{ backgroundColor: "white", color: "#1FB1D9", border: "1px solid #1FB1D9" }}
-            size={"small"} shape={"default"} color={"white"} variant={"main"}>
-              <Link style={{ color:"#1FB1D9"}} to={`/lostnfound/list/everland`}>
-                뒤로가기
-                </Link>
-          </BasicButton>
-       
+        <BasicButton style={{ backgroundColor: "white", color: "#1FB1D9", border: "1px solid #1FB1D9" }}
+          size={"small"} shape={"default"} color={"white"} variant={"main"}>
+          <Link style={{ color: "#1FB1D9" }} to={`/lostnfound/list/everland`}>
+            뒤로가기
+          </Link>
+        </BasicButton>
 
         <BasicButton style={{ marginLeft: '250px' }} size={"small"} shape={"default"} color={"white"} variant={"main"} onClick={handleSubmit}>
         <Link style={{ color:"#fff"}} to={`/lostnfound/list/everland`}>
           등록하기
           </Link>
         </BasicButton>
-
       </S.buttonbox>
     </>
   );

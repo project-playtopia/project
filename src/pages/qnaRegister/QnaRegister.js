@@ -15,9 +15,10 @@ const QnaRegister = () => {
     fetch('http://localhost:8004/qnalist/list/')
       .then((res) => res.json())
       .then((data) => {
+        const highestNo = qnaEntries.reduce((max, item) => (item.no > max ? item.no : max), 0);
         setQnaRegister((prev) => ({
           ...prev,
-          no: data.no + 1, 
+          nno: highestNo + 1, 
           date: data.date, 
         }));
       })
@@ -27,9 +28,10 @@ const QnaRegister = () => {
     fetch('http://localhost:8004/qnaexplain/list/')
       .then((res) => res.json())
       .then((data) => {
+        const highestNo = qnaEntries.reduce((max, item) => (item.no > max ? item.no : max), 0);
         setQnaRegister((prev) => ({
           ...prev,
-          no: data.no + 1, 
+          no: highestNo + 1,
           date: data.date, 
         }));
       })

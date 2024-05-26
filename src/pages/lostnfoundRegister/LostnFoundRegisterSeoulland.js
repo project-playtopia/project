@@ -25,26 +25,29 @@ const LostnFoundRegisterSeoulland = () => {
     fetch('http://localhost:8010/lostnfoundlist/list/')
       .then((res) => res.json())
       .then((data) => {
+        const seoullandEntries = data.lostnfoundlist.filter(entry => entry.company === 'seoulland');
+        const highestNo = seoullandEntries.reduce((max, item) => (item.no > max ? item.no : max), 0);
         setLostnSeoulland((prev) => ({
           ...prev,
-          no: data.no + 1, 
-          date: data.date, 
+          no: highestNo + 1,
         }));
       })
+      .catch((error) => console.error('Error fetching lost and found list:', error));
   }, []);
 
   useEffect(() => {
     fetch('http://localhost:8010/lostnfoundexplain/list/')
       .then((res) => res.json())
       .then((data) => {
+        const seoullandEntries = data.lostnfoundlist.filter(entry => entry.company === 'seoulland');
+        const highestNo = seoullandEntries.reduce((max, item) => (item.no > max ? item.no : max), 0);
         setLostnSeoulland((prev) => ({
           ...prev,
-          no: data.no + 1, 
-          date: data.date, 
+          no: highestNo + 1,
         }));
       })
+      .catch((error) => console.error('Error fetching lost and found list:', error));
   }, []);
-
  
 
   const handleSubmit = (e) => {
