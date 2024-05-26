@@ -203,6 +203,8 @@ const Performance = () => {
   };
   
   // 선택된 날짜에 따른 공연 리스트를 시간 순으로 정렬
+
+
   const getSortedPerformancesByTime = (date) => {
     const performances = dateLists[date];
     if (!performances) {
@@ -212,7 +214,7 @@ const Performance = () => {
       const timeA = a.time.split(':').join(''); 
       const timeB = b.time.split(':').join(''); 
       return timeA.localeCompare(timeB); 
-    });
+    }).slice(0, 3); // 결과 배열의 상위 3개 요소만 반환
   };
   
   return (

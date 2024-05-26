@@ -3,12 +3,12 @@ import mongoose from 'mongoose';
 
 const performanceSchema = new mongoose.Schema({
   date: {
-    type: String,
+    type: Date,
     required: true
   },
   performances: [{
     id: {
-      type: Number,
+      type: String,
       required: true
     },
     image: {
@@ -38,4 +38,4 @@ const performanceSchema = new mongoose.Schema({
 
 
 
-export const Performance = mongoose.model('Performance', performanceSchema);
+export const Performance = mongoose.model('PerformanceSchema', performanceSchema);

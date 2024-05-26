@@ -3,10 +3,10 @@ import connect from "./connect.js";
 connect();
 
 const performanceData = new Performance({
-    date: new Date('2021-04-21'), // '4/21'을 Date 객체로 변환
+    date: new Date('2021-04-21'), 
     performances: [
       { 
-        id: 1, 
+        id: "1", 
         image: "/lotte_19275_main.jpg", 
         parkName: "롯데월드", 
         time: "15:00", 
@@ -14,7 +14,7 @@ const performanceData = new Performance({
         location: "알파인스테이지" 
       },
       { 
-        id: 2, 
+        id: "2", 
         image: "/lotte_19275_main.jpg", 
         parkName: "에버랜드", 
         time: "12:00", 
@@ -22,7 +22,7 @@ const performanceData = new Performance({
         location: "알파인스테이지" 
       },
       { 
-        id: 3, 
+        id: "3", 
         image: "/AttractionsImage/performance/seoul1.jpg", 
         parkName: "서울랜드", 
         time: "10:00", 
@@ -31,8 +31,18 @@ const performanceData = new Performance({
       },
     ]
   });
-  
-  // 데이터베이스에 저장
-   performanceData.save()
-    .then(doc => console.log('저장 성공:', doc))
-    .catch(err => console.error('저장 실패:', err))
+
+
+// 데이터베이스에 저장
+performanceData.save()
+  .then(doc => console.log('저장 성공:', doc))
+  .catch(err => console.error('저장 실패:', err));
+
+// 데이터베이스에서 모든 성능 데이터 조회
+Performance.find()
+  .then(performances => {
+    console.log('화면으로 보낼 performances', performances);
+   })
+  .catch(err => {
+    console.error('조회 실패:', err);
+   });

@@ -1,5 +1,5 @@
 
-import Performance from './performanceschema.js';
+import Performance from '../schemas/performanceschema.js';
 
 
 
