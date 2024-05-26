@@ -3,15 +3,23 @@ import styled from 'styled-components';
 const S = {};
 
 
-S.Div = styled.div`
+S.Title = styled.div`
+  font-size : 30px;
+  font-weight : bold;
+  margin : 150px 700px 0 700px;
+`
 
+
+
+S.Div = styled.div`
+  
   display: flex; // Flexbox 레이아웃 사용
   justify-content: center; // 내부 요소(버튼)를 가운데 정렬
   gap: 20px; // 버튼 사이의 간격 
   border-top: 1px solid #9F9F9F;
   border-bottom: 1px solid #9F9F9F;
-  padding: 10px;
-  margin: 20px auto; // 상하 20px, 좌우 auto로 가운데 정렬
+  padding: 20px;
+  margin: 100px auto; // 상하 20px, 좌우 auto로 가운데 정렬
   width: 1200px; 
 `
 
@@ -31,7 +39,17 @@ align-items: center;
 
 `
 
+S.Centerul = styled.div`
+  list-style: none; // 기본 리스트 스타일 제거
+  padding: 0;
+  margin: 0 0 100px -400px; 
+  display: flex;
+  flex-direction: column; // 아이템들을 세로로 나열
+  align-items: center;
+  
+`
 
 
 
-export default S;
+
+export default  S;

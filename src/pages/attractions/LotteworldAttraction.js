@@ -1,48 +1,7 @@
-import React from 'react';
-import ThreeButtons from '../../components/ThreeButtons/ThreeButtons.jsx';
+import React, { useEffect, useState } from 'react';
+import {  Link, NavLink } from 'react-router-dom';
 import BasicSearch from '../../components/search/BasicSearch.jsx';
-import S from './style.js'
-import { NavLink } from 'react-router-dom';
-
-
-import Image1 from "../../pages/attractions/images/Lotteworld/at1.jpg"
-import Image2 from "../../pages/attractions/images/Lotteworld/at2.jpg"
-import Image3 from "../../pages/attractions/images/Lotteworld/at3.jpg"
-import Image4 from "../../pages/attractions/images/Lotteworld/at4.jpg"
-import Image5 from "../../pages/attractions/images/Lotteworld/at5.jpg"
-import Image6 from "../../pages/attractions/images/Lotteworld/at6.jpg"
-import Image7 from "../../pages/attractions/images/Lotteworld/at7.jpg"
-import Image8 from "../../pages/attractions/images/Lotteworld/at8.jpg"
-import Image9 from "../../pages/attractions/images/Lotteworld/at9.jpg"
-import Image10 from "../../pages/attractions/images/Lotteworld/at10.jpg"
-import Image11 from "../../pages/attractions/images/Lotteworld/at11.jpg"
-import Image12 from "../../pages/attractions/images/Lotteworld/at12.jpg"
-import Image13 from "../../pages/attractions/images/Lotteworld/at13.jpg"
-import Image14 from "../../pages/attractions/images/Lotteworld/at14.jpg"
-import Image15 from "../../pages/attractions/images/Lotteworld/at15.jpg"
-import Image16 from "../../pages/attractions/images/Lotteworld/at16.jpg"
-import Image17 from "../../pages/attractions/images/Lotteworld/at17.jpg"
-import Image18 from "../../pages/attractions/images/Lotteworld/at18.jpg"
-import Image19 from "../../pages/attractions/images/Lotteworld/at19.jpg"
-import Image20 from "../../pages/attractions/images/Lotteworld/at20.jpg"
-import Image21 from "../../pages/attractions/images/Lotteworld/at21.jpg"
-import Image22 from "../../pages/attractions/images/Lotteworld/at22.jpg"
-import Image23 from "../../pages/attractions/images/Lotteworld/at23.jpg"
-import Image24 from "../../pages/attractions/images/Lotteworld/at24.jpg"
-import Image25 from "../../pages/attractions/images/Lotteworld/at25.jpg"
-import Image26 from "../../pages/attractions/images/Lotteworld/at26.jpg"
-import Image27 from "../../pages/attractions/images/Lotteworld/at27.jpg"
-import Image28 from "../../pages/attractions/images/Lotteworld/at28.jpg"
-import Image29 from "../../pages/attractions/images/Lotteworld/at29.jpg"
-import Image30 from "../../pages/attractions/images/Lotteworld/at30.jpg"
-import Image31 from "../../pages/attractions/images/Lotteworld/at31.jpg"
-import Image32 from "../../pages/attractions/images/Lotteworld/at32.jpg"
-import Image33 from "../../pages/attractions/images/Lotteworld/at33.jpg"
-import Image34 from "../../pages/attractions/images/Lotteworld/at34.jpg"
-import Image35 from "../../pages/attractions/images/Lotteworld/at35.jpg"
-import Image36 from "../../pages/attractions/images/Lotteworld/at36.jpg"
-
-
+import S from './style.js';
 
 const LotteworldAttraction = () => {
   
@@ -496,6 +455,9 @@ const LotteworldAttraction = () => {
     </div>
   );
 };
+
+
+
 
 export default LotteworldAttraction;
 

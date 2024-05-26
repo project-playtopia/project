@@ -1,6 +1,4 @@
-
 import { Schema, model } from "mongoose";
-
 
 const LostnFoundExplainShema = new Schema({
     no: Number,
