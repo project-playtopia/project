@@ -106,6 +106,7 @@ S.ButtonContainer = styled.div`
   width: 450px;
   margin: 30px 0;
 `;
+
 S.IdentificationButton = styled.button`
   width: 250px;
   height: 60px;

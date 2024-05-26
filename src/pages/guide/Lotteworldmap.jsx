@@ -7,7 +7,7 @@ const Lotteworldmap = () => {
   return (
     <Map
     center={{ lat:  37.5111158, lng: 127.098167 }}
-    style={{ width: "60%", height: "500px", margin : "60px", position:"sticky"}}
+    style={{ width: "85%", height: "400px", margin : "60px", position:"sticky"}}
   >
     
     <MapMarker 
