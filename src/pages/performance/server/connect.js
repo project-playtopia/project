@@ -6,7 +6,7 @@ const connect = () => {
     mongoose.set("debug", true)
   }
   mongoose.connect(connectionUrl,{
-    dbName : "performance"
+    dbName : "playtopia"
   })
   .then(()=>{
     console.log("Connected to MongoDB")
@@ -16,5 +16,7 @@ const connect = () => {
     console.error(err)
   })
 }
+
+connect();
 
 export default connect
