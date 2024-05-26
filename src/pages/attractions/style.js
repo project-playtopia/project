@@ -4,212 +4,128 @@ const mainColor = ({theme}) => theme.PALETTE.primary.main;
 
 const S = {};
 
-S.Background = styled.div`
-  width: 100%;
-  height: 100%;
-  
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-
-  margin-bottom: 10%;
-
-`;
-
-S.AttractionsContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); // 4열로 나누기
-  grid-gap: 30px; // 그리드 사이의 간격
-  margin-top: 110px;
-`;
 
 
+// Attraction.js
 
-S.NavParkSelector = styled.nav`
-	font-size: 1rem;
-	width: 100%;
-	text-align: center;
-	margin: 30px auto;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	& * {
+
+// 전체컨테이너 
+  S.Background = styled.div`
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 10%;
+    
+ `;
+
+// 3사 셀렉버튼
+  S.NavParkSelector = styled.nav`
+	  font-size: 1rem;
+	  width: 100%;
+	  text-align: center;
+	  margin: 30px auto;
+	  display: flex;
+	  flex-direction: row;
+	  justify-content: center;
+	 & * {
 		margin: 0 0.5rem;
 		color: #000;
-	}
+	 };
 
 	& *:hover {
 		color: ${mainDarkenColor};
 		font-weight: 500;
-	}
+	};
 
 	& .active {
 		color: ${mainColor};
 		font-weight: 600;
-	}
-`;
+	};
+  `;
 
-// S.Button = styled.button`
-// color: #000000;
-
-// `
-
-// S.Threebutton = styled.div`
-// position:absolute;
-// left: 38%;
-// top : 15%;
-// font-size: 16px;
-// `
+// BasicSearch 검색창
+ S.search = styled.div`
+   position:absolute;
+   width: 60%;
+   left: 30%;
+   top : 25%;
+ `;
 
 
-// BasicSearch.jsx 검색창
-S.search = styled.div`
-position:absolute;
-width: 60%;
-left: 30%;
-top : 25%;
-`
+// 이미지리스트 박스
+  S.AttractionsContainer = styled.div`
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-gap: 30px; // 그리드 사이의 간격
+    margin-top: 110px;
+  `;
 
 
 
 
+  S.ImageWrapper = styled.div`
+    position: relative;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 20px;
 
-// AttractionList
+  
 
-S.gridContainer= styled.div`
+    div {
+     display: none;
+     position: absolute;
+     left: 5%;
+     bottom: 5%;
+     color : #ffffff;
+     width: 100%;
+     line-height: 1.5;
+  };
+ 
+     div>p{
+    color: #ffffff;
+     };
 
-  display: grid;
-  position:absolute;
-  left: 13%;     
-  top: 40%;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 40px 40px;
-  padding-bottom: 150px;
+    div>span{
+    font-weight: bold;
+    };
 
-  @media (max-width : 727px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px 20px;
-    padding-bottom: 50px;
-  }
-`;
+    &:hover img {
+      filter: brightness(50%);
+    };
 
-S.gridItem = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  @media (max-width : 727px) {
-    border: solid 1px blue;
-  }
-`;
+    &:hover div {
+      display: block;
+    };
 
-// 롯데월드용
 
-S.ImageWrapper = styled.div`
-  position: relative;
-  width: 250px;
-  height: 250px;
-  overflow: hidden;
 
+
+  
   @media (max-width: 727px){
     grid-template-columns: repeat(2,1fr);
-  }
-
-  &:hover div {
-    display: block;
-  }
-
-  div {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); // 반투명 배경
-    color: white;
-    width: 100%;
-    text-align: center;
-
-  }
-  
-`;
-
-
-
-
-
-
-
-
-
-
-/* S.Image = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover; // 이미지 비율 유지하며 컨테이너에 맞춰 잘림
-`; */
-
-
-
-// 에버랜드, 서울랜드
-// S.ImageWrapper = styled.div`
-//   width: 250px;
-//   height: 250px;
-//   position: relative;
-//   overflow: hidden;
-//   gap : 10px;
-//   display: flex;
-//   justify-content: center;
-//   cursor: pointer;
-
-
-//   &:hover img {
-//     filter: brightness(70%);
-//   }
-
-//   &:hover::after {
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-
-//     display: block;
-//   }
-  
-// `;
-
-  S.Image = styled.img`
-  width: 250px;
-  height: 250px;
-  position: relative;
-  border-radius: 20px;
-  object-fit: cover;
-  
-  
+   }
 
 `;
 
-S.Content = styled.div`
-  color: #fff; 
-  font-size: 16px;
-  font-weight: ${({theme})=>theme.FONT_WEIGHT["thin"]};
-  line-height: 1.5; 
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: none; 
 
-  .attName{
-    font-weight: ${({theme})=>theme.FONT_WEIGHT["semibold"]};
-    font-size: ${({theme})=>theme.FONT_SIZE["default"]}
-  }
 
-  ${S.ImageWrapper}:hover & {
-    display: block; 
-  }
-`;
+ S.Image = styled.img`
+   width: 250px;
+   height: 250px;
+   position: relative;
+   border-radius: 20px;
+   object-fit: cover;
+  `;
+
+
+
+
 
 
 
@@ -218,218 +134,160 @@ S.Content = styled.div`
 
 
 // Explain.js
-S.ExplainWrapper = styled.div`
-    width: 100%;
-  height: 100%;
-  margin-top: 150px;
-  text-align: center;
 
-  & .iconWrapper{
-    display: flex;
-    margin-top: 80px;
-    gap: 200px;
-    text-align: center;
-    text-align: center;
-    justify-content: flex-end;
-    max-width: 1055px;
-    &.icon{
-      margin :0 20px;
-    }
-    &.span{
-      font-weight: bold;
-    }
-  }
+  // 전체컨테이너
 
-  & .notice {
-    font-size: 30px;
-    font-weight: bold;
-    padding-top: 100px;
-  }
+  S.ExplainWrapper = styled.div`
+     width: 100%;
+     margin-top: 150px;
+     text-align: center;
 `;
 
-S.ExplainH1 = styled.div`
- font-size: 50px;
- font-weight: bold;
- /* margin-top: 30px; */
-`;
-
-S.ExplainDescription = styled.div`
- font-size: 24px;
- font-weight: bold;
- margin-top: 30px;
- margin-bottom : 40px;
-
-`;
-
-S.ExplainImage = styled.img`
-  width: 1200px; // 원하는 너비로 설정
-  height: 400px; // 원하는 높이로 설정
-  border-radius: 20px;
-
-`;
-
-
-
-
-S.BigContainer = styled.div`
-  display:  flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center; 
-  /* justify-content: space-evenly; */
-  justify-content: center;
-  text-align: center;
- 
-
-
-
-  & .limit{
-    padding-top: 50px;
-    margin-bottom: 50px;
-    margin: 40px;
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-    align-items: center;  
-    margin-left: 120px;
-  };
-
-
-  & .limitWrapper{
-    
-    border: 2px solid #1FB1D9;
-    border-radius: 20px;
-    width: 90%;
-    height: 300px;
-    position: relative;
-    
-    gap: 70px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    
-    justify-content: space-evenly;
-  };
-
-   
-
-`;
-
-
-
-
-S.IconContainer = styled.div`
-  display: flex;
-  flex-direction: column; 
-  
-  align-items: center; 
-  margin: 10px; 
-
-  @media (max-width : 720px) {
-    flex-direction: column; 
-    align-items: center; 
-  }
-`;
-
-
-
-S.IconText = styled.p`
-  margin-top: 10px; 
-  font-size: 16px; 
-  color: #000000;
-  display: flex;
-  justify-content: center;
-  
-
-`;
-
-
-S.Container=styled.div`
-  width: 90%;
-  height: 100vh;
-
-  margin: 100px 0 0 80px;
-  padding-bottom: 500px;
-
-  & h2{
+// 어트 타이틀
+ S.ExplainH1 = styled.div`
     font-size: 50px;
     font-weight: bold;
-    text-align: center;
-    margin-bottom: 50px;
-  };
+ `;
 
-  .description{
+// 어트 설명
+ S.ExplainDescription = styled.div`
     font-size: 24px;
     font-weight: bold;
-    text-align: center;
-    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-bottom : 40px;
 
-  };
+  `;
 
- .mainImage{
-   /* width: 1350px;
-   height: 485px; */
-   width : 1200px;
-   height: 400px;
-   border-radius: 20px;
-   margin-left: 100px;
+// 어트 이미지
+ S.ExplainImage = styled.img`
+    width: 1200px; // 원하는 너비로 설정
+    height: 400px; // 원하는 높이로 설정
+    border-radius: 20px;
 
- };
+  `;
 
- & .p{
- 
-  font-size: 16px;
-
-
+// 탑승인원, 이용정보 컨테이너
+ S.IconWrapper =styled.div`
+     display: flex;
+     margin-top: 80px;
+     gap: 200px;
+     text-align: center;
+     text-align: center;
+     justify-content: flex-end;
+     max-width: 1055px;
+     
+     
+     &.icon{
+        margin :0 20px;
+      };
   
- };
+   
 
- & img{
-  border-radius: 20px;
- };
+   & .notice {
+      font-size: 30px;
+      font-weight: bold;
+      padding-top: 100px;
+   }; 
 
 
-& .location{
-  font-size: 30px;
+ `;
+
+ S.Span = styled.div`
   font-weight: bold;
+  line-height: 40px;
+ `;
 
-};
+
+// 탑승제한 4가지 아이콘 wrapper
+
+ S.BigContainer = styled.div`
+    display:  flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+   margin : 100px 0;
+
+  `;
+
+
+ S.Limit = styled.div`
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      text-align: center;
+      align-items: center;  
+    
+`;
+
+ S.LimitWrapper = styled.div`
+      display: flex;
+      flex-wrap: wrap; // 아이콘들이 너무 많아 한 줄에 다 표시되지 않을 경우 다음 줄로 넘어갈 수 있도록 설정
+      justify-content: center; // 아이콘들을 중앙 정렬
+      align-items: center; // 아이템
+      border: 2px solid #1FB1D9;
+      border-radius: 20px;
+      width: 90%;
+      height: 400px;
+      position: relative;
+      gap: 70px;
+      text-align: center;
+      justify-content: space-evenly;
+   `;
+
+
+  S.IconContainer = styled.div`
+     display: flex;
+     flex-direction: column; 
+     align-items: center; 
+     margin: 10px; 
+ `;
+
+
+ S.IconText = styled.p`
+    margin-top: 10px; 
+    font-size: 16px; 
+    color: #000000;
+    display: flex;
+    justify-content: center;
+ `;
 
 
 
- @media (max-width : 727px) {
-        gap: 20px 20px;
-        padding-bottom: 50px;
- }
+
+S.Notice = styled.div`
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+    align-items: center;  
+     
 `;
 
 
 
-S.Notice= styled.div`
-   border: 2px solid ${mainColor};
-   margin: 100px auto;
-    border: 2px solid #1FB1D9;
-    border-radius: 20px;
-    width: 90%;
-    height: 100px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+ S.NoticeMessage= styled.div`
+     border: 2px solid ${mainColor};
+     margin: 0 auto;
+     border: 2px solid #1FB1D9;
+     border-radius: 20px;
+     width: 90%;
+     height: 100px;
+     text-align: center;
+     display: flex;
+     align-items: center;
+     justify-content: center;
   
-
-  p{
+   p{
     text-align: center;
-  }
+    };
 `;
 
 
 
 S.ButtonContainer = styled.div`
-  position: absolute;
-  margin-top: 200px;
-  left: 42%;
-
+   margin : 100px auto;
 `;
 
 

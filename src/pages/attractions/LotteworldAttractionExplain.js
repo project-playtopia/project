@@ -31,7 +31,6 @@ const LotteworldAttractionExplain = () => {
                 console.error("Fetching attraction explain failed:", error);
             }
         };
-
         fetchAttractionDetail();
     }, []);
 
@@ -42,66 +41,65 @@ const LotteworldAttractionExplain = () => {
     return (
    
             
-        <S.ExplainWrapper>
-            <S.ExplainH1>{attractions.title}</S.ExplainH1>
-            <S.ExplainDescription>{attractions.description}</S.ExplainDescription>
-            <S.ExplainImage src={`${process.env.PUBLIC_URL}/AttractionsImage/Lotteworld/at${attractions.id}.jpg`} alt="attraction" />
+   <S.ExplainWrapper>
+     <S.ExplainH1>{attractions.title}</S.ExplainH1>
+     <S.ExplainDescription>{attractions.description}</S.ExplainDescription>
+     <S.ExplainImage src={`${process.env.PUBLIC_URL}/AttractionsImage/Lotteworld/at${attractions.id}.jpg`} alt="attraction" />
 
-            <div className='iconWrapper'>
-                <div className='icon1'>
-                    <img src='/AttractionsImage/at_icon1.png' alt='#' />
-                    <p> 탑승인원 </p> 
-                    <p>{attractions.people}</p>
-                </div>
-                <div className='icon2'>
-                 <img src='/AttractionsImage/at_icon2.png' alt='#' />
-                    <p>이용 정보</p>
-                    <p>{attractions.height}</p>
-                </div>
-            </div>
+      <S.IconWrapper>
+         <div>
+           <img src='/AttractionsImage/at_icon1.png' alt='#' />
+           <S.Span> 탑승인원 </S.Span> 
+           <p>{attractions.people}</p>
+         </div>
+         <div>
+           <img src='/AttractionsImage/at_icon2.png' alt='#' />
+             <S.Span>이용 정보</S.Span>
+             <p>{attractions.height}</p>
+        </div>
+     </S.IconWrapper>
 
-
-            <S.BigContainer>
-                <p className='limit'> 
-                    <FontAwesomeIcon icon={faBan}></FontAwesomeIcon>  탑승 제한
-                </p>
-                <div className='limitWrapper'>
-                    <S.IconContainer>
-                        <FontAwesomeIcon icon={faMartiniGlass} style={{fontSize:"100px"}} color='#1FB1D9'/> 
-                        <S.IconText>음주</S.IconText>
-                    </S.IconContainer>
-                    <S.IconContainer>
-                        <FontAwesomeIcon icon={faHeartPulse} style={{fontSize:"100px"}} color='#1FB1D9'/>
-                        <S.IconText>심장질환</S.IconText>
-                    </S.IconContainer>
-                    <S.IconContainer>
-                        <FontAwesomeIcon icon={faPersonPregnant} style={{fontSize:"100px"}} color='#1FB1D9'/>
-                        <S.IconText>임산부</S.IconText>
-                    </S.IconContainer>
-                    <S.IconContainer>
-                        <FontAwesomeIcon icon={faWheelchair} style={{fontSize:"100px"}} color='#1FB1D9'/>
-                        <S.IconText>휠체어</S.IconText>
-                    </S.IconContainer>
-                </div>
-         </S.BigContainer>
+      <S.BigContainer>
+         <S.Limit > 
+            <FontAwesomeIcon icon={faBan}></FontAwesomeIcon>  탑승 제한
+        </S.Limit>
+         <S.LimitWrapper>
+             <S.IconContainer>
+                 <FontAwesomeIcon icon={faMartiniGlass} style={{fontSize:"100px"}} color='#1FB1D9'/> 
+                 <S.IconText>음주</S.IconText>
+                 </S.IconContainer>
+                 <S.IconContainer>
+                 <FontAwesomeIcon icon={faHeartPulse} style={{fontSize:"100px"}} color='#1FB1D9'/>
+                 <S.IconText>심장질환</S.IconText>
+                 </S.IconContainer>
+                 <S.IconContainer>
+                <FontAwesomeIcon icon={faPersonPregnant} style={{fontSize:"100px"}} color='#1FB1D9'/>
+                 <S.IconText>임산부</S.IconText>
+                 </S.IconContainer>
+                 <S.IconContainer>
+                 <FontAwesomeIcon icon={faWheelchair} style={{fontSize:"100px"}} color='#1FB1D9'/>
+                 <S.IconText>휠체어</S.IconText>
+                 </S.IconContainer>
+        </S.LimitWrapper>
+     </S.BigContainer>
 
          
-            <p className='notice'> 
-                <FontAwesomeIcon icon={faCircleExclamation}></FontAwesomeIcon> 유의사항
-            </p>
-            
-           <S.Notice>
-                    <p>마감 시간과 입장 가능 시간이 다를 수 있으니 양지해 주시기 바랍니다.</p>
-            </S.Notice>
+       <S.Notice> 
+          <FontAwesomeIcon icon={faCircleExclamation}></FontAwesomeIcon> 유의사항
+       </S.Notice>
+         <S.NoticeMessage>
+            <p>마감 시간과 입장 가능 시간이 다를 수 있으니 양지해 주시기 바랍니다.</p>
+        </S.NoticeMessage>
            
-            <S.ButtonContainer>
-                <NavLink to ="/attraction/lotteworld">
-                    <BasicButton shape={"default"} variant={"main"} size={"medium"} color={"white"} >
-                        뒤로가기
-                    </BasicButton>
-                </NavLink>
-            </S.ButtonContainer>
-        </S.ExplainWrapper>
+        <S.ButtonContainer>
+            <NavLink to ="/attraction/lotteworld">
+            <BasicButton shape={"default"} variant={"main"} size={"medium"} color={"white"} >
+                뒤로가기
+            </BasicButton>
+           </NavLink>
+       </S.ButtonContainer>
+       
+   </S.ExplainWrapper>
     );
 };
 
