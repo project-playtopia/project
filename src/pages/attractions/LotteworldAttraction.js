@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {  Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import BasicSearch from '../../components/search/BasicSearch.jsx';
 import S from './style.js';
 
@@ -25,7 +25,6 @@ const LotteworldAttraction = () => {
             return datas;
         };
         getAttractions().then((datas)=>{
-            // console.log(datas);
             setAttractions(datas);
         });
     }, []);
@@ -35,16 +34,13 @@ const LotteworldAttraction = () => {
     // 화면에 뿌리기 위해 리스트를 구현한다.
     const attractionsList = attractions.map((att, i) => (
         <S.ImageWrapper key={i}>
-            {/* NavLink 쓰다가 Link씀 */}
-        <Link to={`/attraction/lotteworld/explain/${att.id}`}>    
-            {/* <img src={`process.env.PUBLIC_URL/pages/attractions/lotte/blahblah${att.id}.jpg`} /> */}
+         <NavLink to={`/attraction/lotteworld/explain/${att.id}`}>    
              <S.Image src={`${process.env.PUBLIC_URL}/AttractionsImage/Lotteworld/at${att.id}.jpg`} alt="attraction" />
             <div>
                 <p>{att.title}</p>
                 <span>{att.location}</span>
-                {/* <p>{att.description}</p> */}
             </div>  
-        </Link>
+        </NavLink>
         </S.ImageWrapper>
         
     ))

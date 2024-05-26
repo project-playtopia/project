@@ -23,7 +23,6 @@ const LotteworldAttraction = () => {
             return datas;
         };
         getAttractions().then((datas)=>{
-            // console.log(datas);
             setAttractions(datas);
         });
     }, []);

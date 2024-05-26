@@ -20,7 +20,13 @@ const S = {};
     align-items: center;
     margin: 0 auto;
     margin-bottom: 10%;
-    
+
+    @media (max-width: 727px) {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 30px;
+  };
+
+
  `;
 
 // 3사 셀렉버튼
@@ -54,15 +60,30 @@ const S = {};
    width: 60%;
    left: 30%;
    top : 25%;
+
+    
+  @media (max-width: 727px) {
+    align-items: flex-start;
+  }
+
+
+
  `;
 
 
-// 이미지리스트 박스
+// 이미지리스트 전체박스
   S.AttractionsContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
     grid-gap: 30px; // 그리드 사이의 간격
     margin-top: 110px;
+
+     @media(max-width: 727px){
+      grid-template-columns: repeat(2, 1fr);
+      padding: 30px;
+     };
+  
+    
   `;
 
 
@@ -102,15 +123,6 @@ const S = {};
     &:hover div {
       display: block;
     };
-
-
-
-
-  
-  @media (max-width: 727px){
-    grid-template-columns: repeat(2,1fr);
-   }
-
 `;
 
 
@@ -123,11 +135,10 @@ const S = {};
    object-fit: cover;
   `;
 
+ 
 
 
-
-
-
+ 
 
 
 
