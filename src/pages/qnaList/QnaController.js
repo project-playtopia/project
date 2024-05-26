@@ -2,7 +2,7 @@
 import QnaSchema from "./QnaSchema.js";
 
 
-let currentNo = 22; 
+
 
 const list =  async (req, res) => {
     const page = req.query.page || 1;
@@ -26,8 +26,10 @@ const list =  async (req, res) => {
 const post = async (req, res) => {
     const { title, category, content } = req.body;
     const date = new Date().toISOString().split('T')[0]; 
+    const currentNo = lastRecord ? lastRecord.no + 1 : 1;
     const newQna = new QnaSchema({ no: currentNo++, category, title, content, date });
     await newQna.save();
+
     res.status(201).json({
       ...newQna.toObject(), 
       date: date 
