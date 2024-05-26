@@ -50,6 +50,10 @@ width: 60%;
 border: solid 1px ${ ({theme}) => theme.PALETTE.primary["main"]};
 margin-bottom: 50px;
 border-radius: 50px;
+@media (max-width: 727px) {
+    width : 90%;
+    margin-top: 10%;
+  }
 `
 
 
@@ -58,6 +62,10 @@ S.Input = styled.input`
   height: 60px;
   border: solid 1px #000000;
   border-radius: 50px;
+  @media (max-width: 727px) {
+    width : 90%;
+    margin-top: 10%;
+  }
 `;
 
 
@@ -73,6 +81,10 @@ S.SubmitButton = styled.button`
   cursor: pointer;
   margin-top: 5%;
   margin-bottom: 30px;
+  @media (max-width: 727px) {
+    width : 60%;
+    margin-top: 15%;
+  }
 `
 S.LoginButton = styled.button`
   margin-top: 3%;
@@ -86,5 +98,9 @@ S.LoginButton = styled.button`
   cursor: pointer;
   font-size: ${({theme}) => theme.FONT_SIZE["default"]};
   font-weight: ${({theme})=> theme.FONT_WEIGHT["regular"]};
+  @media (max-width: 727px) {
+    width : 200px;
+    margin-top: 15%;
+  }
 `;
 export default S;
