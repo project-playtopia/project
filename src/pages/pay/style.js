@@ -158,7 +158,6 @@ S.TicketCntBtn = styled.button`
 	border-width: 1px;
 	cursor: pointer;
 	font-size: 1rem;
-	padding: 0.5rem;
 	font-weight: ${fontSemiBold};
 	@media (max-width: 727px){
 		font-size: 0.9rem;

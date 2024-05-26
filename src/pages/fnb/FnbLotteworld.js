@@ -46,7 +46,7 @@ const FnbLotteworld = () => {
   useEffect(()=>{
     getDatas()
     .then((datas)=>{setFnbList(datas)})
-    .then(()=>{console.log(fnbList)})
+    // .then(()=>{console.log(fnbList)})
     ;
   },[])
 
