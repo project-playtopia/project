@@ -7,8 +7,8 @@ const QnaExplainShema = new Schema({
     title: String,
     content: String,
     name : String,
-    explianontent : String,
-    date : String
+    date : String,
+    company : String
 });
 
 
