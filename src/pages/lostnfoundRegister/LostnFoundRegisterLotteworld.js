@@ -19,24 +19,28 @@ const LostnFoundRegisterLotteworld = () => {
     fetch('http://localhost:8010/lostnfoundlist/list/')
       .then((res) => res.json())
       .then((data) => {
+        const lotteworldEntries = data.lostnfoundlist.filter(entry => entry.company === 'lotteworld');
+        const highestNo = lotteworldEntries.reduce((max, item) => (item.no > max ? item.no : max), 0);
         setLostnLotteworld((prev) => ({
           ...prev,
-          no: data.no + 1, 
-          date: data.date, 
+          no: highestNo + 1,
         }));
       })
+      .catch((error) => console.error('Error fetching lost and found list:', error));
   }, []);
 
   useEffect(() => {
     fetch('http://localhost:8010/lostnfoundexplain/list/')
       .then((res) => res.json())
       .then((data) => {
+        const lotteworldEntries = data.lostnfoundlist.filter(entry => entry.company === 'lotteworld');
+        const highestNo = lotteworldEntries.reduce((max, item) => (item.no > max ? item.no : max), 0);
         setLostnLotteworld((prev) => ({
           ...prev,
-          no: data.no + 1, 
-          date: data.date, 
+          no: highestNo + 1,
         }));
       })
+      .catch((error) => console.error('Error fetching lost and found list:', error));
   }, []);
 
   const handleChange = (e) => {
@@ -134,14 +138,14 @@ const LostnFoundRegisterLotteworld = () => {
         
           <BasicButton style={{ backgroundColor: "white", color: "#1FB1D9", border: "1px solid #1FB1D9" }}
             size={"small"} shape={"default"} color={"white"} variant={"main"}>
-              <Link style={{ color:"#1FB1D9"}} to={`/lostnfound/list/everland`}>
+              <Link style={{ color:"#1FB1D9"}} to={`/lostnfound/list/lotteworld`}>
                 뒤로가기
                 </Link>
           </BasicButton>
        
 
         <BasicButton style={{ marginLeft: '250px' }} size={"small"} shape={"default"} color={"white"} variant={"main"} onClick={handleSubmit}>
-        <Link style={{ color:"#fff"}} to={`/lostnfound/list/everland`}>
+        <Link style={{ color:"#fff"}} to={`/lostnfound/list/lotteworld`}>
           등록하기
           </Link>
         </BasicButton>
