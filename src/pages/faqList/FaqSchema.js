@@ -1,6 +1,4 @@
-
 import { Schema, model } from "mongoose";
-
 
 const FaqSchema = new Schema({
     no: Number,
@@ -8,6 +6,5 @@ const FaqSchema = new Schema({
     content: String,
     date: String
 });
-
 
 export default model("faqdatas", FaqSchema);
