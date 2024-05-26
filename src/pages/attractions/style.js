@@ -61,13 +61,12 @@ const S = {};
    left: 30%;
    top : 25%;
 
-    
-  @media (max-width: 727px) {
-    align-items: flex-start;
-  }
-
-
-
+   @media (max-width: 727px) {
+    /* position: relative; // 절대위치에서 상대위치로 변경 */
+    width: 80%; // 너비를 조정하여 화면에 맞게 만듦
+    left: 5%; // 왼쪽 여백을 조정하여 중앙 정렬
+    margin: 0 auto; // 자동 마진을 사용하여 중앙 정렬
+   };
  `;
 
 
@@ -82,8 +81,6 @@ const S = {};
       grid-template-columns: repeat(2, 1fr);
       padding: 30px;
      };
-  
-    
   `;
 
 
@@ -106,7 +103,7 @@ const S = {};
      color : #ffffff;
      width: 100%;
      line-height: 1.5;
-  };
+    };
  
      div>p{
     color: #ffffff;
@@ -123,7 +120,7 @@ const S = {};
     &:hover div {
       display: block;
     };
-`;
+ `;
 
 
 
@@ -139,8 +136,6 @@ const S = {};
 
 
  
-
-
 
 
 
@@ -166,7 +161,6 @@ const S = {};
     font-weight: bold;
     margin-top: 30px;
     margin-bottom : 40px;
-
   `;
 
 // 어트 이미지
@@ -174,33 +168,19 @@ const S = {};
     width: 1200px; // 원하는 너비로 설정
     height: 400px; // 원하는 높이로 설정
     border-radius: 20px;
-
   `;
 
 // 탑승인원, 이용정보 컨테이너
  S.IconWrapper =styled.div`
-     display: flex;
-     margin-top: 80px;
-     gap: 200px;
-     text-align: center;
-     text-align: center;
-     justify-content: flex-end;
-     max-width: 1055px;
-     
-     
-     &.icon{
-        margin :0 20px;
-      };
-  
-   
-
-   & .notice {
-      font-size: 30px;
-      font-weight: bold;
-      padding-top: 100px;
-   }; 
-
-
+  display: flex;
+  /* margin-top: 80px; */
+  margin: 80px auto;
+  text-align: center;
+  justify-content: space-around;
+  width: 60%;
+  & div{
+    margin: 0 1rem;
+  }
  `;
 
  S.Span = styled.div`
@@ -219,7 +199,6 @@ const S = {};
     justify-content: center;
     text-align: center;
    margin : 100px 0;
-
   `;
 
 
@@ -228,9 +207,8 @@ const S = {};
       font-weight: bold;
       margin-bottom: 40px;
       text-align: center;
-      align-items: center;  
-    
-`;
+      align-items: center;    
+  `;
 
  S.LimitWrapper = styled.div`
       display: flex;
@@ -252,8 +230,10 @@ const S = {};
      display: flex;
      flex-direction: column; 
      align-items: center; 
-     margin: 10px; 
- `;
+     /* margin: 10px;  */
+     margin : 0 auto;
+
+  `;
 
 
  S.IconText = styled.p`
@@ -262,7 +242,7 @@ const S = {};
     color: #000000;
     display: flex;
     justify-content: center;
- `;
+  `;
 
 
 
@@ -273,8 +253,7 @@ S.Notice = styled.div`
     margin-bottom: 40px;
     text-align: center;
     align-items: center;  
-     
-`;
+  `;
 
 
 

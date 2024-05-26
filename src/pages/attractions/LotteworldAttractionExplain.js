@@ -46,18 +46,18 @@ const LotteworldAttractionExplain = () => {
      <S.ExplainDescription>{attractions.description}</S.ExplainDescription>
      <S.ExplainImage src={`${process.env.PUBLIC_URL}/AttractionsImage/Lotteworld/at${attractions.id}.jpg`} alt="attraction" />
 
-         <S.IconWrapper>
-             <div>
-                 <img src='/AttractionsImage/at_icon1.png' alt='#' />
-                 <S.Span> 탑승인원 </S.Span> 
-                 <p>{attractions.people}</p>
-             </div>
-             <div>
-                 <img src='/AttractionsImage/at_icon2.png' alt='#' />
-                 <S.Span>이용 정보</S.Span>
-                 <p>{attractions.height}</p>
-             </div>
-         </S.IconWrapper>
+        <S.IconWrapper>
+            <div>
+                <img src='/AttractionsImage/at_icon1.png' alt='#' />
+                <S.Span> 탑승인원 </S.Span> 
+                <p>{attractions.people}</p>
+            </div>
+            <div>
+                <img src='/AttractionsImage/at_icon2.png' alt='#' />
+                <S.Span>이용 정보</S.Span>
+                <p>{attractions.height}</p>
+            </div>
+        </S.IconWrapper>
 
          <S.BigContainer>
             <S.Limit > 
