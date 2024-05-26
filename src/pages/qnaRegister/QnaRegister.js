@@ -9,12 +9,14 @@ const QnaRegister = () => {
     title: '',
     content: '',
     no: null, 
+    company : 'everland'
   });
 
   useEffect(() => {
     fetch('http://localhost:8004/qnalist/list/')
       .then((res) => res.json())
       .then((data) => {
+        const qnaEntries = data.qnalist.filter(entry => entry.company = 'everland' );
         const highestNo = qnaEntries.reduce((max, item) => (item.no > max ? item.no : max), 0);
         setQnaRegister((prev) => ({
           ...prev,
@@ -28,6 +30,7 @@ const QnaRegister = () => {
     fetch('http://localhost:8004/qnaexplain/list/')
       .then((res) => res.json())
       .then((data) => {
+        const qnaEntries = data.qnaexplain.filter(entry => entry.company = 'everland' );
         const highestNo = qnaEntries.reduce((max, item) => (item.no > max ? item.no : max), 0);
         setQnaRegister((prev) => ({
           ...prev,

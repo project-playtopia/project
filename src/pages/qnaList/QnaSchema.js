@@ -6,7 +6,8 @@ const QnaSchema = new Schema({
     no: Number,
     title: String,
     category: String,
-    date: String
+    date: String,
+    company : String
 });
 
 
