@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import BasicSearch from '../../components/search/BasicSearch.jsx';
 import S from './style.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const LotteworldAttraction = () => {
 
@@ -47,9 +49,7 @@ const LotteworldAttraction = () => {
    
     return (
         <S.Background>
-            
-            
-
+            <S.Header1>어트랙션</S.Header1>
             <S.NavParkSelector>
                 <NavLink to={"/attraction/lotteworld"}>롯데월드</NavLink>
                 <span>|</span>
@@ -58,9 +58,13 @@ const LotteworldAttraction = () => {
                 <NavLink to={"/attraction/seoulland"}>서울랜드</NavLink>
             </S.NavParkSelector>
 
-            <S.search className='searchbar'>
+            {/* <S.search className='searchbar'>
               <BasicSearch  shape={"default"} variant={"main"} size={"default"} />
-             </S.search>
+             </S.search> */}
+             <S.SearchWrapper>
+          <S.SearchInput id='search-input'></S.SearchInput>
+          <S.SearchBtn onClick={()=>{}}><FontAwesomeIcon icon={faSearch} size="2x" color="#1FB1D9" /></S.SearchBtn>
+        </S.SearchWrapper>
 
             <div>
                 <S.AttractionsContainer>

@@ -2,6 +2,9 @@ import styled from "styled-components";
 const mainDarkenColor = ({theme}) => theme.PALETTE.primary.main_darken;
 const mainColor = ({theme}) => theme.PALETTE.primary.main;
 
+const h1FontSize = "40px";
+const fontBold = ({theme}) => theme.FONT_WEIGHT.bold;
+
 const S = {};
 
 
@@ -29,6 +32,14 @@ const S = {};
 
  `;
 
+S.Header1 = styled.h1`
+  margin: 30px auto 10px auto;
+  font-size: ${h1FontSize};
+  text-align: center;
+  width: 100%;
+  font-weight: ${fontBold};
+`;
+
 // 3사 셀렉버튼
   S.NavParkSelector = styled.nav`
 	  font-size: 1rem;
@@ -54,20 +65,40 @@ const S = {};
 	};
   `;
 
-// BasicSearch 검색창
- S.search = styled.div`
-   position:absolute;
-   width: 60%;
-   left: 30%;
-   top : 25%;
 
-   @media (max-width: 727px) {
-    /* position: relative; // 절대위치에서 상대위치로 변경 */
-    width: 80%; // 너비를 조정하여 화면에 맞게 만듦
-    left: 5%; // 왼쪽 여백을 조정하여 중앙 정렬
-    margin: 0 auto; // 자동 마진을 사용하여 중앙 정렬
-   };
- `;
+
+S.SearchWrapper = styled.div`
+	padding: 0;
+	width: 400px;
+	height: 3rem;
+	display: flex;
+	align-items: center;
+	margin: 20px;
+`;
+
+S.SearchInput = styled.input`
+	flex-basis: 80%;
+	height: 100%;
+	background-color: #fff;
+	border-color: ${mainColor};
+	border-style: solid;
+	border-width: 1px 0 1px 1px;
+	border-radius: 30px 0 0 30px;
+	outline: none;
+	padding-left: 1rem;
+	font-size: 0.9rem;
+`;
+
+S.SearchBtn = styled.button`
+	flex-basis: 20%;
+	height: 100%;
+	background-color: #fff;
+	border-color: ${mainColor};
+	border-style: solid;
+	border-width: 1px 1px 1px 0;
+	border-radius: 0 30px 30px 0;
+	cursor: pointer;
+`;
 
 
 // 이미지리스트 전체박스
@@ -75,7 +106,7 @@ const S = {};
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
     grid-gap: 30px; // 그리드 사이의 간격
-    margin-top: 110px;
+    margin-top: 50px;
 
      @media(max-width: 727px){
       grid-template-columns: repeat(2, 1fr);
