@@ -3,7 +3,7 @@ import './qna.css'
 
 const QnaRow = ({ children }) => {
     return (
-      <tr className="row">
+      <tr className="QnaRow">
         {children}
       </tr>
     )

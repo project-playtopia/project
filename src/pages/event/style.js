@@ -6,8 +6,10 @@ S.title = styled.div`
     display: flex;
     font-size: 24px;
     justify-content: center;
-    margin: 20px 0px 30px 0;   
-    
+    margin: 20px 0px 30px 0; 
+    @media (max-width: 727px){
+    font-size: 15px;
+    }  
 `
 
 S.everland = styled.div`
@@ -37,12 +39,19 @@ S.H1 = styled.div`
     margin: 120px 0px 20px 0px;
     width: 100%; 
     text-align: center; 
+    @media (max-width: 727px){
+    font-size: 38px;
+    }
     
 `
 S.MainImage = styled.img`
   width: 100%; 
   max-width: 1200px; 
   height: auto; 
+  @media (max-width: 727px){
+    width: 362px;
+    height: 136px;
+    }  
   
 `
 S.MainImagediv = styled.div`
@@ -70,7 +79,13 @@ S.SideBar = styled.div`
     display: flex;
     color: #006C93;
     width: 100%; 
-    max-width: 1200px; 
+    max-width: 1200px;
+    @media (max-width: 727px){
+    width: 362px;
+    height: 36px;
+    font-size: 15px;
+    }  
+
     & svg.bullhorn path {
             color: black;
         }
@@ -81,6 +96,10 @@ S.SideBar = styled.div`
 S.icon = styled.div`
         margin: 0px 40px 0px 60px;
         font-size: 43px;
+        @media (max-width: 727px){
+            margin-left: 20px;
+            font-size:  20px;
+    }  
 `
 
 S.SideBardiv = styled.div`
@@ -99,6 +118,15 @@ S.content = styled.div`
     display: flex;
     align-items: center;
     padding: 0 20px;
+
+    @media (max-width: 727px){
+            width: 362px;
+            height: 200px;
+            border: none;
+            border-bottom: 1px solid #1FB1D9;
+            border-radius: 0;
+    } 
+     
 
     @media screen and (max-width: 1200px) {
         width: 90%; /
@@ -120,19 +148,36 @@ S.ContentImage = styled.img`
     height: 222px;
     margin: 0 0 0 10px;
     border-radius: 30px;
+
+    @media (max-width: 727px){
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+           
+    } 
+    
 `
 S.subtitle = styled.p`
     font-size: 30px;
     color: black;
+    @media (max-width: 727px){
+            font-size: 20px;
+    }   
     
 `
-S.subcontent = styled.div`
+S.subcontent = styled.p`
     font-size: 24px;
     margin: 30px 0 0 0;
-    width: 790px;
     display: flex;
     justify-content: center;
     line-height: 30px;
+    word-break: break-all;
+
+    @media (max-width: 727px){
+            font-size: 14px;
+            word-break: break-all;
+            
+    } 
     
 `
 

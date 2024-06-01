@@ -30,28 +30,32 @@ const LostnFoundExplain = () => {
           if (parseInt(item.no) === parseInt(id) && item.company === company) {
             return (
               <div key={item._id}>
+                   <S.imagebox>
+                  <img src={item.img} alt="분실물 url" />
+                </S.imagebox>
+
                 <S.content>
                   <p>습득 장소 : {companyNames[item.company] || item.company} {item.found}</p>
                   <p>습득물 : {item.item}</p>
                   <p>습득일자 : {item.date}</p>
                   <p>결과 : {item.result}</p>
                 </S.content>
-                <S.imagebox>
-                  <img src={item.img} alt="분실물 url" />
-                </S.imagebox>
 
+                <S.buttonbox>
+        
+        <S.backbutton >
+        <Link style={{color:'#1FB1D9'}} to={`/lostnfound/list/${company}`}>목록으로</Link>
+        </S.backbutton>
+        
+      
 
-                <S.buttonbox style={{marginTop:'500px'}}>
-                  
-                    <BasicButton style={{ backgroundColor: "white", color: "#1FB1D9", border: "1px solid #1FB1D9", marginRight:'50px' }} size={"small"} shape={"default"}>
-                    <Link style={{color:'#1FB1D9'}} to={`/lostnfound/list/${company}`}>목록으로</Link>
-                    </BasicButton>
-                  
-                  <BasicButton size={"small"} shape={"default"} variant={"main"} color={"white"}>
-                    <Link style={{color:'#fff'}}to={`/lostnfound/search/${item.no}/${item.company}`}>찾기</Link>
-                  </BasicButton>
+      <S.okbutton  >
+      <Link style={{color:'#fff'}}to={`/lostnfound/search/${item.no}/${item.company}`}>찾기</Link>
+      </S.okbutton>
 
-                </S.buttonbox>
+    </S.buttonbox>
+
+                
               </div>
             );
           }

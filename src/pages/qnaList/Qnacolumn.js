@@ -3,7 +3,7 @@ import './qna.css'
 
 const Qnacolumn = ({ children }) => {
     return (
-      <td className="column" >
+      <td className="Qnacolumn" >
         {children}
       </td>
     )

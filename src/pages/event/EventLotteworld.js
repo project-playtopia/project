@@ -34,7 +34,7 @@ const EventLotteworld = () => {
         </S.SideBar>
         </S.SideBardiv>
  
-          <S.content >
+      <S.content >
         <S.ContentImage  src={lotteworldimage1} alt="lotteworldimage1"></S.ContentImage >
         <S.contenttitle>
         <Link to={`/event/explain/${1}`}><S.subtitle>루프탑 갤러리</S.subtitle></Link>

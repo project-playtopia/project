@@ -1,9 +1,9 @@
 import React from 'react';
-import './foundlist.css'
+import './foundlist.css';
 
 const LostnFoundTableColumn = ({ children }) => {
     return (
-      <td className="column" >
+      <td className="LostnFoundTableColumn" >
         {children}
       </td>
     )

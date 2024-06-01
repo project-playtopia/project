@@ -108,42 +108,48 @@ const LostnFoundRegisterSeoulland = () => {
       </S.head>
 
       <S.header>
-        <h1 style={{marginRight:"600px", marginBottom:"60px"}}>분실물 등록</h1>
+        <h2 >분실물 등록</h2>
       </S.header>
 
       <div>
+      <S.divbox1>
         <S.subtitle>
-          <p>종류 </p> <S.subp>(필수 항목)</S.subp>
-          <p style={{ marginLeft: '400px' }}>장소 </p><S.subp>(필수 항목)</S.subp>
+          <p >종류 </p> <S.subp>(필수 항목)</S.subp>
+          <S.marginleft>장소 </S.marginleft><S.subp>(필수 항목)</S.subp>
         </S.subtitle>
+        </S.divbox1>
 
         <S.inputbox>
           <S.StyledInput type='text' name='item' placeholder="종류" value={lostnseouland.item} onChange={handleChange} />
-          <S.StyledInput style={{ marginLeft: '250px' }} type='text' name='found' placeholder="장소" value={lostnseouland.found} onChange={handleChange} />
+          <S.StyledInput2  type='text' name='found' placeholder="장소" value={lostnseouland.found} onChange={handleChange} />
         </S.inputbox>
       </div>
 
       <div>
-        <S.subtitle>
-          <p>내용 </p><S.subp style={{ marginRight: '540px' }}>(필수 항목)</S.subp>
-        </S.subtitle>
+      <S.divbox2>
+        <S.subtitle2>
+          <p>내용 </p><S.subp2 >(필수 항목)</S.subp2>
+        </S.subtitle2>
+        </S.divbox2>
+
 
         <S.inputbox>
-          <S.StyledInput style={{ width: '850px', height: '300px' }} type="text" name="content" placeholder="내용을 입력해주세요." value={lostnseouland.content} onChange={handleChange} />
+          <S.StyledInput3  type="text" name="content" placeholder="내용을 입력해주세요." value={lostnseouland.content} onChange={handleChange} />
         </S.inputbox>
       </div>
 
       <S.buttonbox>
-        <BasicButton style={{ backgroundColor: "white", color: "#1FB1D9", border: "1px solid #1FB1D9" }} size={"small"} shape={"default"} color={"white"} variant={"main"}>
-          <Link style={{ color:"#1FB1D9"}} to={`/lostnfound/list/seoulland`}>뒤로가기</Link>
-        </BasicButton>
-
-        <BasicButton style={{ marginLeft: '250px' }} size={"small"} shape={"default"} color={"white"} variant={"main"} onClick={handleSubmit}>
-          <Link style={{ color:"#fff"}}to={`/lostnfound/list/seoulland`}>
-            등록하기
+      <S.backbutton >
+          <Link to={`/lostnfound/list/seoulland`}>뒤로가기
           </Link>
-        </BasicButton>
+          </S.backbutton>
+
+        <S.okbutton  onClick={handleSubmit}>
+          <Link style={{color:"#fff"}} to={`/lostnfound/list/seoulland`}>등록하기</Link>
+        </S.okbutton>
       </S.buttonbox>
+
+
     </>
   );
 };

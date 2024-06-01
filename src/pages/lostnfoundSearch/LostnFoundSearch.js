@@ -84,26 +84,28 @@ const LostnFoundSearch = () => {
       </S.header>
 
       <S.container>
-        <S.titlebox>
-          <div>
-            <p>이름 :<S.StyledInput style={{marginLeft:"30px",width:"400px", height:"40px"}}type='text' /></p>
-            <p>연락처 : <S.StyledInput style={{marginRight:"15px",marginLeft:"30px",width:"110px", height:"40px"}} type='text' />
-            - <S.StyledInput style={{marginLeft:"15px",marginRight:"15px",width:"110px", height:"40px"}} type='text' /> - 
-              <S.StyledInput style={{marginLeft:"15px",width:"110px", height:"40px"}} type='text' /></p> 
+      <S.titlebox>
+        <div>
+          <p>이름 :<S.StyledInput  type='text' /></p>
+          <p>연락처 : 
+            <S.StyledInput2  type='text' />
+            - <S.StyledInput3  type='text' /> - 
+            <S.StyledInput4 type='text' />
+          </p> 
 
-              {lostnfoundlist.map(item => {
-              const startDate = item.date;
-              const endDate = addSevenDays(startDate);
-              
-                return (
-                  <div key={item._id}>
-                    <p>찾는 물건 : {item.item}</p>
-                    <p>수령 가능 기간 : {startDate} ~ {endDate}</p>
-                  </div>
-                        );
-                      })}
-            </div>
-        </S.titlebox>
+          {lostnfoundlist.map(item => {
+            const startDate = item.date;
+            const endDate = addSevenDays(startDate);
+            
+            return (
+              <div key={item._id}>
+                <S.subp>찾는 물건 : {item.item}</S.subp>
+                <S.subp2>수령 가능 기간 : {startDate} ~ {endDate}</S.subp2>
+              </div>
+            );
+          })}
+        </div>
+      </S.titlebox>
         
         <S.contentbox>
           <S.ptitle>분실물이 본인의 것이 아닌 경우 법적 책임은 지지 않습니다.</S.ptitle>
@@ -115,22 +117,25 @@ const LostnFoundSearch = () => {
           <p>분실물 찾기 신청인은 본인을 증명할 수 있는 신분증(운전 면허증, 여권, 학생증 등 ) 또는 서류를 준비해주시길 바랍니다.</p>
           <S.ptitle>분실물 찾아가기 신청 후 1주일 내에 방문해 찾아가야 합니다.</S.ptitle>
           <p>분실물 신청 후 1주일 동안 “처리중” 상태가 되며, 기간 내 수령하지 않을 시 다시 “보관 중” 상태로 변경됩니다.</p>
+
           <p>
-            <input type='checkbox' onChange={handleCheckboxChange} /> 위 내용을 모두 확인하였습니다. (필수)
+            <S.StyledInput5 type='checkbox' onChange={handleCheckboxChange} /> 위 내용을 모두 확인하였습니다. (필수)
           </p>
         </S.contentbox>
 
         <div style={{marginTop:"50px"}}>
-          <BasicButton style={{ backgroundColor: "white", color: "#1FB1D9", border: "1px solid #1FB1D9" }}
-            size={"small"} shape={"default"} color={"white"} variant={"main"}>
-            <Link style={{ color:"#1FB1D9"}} to={`/lostnfound/list/lotteworld`}>뒤로가기</Link>
-          </BasicButton>
+        <S.buttonbox>
+      <S.backbutton >
+          <Link to={`/lostnfound/list/lotteworld`}>뒤로가기
+          </Link>
+          </S.backbutton>
 
-          <BasicButton style={{ marginLeft: '250px' }} size={"small"} shape={"default"} color={"white"} variant={"main"} onClick={handleRegisterClick}>
-            <Link style={{ color:"#fff"}}to={`/lostnfound/list/lotteworld`}>
-              등록하기
-            </Link>
-          </BasicButton>
+        <S.okbutton  onClick={handleRegisterClick}>
+          <Link style={{color:"#fff"}} to={`/lostnfound/list/lotteworld`}>등록하기</Link>
+        </S.okbutton>
+      </S.buttonbox>
+
+          
         </div>
       </S.container>
     </>

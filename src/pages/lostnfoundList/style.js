@@ -41,16 +41,7 @@ S.margin = styled.div`
     margin-top: 150px;
 `
 
-S.head = styled.div`
-    display: flex;
-    width: 1200px;
-    justify-content: center;
-    align-items: center;
-    font-size: 50px;
-    flex-direction: column;
-    margin: 30px auto;
 
-`
 
 S.basicbox = styled.div`
     display: flex;
@@ -79,6 +70,9 @@ S.header = styled.div`
         & h1 {
             font-size: 50px;
             margin: 20px;
+            @media (max-width: 727px){
+                font-size: 38px;
+                }  
 
         }
 
@@ -92,4 +86,80 @@ S.header = styled.div`
 
 `
 
+S.SearchWrapper = styled.div`
+display: flex;
+border-radius: 30px;
+@media (max-width: 727px){
+    grid-column: 1 / 5;
+}
+`;
+
+S.SearchInput = styled.input`
+width: 620px;
+height: 60px;
+background-color: #fff;
+border: 1px solid #1FB1D9;
+border-radius: 30px 0 0 30px;
+outline: none;
+padding-left: 1rem;
+font-size: 15px;
+@media (max-width: 727px){
+    width: 300px;
+    height: 40px;
+}
+`;
+
+S.SearchBtn = styled.button`
+
+background-color: #fff;
+border: 1px solid #1FB1D9;
+border-radius: 0 30px 30px 0;
+cursor: pointer;
+margin-right: 40px;
+@media (max-width: 727px){
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+`;
+
+S.title = styled.div`
+    display: flex;
+    font-size: 24px;
+    justify-content: center;
+    margin: 20px 0px 30px 0; 
+    margin-top: 60px;
+    @media (max-width: 727px){
+    font-size: 15px;
+    }  
+`
+S.backbutton = styled.button`
+  width: 140px;
+  height: 55px;
+  background-color: white;
+  color: #1FB1D9;
+  border: 1px solid #1FB1D9;
+  border-radius: 30px 30px 30px 30px;
+  @media (max-width: 727px){
+        width: 90px;
+        height: 40px;
+        
+  }
+  `
+
+  S.buttonbox = styled.div`
+     display: flex;
+  justify-content: center;
+  align-items: center;
+
+  
+
+  @media (max-width: 727px){
+    flex-direction: column-reverse;
+    margin-right: 0px;
+    
+    
+  }
+
+`
 export default S;

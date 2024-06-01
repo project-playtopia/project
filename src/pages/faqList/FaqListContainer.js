@@ -4,9 +4,10 @@ import FaqTable from './FaqTable.js';
 import FaqRow from './FaqRow.js';
 import Faqcolumn from './Faqcolumn.js';
 import BasicButton from '../../components/button/BasicButton.jsx';
-import BasicSearch from '../../components/search/BasicSearch.jsx';
 import S from './style.js';
-import './faq.css';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 const FaqListContainer = () => {
   const [faqlist, setFaqList] = useState([]);
@@ -60,26 +61,33 @@ const FaqListContainer = () => {
 
 
   return (
-    <div className="faq-list-container">
+    <div >
       <S.header>
       <h1>FAQ</h1>
-      <BasicSearch size={"default"} shape={"default"} classname="serach" placeholder="검색어를 입력하세요." onChange={handleSearchChange}/>
+         <S.SearchWrapper>
+            <S.SearchInput ></S.SearchInput>
+            <S.SearchBtn ><FontAwesomeIcon icon={faSearch} size="2x" color="#1FB1D9" /></S.SearchBtn>
+          </S.SearchWrapper>
       </S.header>
       
-      <FaqTable headersName={['No', '카테고리', '제목', '등록일']} >
-      {page.map((item, i) => (
-        <FaqRow key={i} className="tablerow">
-          <Faqcolumn>{item.no}</Faqcolumn>
-          <Faqcolumn className="faq-title">{item.title}</Faqcolumn>
-          <Faqcolumn>
-            <Link className="faq-link" to={`/faq/explain/${item.no}`}>
-              {item.content}
-            </Link>
-          </Faqcolumn>
-          <Faqcolumn>{item.date}</Faqcolumn>
-        </FaqRow>
-      ))}
-      </FaqTable>
+     
+
+      <div class="Faqtablerow1">
+          <FaqTable headersName={['No', '카테고리', '제목', '등록일']} >
+              {page.map((item, i) => (
+                <FaqRow key={i} className="tablerow">
+                  <Faqcolumn>{item.no}</Faqcolumn>
+                  <Faqcolumn className="faq-title">{item.title}</Faqcolumn>
+                  <Faqcolumn>
+                    <Link className="faq-link" to={`/faq/explain/${item.no}`}>
+                      {item.content}
+                    </Link>
+                  </Faqcolumn>
+                  <Faqcolumn>{item.date}</Faqcolumn>
+                </FaqRow>
+              ))}
+              </FaqTable>
+        </div>
       
       <S.pagebutton>
         {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
@@ -96,6 +104,8 @@ const FaqListContainer = () => {
           </BasicButton>
         ))}
       </S.pagebutton>
+
+    
     </div>
   );
 };

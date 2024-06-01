@@ -3,7 +3,7 @@ import './foundlist.css';
 
 const LostnFoundTableRow = ({ children }) => {
     return (
-      <tr className="row">
+      <tr className="LostnFoundTableRow">
         {children}
       </tr>
     );

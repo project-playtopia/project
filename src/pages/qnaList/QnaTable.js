@@ -5,11 +5,11 @@ const QnaTable = props => {
   const { headersName, children } = props;
 
   return (
-    <table className="table">
+    <table className="QnaTable">
       <thead>
         <tr>
           {headersName.map((item, i) => {
-              return (<td className="head" key={i}>{ item }</td>)
+              return (<td className="QnaTablehead" key={i}>{ item }</td>)
             })
             }
         </tr>

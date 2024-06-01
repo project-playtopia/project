@@ -6,6 +6,8 @@ import LostnFoundTableRow from './LostnFoundTableRow.js';
 import LostnFoundTableColumn from './LostnFoundTableColumn.js';
 import BasicSearch from '../../components/search/BasicSearch.jsx';
 import BasicButton from '../../components/button/BasicButton.jsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const LostnFoundListEverland = () => {
   const [lostList, setLostList] = useState([]);
@@ -48,29 +50,32 @@ const LostnFoundListEverland = () => {
   return (
     <>
       <S.margin></S.margin>
-      <S.head>
+     
         <S.header>
           <h1>분실물 리스트</h1>
         </S.header>
+
         <S.title>
           <Link to={"/lostnfound/list/lotteworld"}><S.lotteworld>롯데월드</S.lotteworld></Link>
           <S.everland color='#1FB1D9'>에버랜드</S.everland>
           <Link to={"/lostnfound/list/seoulland"}><S.seoulland>서울랜드</S.seoulland></Link>
-        </S.title>
-        <S.basicbox>
-          <BasicSearch
-            size={"default"}
-            shape={"default"}
-            className="search"
-            placeholder="검색어를 입력하세요."
-            onChange={handleSearchChange}
-          />
-          <BasicButton size={"small"} shape={"default"} variant={"main"} color={"white"}>
-            <Link to={`/lostnfound/register/everland`}>글쓰기</Link>
-          </BasicButton>
-        </S.basicbox>
-      </S.head>
+       </S.title>
 
+       <S.title>
+          <S.SearchWrapper>
+            <S.SearchInput placeholder="검색어를 입력하세요." onChange={handleSearchChange} ></S.SearchInput>
+            <S.SearchBtn ><FontAwesomeIcon icon={faSearch} size="2x" color="#1FB1D9" /></S.SearchBtn>
+          
+
+           <S.backbutton >
+        <Link to={`/lostnfound/register/everland`}>등록하기
+        </Link>
+        </S.backbutton>
+          </S.SearchWrapper>  
+          </S.title>
+
+
+      <div class="tablerow1">
       <LostnFoundTable headersName={['No', '습득물', '습득장소', '습득날짜', '처리결과']}>
         {searcheverland
         .filter(item => item.company === "everland")
@@ -88,7 +93,7 @@ const LostnFoundListEverland = () => {
           </LostnFoundTableRow>
         ))}
       </LostnFoundTable>
-
+        </div>
       <S.pagebutton>
         {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
           <BasicButton
