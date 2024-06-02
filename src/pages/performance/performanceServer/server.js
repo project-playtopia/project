@@ -1,5 +1,5 @@
 import express from 'express';
-import router from './router.js';
+import performanceRouter from './performanceRouter.js';
 import connect from './connect.js';
 import cors from 'cors'
 import bodyParser from 'body-parser'
@@ -27,7 +27,7 @@ app.use(cors({
 
 app.use(express.json());
 // 라우팅을 가로채어 localhost:8000/attractions/작성한 라우팅
-app.use('/performance', router)
+app.use('/performance', performanceRouter);
 
 // 서버 실행
 app.listen(port, () => {
