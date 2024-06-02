@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const EventLotteworld = () => {
   return (
-    <div>
+    <div className='notosanskr'>
       <S.H1>이벤트 공지사항</S.H1>
       <S.title>
         <S.lotteworld color='#1FB1D9'>롯데월드</S.lotteworld>

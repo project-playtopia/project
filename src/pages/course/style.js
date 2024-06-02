@@ -26,6 +26,10 @@ S.H1 = styled.h1`
   text-align: center;
   margin-top: 10%;
   margin-bottom: 2%;
+  @media (max-width: 727px) {
+    margin-top: 25%;
+    margin-bottom:10%;
+  }
 `;
 
 
@@ -56,6 +60,9 @@ S.NavParkSelector = styled.nav`
 		color: ${mainColor};
 		font-weight: 600;
 	}
+  @media (max-width: 727px) {
+    margin-bottom: 10%;
+  }
 `;
 
 
@@ -65,6 +72,9 @@ display: flex;
 flex-direction: row;
 justify-content: space-around;
 margin-top: 5%;
+@media (max-width: 727px) {
+    margin-bottom: 10%;
+  }
 `
 
 S.AttractionsContainer = styled.div`

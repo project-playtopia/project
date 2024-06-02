@@ -42,7 +42,7 @@ const SearchId = () => {
   };
 
   return (
-    <S.Background>
+    <S.Background className='notosanskr'>
       <S.H1>아이디 찾기</S.H1>
       <S.Input
         value={phoneNumber}

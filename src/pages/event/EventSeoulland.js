@@ -10,7 +10,7 @@ import { faBullhorn } from '@fortawesome/free-solid-svg-icons';
 
 const EventSeoulland = () => {
   return (
-    <div>
+    <div className='notosanskr'>
     <S.H1>이벤트 공지사항</S.H1>
     <S.title>
     <Link to={"/event/lotteworld"} ><S.lotteworld>롯데월드</S.lotteworld></Link>

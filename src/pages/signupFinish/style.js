@@ -15,6 +15,10 @@ S.Background = styled.div`
 S.Image = styled.img`
   width: 600px;
   height: 170px;
+  @media (max-width: 727px) {
+    width : 360px;
+    height: 170px;
+  }
 `
 
 S.P = styled.p`

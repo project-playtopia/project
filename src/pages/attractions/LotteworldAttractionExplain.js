@@ -41,7 +41,7 @@ const LotteworldAttractionExplain = () => {
     return (
    
             
-   <S.ExplainWrapper>
+   <S.ExplainWrapper className='notosanskr'>
      <S.ExplainH1>{attractions.title}</S.ExplainH1>
      <S.ExplainDescription>{attractions.description}</S.ExplainDescription>
      <S.ExplainImage src={`${process.env.PUBLIC_URL}/AttractionsImage/Lotteworld/at${attractions.id}.jpg`} alt="attraction" />

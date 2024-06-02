@@ -43,7 +43,7 @@ const MyPageQuestion = () => {
   }
   
   return (
-    <S.Background>
+    <S.Background className='notosanskr'>
       <S.ProfileBackground>
         <S.Icon icon={faCircleUser}/>
         <S.UserP>{user ? `${user.id}님, 환영합니다` : '로그인이 필요합니다.'}</S.UserP>

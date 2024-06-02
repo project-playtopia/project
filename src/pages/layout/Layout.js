@@ -28,7 +28,7 @@ const Layout = () => {
   const { user ,setUser } = useUser();
 
   return (
-    <S.Background>
+    <S.Background className='notosanskr'>
       <S.Wrapper>
         <S.Main>
           <Outlet />
