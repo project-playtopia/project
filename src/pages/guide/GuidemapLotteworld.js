@@ -30,7 +30,7 @@ const GuidemapLotteworld = () => {
 }, [])
 
   return (
-    <S.Background>
+    <S.Background className='notosanskr'>
       <S.H1>가이드맵</S.H1>
       <S.NavParkSelector>
         <NavLink to={"/guidemap/lotteworld"}>

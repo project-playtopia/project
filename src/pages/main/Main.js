@@ -12,7 +12,7 @@ import { NavLink } from "react-router-dom";
 const Main = () => {
   const [isHovered, setIsHovered] = useState({ lotteworld: false, everland: false, seoulland: false });
   return (
-    <S.Background>
+    <S.Background className='notosanskr'>
       <S.Main>
          <S.ImageContainer
           onMouseEnter={() => setIsHovered({ ...isHovered, lotteworld: true })}

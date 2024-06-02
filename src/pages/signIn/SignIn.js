@@ -18,7 +18,7 @@ const SignIn = () => {
   const { setUser } = useUser();
 
   return (
-    <S.Background>
+    <S.Background className='notosanskr'>
       <S.Container>
         <S.H1>로그인</S.H1>
         <S.P>회원 아이디와 비밀번호로 로그인하세요</S.P>

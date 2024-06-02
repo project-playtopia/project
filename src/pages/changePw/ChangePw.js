@@ -47,7 +47,7 @@ const ChangePw = () => {
   };
 
   return (
-    <S.Background>
+    <S.Background className='notosanskr'>
       <S.H1>비밀번호 변경</S.H1>
       <form onSubmit={handleSubmit(onSubmit)}>
         <S.IdInputContainer>

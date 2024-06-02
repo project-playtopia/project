@@ -62,7 +62,7 @@ const EventExplain = () => {
     <S.margin ></S.margin >
     
     
-      <S.Container>
+      <S.Container className='notosanskr'>
         <S.head>공지</S.head>
         <S.title>{title}</S.title>
         <S.date>2024.02.12</S.date>

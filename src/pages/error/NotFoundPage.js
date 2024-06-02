@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 const NotFoundPage = () => {
   return (
-    <S.Background>
+    <S.Background className='notosanskr'>
       <S.Image src={logo}/>
       <S.H1>페이지를 찾을 수 없습니다</S.H1>
       <NavLink to={"/"}>

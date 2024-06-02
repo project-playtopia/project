@@ -46,7 +46,7 @@ const EverLandAttraction = () => {
    
     return (
 
-     <S.Background>
+     <S.Background className='notosanskr'>
 
        <S.NavParkSelector>
         <NavLink to={"/attraction/lotteworld"}>롯데월드</NavLink>

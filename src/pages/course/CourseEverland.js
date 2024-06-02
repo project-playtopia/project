@@ -28,7 +28,7 @@ const CourseEverland = () => {
     }
   }, [activeIndex]);
   return (
-    <S.Background>
+    <S.Background className='notosanskr'>
       <S.H1>추천코스</S.H1>
       <S.NavParkSelector>
         <NavLink to={"/course/lotteworld"}>

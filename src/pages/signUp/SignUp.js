@@ -98,7 +98,7 @@ const SignUp = () => {
             navigate('/signUpFinish')
   }};
   return (
-    <S.Background>
+    <S.Background className='notosanskr'>
       <S.FormContainer>
       <S.H1>회원가입</S.H1>
       <form onSubmit={handleSubmit(handleSignUpClick)}>

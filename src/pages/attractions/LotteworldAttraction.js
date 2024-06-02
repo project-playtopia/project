@@ -50,7 +50,7 @@ const LotteworldAttraction = () => {
     ))
    
     return (
-        <S.Background>
+        <S.Background className='notosanskr'>
             
             
 
