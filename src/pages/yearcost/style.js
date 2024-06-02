@@ -107,6 +107,7 @@ S.GridWrapper = styled.div`
 	display: grid;
 	grid-template-columns: repeat(4, 20%);
 	grid-auto-rows: minmax(17rem, auto);
+	
 	gap: 2vw;
 	justify-content: space-between;
 	margin: 30px 0;

@@ -1,266 +1,89 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import S from './style.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import PerformanceItem from './PerformanceItem.jsx';
 
 
 const Performance = () => {
-  let dayNow = new Date();
-  const [selectedDate, setSelectedDate] = useState(null);
+  HTMLCollection.prototype.forEach = Array.prototype.forEach;
+
+  const today = new Date();
+  let month;
+  let date;
+  const dateList = [];
+  for (let i=0; i<7; i++){
+    month = today.getMonth() + 1;
+    date = today.getDate();
+    dateList.push(month + " / " + date);
+    today.setDate(today.getDate() + 1);
+  } 
+  
+  const [dateState, setDateState] = useState(dateList[0]);
+  const [performanceList, setPerformanceList] = useState([]);
 
 
-  const dateLists = {
-    "4/21": [
-      { 
-        id: 1, 
-        image: "/lotte_19275_main.jpg", 
-        parkName: "롯데월드", 
-        time: "15:00", 
-        performanceName: "런런 !프렌즈", 
-        location: "알파인스테이지" 
-      },
-      { 
-        id: 2, 
-        image: "/lotte_19275_main.jpg", 
-        parkName: "에버랜드", 
-        time: "12:00", 
-        performanceName: "매지컬 스케치북", 
-        location: "알파인스테이지" 
-      },
-      { 
-        id: 3, 
-        image: "/AttractionsImage/performance/seoul1.jpg", 
-        parkName: "서울랜드", 
-        time: "10:00", 
-        performanceName: "뮤직 로드쇼", 
-        location: "통나무 소극장" 
-      },
-    ],
+  
+  const onClickToSelectDate = (d) => {
+    setDateState(d);
+  }
 
-    "4/22": [
-      { 
-        id: 4, 
-        image: "/AttractionsImage/performance/lotte2.jpg", 
-        parkName: "롯데월드", 
-        time: "11:00", 
-        performanceName: "키디밴드", 
-        location: "키디존" 
-      },
-      { 
-        id: 5, 
-        image: "/lotte_19275_main.jpg", 
-        parkName: "에버랜드", 
-        time: "12:00", 
-        performanceName: "슈퍼윙스 애니멀 톡", 
-        location: "알파인스테이지" 
-      },
-      { 
-        id: 6, 
-        image: "/AttractionsImage/performance/seoul2.jpg", 
-        parkName: "서울랜드", 
-        time: "18:00", 
-        performanceName: " 스트릿 저글링 쇼!", 
-        location: "세계의 광장" 
-      },
-    ],
-    "4/23": [
-      { 
-        id: 7, 
-        image: "/lotte_19275_main.jpg", 
-        parkName: "롯데월드", 
-        time: "15:00", 
-        performanceName: "로티스 퍼레이드", 
-        location: "어드벤처 1층 " 
-      },
-      { 
-        id: 8, 
-        image: "/lotte_19275_main.jpg", 
-        parkName: "에버랜드", 
-        time: "12:00", 
-        performanceName: "레니의 컬러풀드림", 
-        location: "알파인스테이지" 
-      },
-      { 
-        id: 9, 
-        image: "/lotte_19275_main.jpg", 
-        parkName: "서울랜드", 
-        time: "20:00", 
-        performanceName: "키즈 나이트파티", 
-        location: "세계의 광장" 
-      },
-    ],
-    "4/24": [
-      { 
-        id: 10, 
-        image: "/lotte_19275_main.jpg", 
-        parkName: "롯데월드", 
-        time: "11:00", 
-        performanceName: "월드팝 밴드 쇼", 
-        location: "만남의 광장" 
-      },
-      { 
-        id: 11, 
-        image: "/lotte_19275_main.jpg", 
-        parkName: "에버랜드", 
-        time: "14:00", 
-        performanceName: "카니발 판타지", 
-        location: "알파인스테이지" 
-      },
-      { 
-        id: 12, 
-        image: "/lotte_19275_main.jpg", 
-        parkName: "서울랜드", 
-        time: "17:00", 
-        performanceName: "애니멀킹덤", 
-        location: "이벤트홀" 
-      },
-    ],
-    "4/25": [
-      { 
-        id: 13, 
-        image: "/lotte_19275_main.jpg", 
-        parkName: "롯데월드", 
-        time: "19:00", 
-        performanceName: "못말리는 그리피", 
-        location: "어린이 동화극장" 
-      },
-      { 
-        id: 14, 
-        image: "/lotte_19275_main.jpg", 
-        parkName: "에버랜드", 
-        time: "12:00", 
-        performanceName: "카피바라 애니멀톡", 
-        location: "알파인스테이지" 
-      },
-      {
-      id: 15, 
-      image: "/lotte_19275_main.jpg", 
-      parkName: "서울랜드", 
-      time: "15:00", 
-      performanceName: "플라워즈업! 로드쇼", 
-      location: "서울랜드 전역" 
-      },
-    ],
-    "4/26": [
-      { 
-        id: 16, 
-        image: "/lotte_19275_main.jpg", 
-        parkName: "롯데월드", 
-        time: "14:00", 
-        performanceName: "신비의 동화나라", 
-        location: "가든 스테이지" 
-      },
-      { 
-        id: 17, 
-        image: "/lotte_19275_main.jpg", 
-        parkName: "에버랜드", 
-        time: "16:00", 
-        performanceName: "애니멀톡", 
-        location: "알파인스테이지" 
-      },
-      { 
-        id: 18, 
-        image: "/lotte_19275_main.jpg", 
-        parkName: "서울랜드", 
-        time: "20:00", 
-        performanceName: "레이저쇼", 
-        location: "알파인스테이지" 
-      },
-    ],
-    "4/27": [
-      { 
-        id: 19, 
-        image: "/lotte_19275_main.jpg", 
-        parkName: "롯데월드", 
-        time: "12:00", 
-        performanceName: "재즈 앙상블", 
-        location: "만남의 광장" 
-      },
-      { 
-        id: 20, 
-        image: "/lotte_19275_main.jpg", 
-        parkName: "에버랜드", 
-        time: "18:00", 
-        performanceName: "주크박스", 
-        location: "알파인스테이지" 
-      },
-      { 
-        id: 21, 
-        image: "/lotte_19275_main.jpg", 
-        parkName: "서울랜드", 
-        time: "21:00", 
-        performanceName: "루나-빛의전설", 
-        location: "지구별무대" 
-      },
-    ],
+  const getData = async () => {
+    let tempDate = dateState.split(' ');
+    // '6 / 2'
+    // ['6', '/' , '2']
+    // 0602
+    // 데이터 형식에 맞게 변환하는 것을 parsing(파싱)이라고 한다.
+    let parseDate = ((parseInt(tempDate[0]) < 10) ? "0" + tempDate[0] : tempDate[0]) + ((parseInt(tempDate[2]) < 10) ? "0" + tempDate[2] : tempDate[2]);
     
-  };
+    const res = await fetch(`http://localhost:8000/performance/list?date=${parseDate}`);
+    const data = await res.json();
+    return await data;
+  }
 
-  const handleButtonClick = (date) => {
-    setSelectedDate(date); // 선택된 날짜 상태 업데이트
-  };
-  
-  // 선택된 날짜에 따른 공연 리스트를 시간 순으로 정렬
+  useEffect(()=>{
+    document.getElementById("datewrapper").children.forEach((e)=>{
+      if(e.innerText === dateState){
+        e.classList.add('active');
+      }else{
+        e.classList.remove('active');
+      }
+    });
+    
+    getData()
+    .then((data)=>{
+      console.log(data);
+      setPerformanceList(data);
+    });
 
+  },[dateState]);
 
-  const getSortedPerformancesByTime = (date) => {
-    const performances = dateLists[date];
-    if (!performances) {
-      return [];
-    }
-    return performances.sort((a, b) => {
-      const timeA = a.time.split(':').join(''); 
-      const timeB = b.time.split(':').join(''); 
-      return timeA.localeCompare(timeB); 
-    }).slice(0, 3); // 결과 배열의 상위 3개 요소만 반환
-  };
-  
   return (
-    <div >
-      <S.Title>공연일정</S.Title>
-      <S.Div>
-
-      {Object.keys(dateLists).map((date, i) => {
-        
-          let buttonDate = new Date(dayNow);
-          buttonDate.setDate(buttonDate.getDate() + i);
-
-
-          let displayDate = `${buttonDate.getMonth() + 1}.${buttonDate.getDate()}`;
-
-          return (
-            <S.Button
-              key={date}
-              onClick={() => handleButtonClick(date)}
-              isSelected={selectedDate === date}
-            >
-              {displayDate}
-            </S.Button>
-          );
-        })}
-
-  
-
-
-      </S.Div>
-
-      
-
-      {/*퍼포먼스 리스트*/}
-      <S.Centerul>
-      {selectedDate && getSortedPerformancesByTime(selectedDate).map((item) => (
-        <li key={item.id} style={{ display: 'flex', alignItems: 'center', marginBottom: '20px', flexDirection: 'row' }}>
-          <S.Img src={item.image} alt="공연 이미지"  />
-          <S.List>
-            <p> <FontAwesomeIcon icon={faLocationDot} style={{color: '#FE78C0'}}></FontAwesomeIcon>  {item.parkName}
-            <span>  <FontAwesomeIcon icon = {faClock}></FontAwesomeIcon>  {item.time} </span></p>
-            <p>{item.performanceName}</p> 
-            <p>{item.location}</p>
-          </S.List> 
-        </li>
-      ))}
-      </S.Centerul>
+    <div className='notosanskr'>
+      <S.Container>
+        <S.Header1>공연 일정</S.Header1>
+        <S.DateWrapper id='datewrapper'>
+          {
+            dateList.map((d) => (
+              <S.DateSelector onClick={()=>{onClickToSelectDate(d)}}>{d}</S.DateSelector>
+            ))
+          }
+        </S.DateWrapper>
+        <S.ItemContainer>
+          {
+            performanceList.map((e)=>(
+              <PerformanceItem
+                img={e.img}
+                title={e.title}
+                parkName={e.park_name}
+                time={e.time}
+                location={e.location}
+              />
+            ))
+          }
+        </S.ItemContainer>
+      </S.Container>
     </div>
   );
 };
