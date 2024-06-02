@@ -6,6 +6,8 @@ import Qnacolumn from './Qnacolumn.js';
 import BasicButton from '../../components/button/BasicButton.jsx';
 import S from './style.js';
 import BasicSearch from '../../components/search/BasicSearch.jsx';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const QnaListContainer = () => {
   const [qnalist, setQnaList] = useState([]);
@@ -61,12 +63,17 @@ const QnaListContainer = () => {
     <>
       <S.header>
         <h1>QnA</h1>
-        <BasicSearch size={"default"} shape={"default"} classname="serach" placeholder="검색어를 입력하세요." onChange={handleSearchChange}
-        />
+        <S.SearchWrapper>
+            <S.SearchInput placeholder="검색어를 입력하세요." onChange={handleSearchChange} ></S.SearchInput>
+            <S.SearchBtn ><FontAwesomeIcon icon={faSearch} size="2x" color="#1FB1D9" /></S.SearchBtn>
+          </S.SearchWrapper>
       </S.header>
 
+   
       <S.contanier>
-        <QnaTable headersName={['No', '카테고리', '제목', '등록일']}>
+
+      <div class="Qnatablerow1">
+        <QnaTable className="QnaTable" headersName={['No', '카테고리', '제목', '등록일']}>
           {page.map((item, i) => (
             <QnaRow key={i} className="tablerow">
               <Qnacolumn>{item.no}</Qnacolumn>
@@ -78,7 +85,8 @@ const QnaListContainer = () => {
             </QnaRow>
           ))}
         </QnaTable>
-        
+        </div>
+
         <S.pagebutton>
           {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNumber) => (
             <BasicButton
@@ -97,13 +105,15 @@ const QnaListContainer = () => {
           ))}
         </S.pagebutton>
 
-        <S.button>
-          <BasicButton style={{ marginLeft: '900px' }} size={"small"} shape={"default"} variant={"main"} color={"white"}>
-            <Link style={{ color: "#fff" }} to={`/qna/register`}>
-              글쓰기
-            </Link>
-          </BasicButton>
-        </S.button>
+        <S.buttonbox>
+        <S.okbutton >
+          <Link style={{color:"#fff"}} to={`/qna/register`}>등록하기</Link>
+        </S.okbutton>
+        
+    
+      </S.buttonbox>
+
+       
       </S.contanier>
     </>
   );

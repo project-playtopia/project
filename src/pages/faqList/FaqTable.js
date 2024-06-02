@@ -1,15 +1,15 @@
 import React from 'react';
-import './faq.css'
+import './faq.css';
 
 const FaqTable = props => {
   const { headersName, children } = props;
 
   return (
-    <table className="table">
+    <table className="FaqTable">
       <thead>
         <tr>
           {headersName.map((item, i) => {
-              return (<td className="head" key={i}>{ item }</td>)
+              return (<td className="FaqTablehead" key={i}>{ item }</td>)
             })
             }
         </tr>

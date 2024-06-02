@@ -1,9 +1,9 @@
 import React from 'react';
-import './faq.css'
+import './faq.css';
 
 const FaqRow = ({ children }) => {
     return (
-      <tr className="row">
+      <tr className="FaqRow">
         {children}
       </tr>
     )

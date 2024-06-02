@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import BasicButton from '../../components/button/BasicButton.jsx';
 import S from './style.js';
 
 const QnaRegister = () => {
@@ -96,16 +95,17 @@ const QnaRegister = () => {
           QnA
         </S.StyledHeader>
         <S.StyledHeaderBox>
-          <p style={{ marginLeft: '120px'}}>빠른 시일 내에 답변드리겠습니다</p>
+          <p>빠른 시일 내에 답변드리겠습니다</p>
         </S.StyledHeaderBox>
       </S.CenteredContainer>
 
       <div>
+        <S.divbox1>
         <S.subtitle>
           <p >카테고리 </p> <S.subp>(필수 항목)</S.subp>
-          <p style={{ marginLeft: '400px'}}>구분 </p><S.subp>(필수 항목)</S.subp>
+          <S.marginleft>구분 </S.marginleft><S.subp>(필수 항목)</S.subp>
         </S.subtitle>
-
+        </S.divbox1>
         <S.inputbox>
         <S.category name="category"  value={qnaregister.category} onChange={handleChange}>
           <option value="">카테고리를 선택하세요</option>
@@ -116,45 +116,54 @@ const QnaRegister = () => {
           <option value="장애인 탑승예약제">장애인 탑승예약제</option>
           <option value="탑승예약제/싱글라이더">탑승예약제/싱글라이더</option>
         </S.category>
-        <S.category name="division" value={qnaregister.division} onChange={handleChange} style={{ marginLeft: '200px'}}>
+
+        <S.category2 name="division" value={qnaregister.division} onChange={handleChange}>
           <option value="">방문 전</option>
           <option value="방문 후">방문 후</option>
-        </S.category>
+        </S.category2>
+
         </S.inputbox>
       </div>
 
-      <div>
-        <S.subtitle>
-          <p>제목 </p><S.subp style={{ marginRight: '540px'}}>(필수 항목)</S.subp>
-        </S.subtitle>
+      <S.divbox2>
+        <S.subtitle2>
+          <p>제목 </p><S.subp>(필수 항목)</S.subp>
+        </S.subtitle2>
+      </S.divbox2>
 
         <S.inputbox>
-          <S.StyledInput style={{ width: '850px'}} type="text" name="title" placeholder="제목을 입력해주세요."  value={qnaregister.title} onChange={handleChange} />
+          <S.StyledInput2 type="text" name="title" placeholder="제목을 입력해주세요."  value={qnaregister.title} onChange={handleChange} />
         </S.inputbox>
-      </div>
+      
 
       <div>
-        <S.subtitle>
-          <p>내용 </p><S.subp style={{ marginRight: '540px'}}>(필수 항목)</S.subp>
-        </S.subtitle>
+      <S.divbox2>
+        <S.subtitle2>
+          <p>내용 </p><S.subp >(필수 항목)</S.subp>
+        </S.subtitle2>
+       </S.divbox2>
 
         <S.inputbox>
-          <S.StyledInput style={{ width: '850px', height: '300px'}} type="text" name="content" placeholder="내용을 입력해주세요." value={qnaregister.content} onChange={handleChange} />
+          <S.StyledInput3 type="text" name="content" placeholder="내용을 입력해주세요." value={qnaregister.content} onChange={handleChange} />
         </S.inputbox>
       </div>
 
       <S.buttonbox>
         
-          <BasicButton style={{backgroundColor: "white", color:"#1FB1D9", border:"1px solid #1FB1D9"}} size={"small"} shape={"default"} color={"white"} variant={"main"}>
+          <S.backbutton >
           <Link to={`/qna/list`}>뒤로가기
           </Link>
-          </BasicButton>
+          </S.backbutton>
+          
         
-
-        <BasicButton style={{marginLeft: '250px'}} size={"small"} shape={"default"} color={"white"} variant={"main"} onClick={handleSubmit}>
+      <S.buttonmargin >
+        <S.okbutton  onClick={handleSubmit}>
           <Link style={{color:"#fff"}} to={`/qna/list`}>등록하기</Link>
-        </BasicButton>
+        </S.okbutton>
+        </S.buttonmargin>
       </S.buttonbox>
+
+      
     </>
   );
 };

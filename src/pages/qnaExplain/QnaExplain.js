@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import S from './style.js';
 
 
@@ -17,8 +17,10 @@ const QnaExplain = () => {
    
   return (
     <>
-    
+      <div>
      <S.header>QnA</S.header> 
+     </div>
+     <div>
      <S.container2>
         {qnaexplain.map((item, i) => (
           <div key={i} >
@@ -41,6 +43,16 @@ const QnaExplain = () => {
           </div>
         ))}
       </S.container2>
+      </div>
+        
+      <S.buttonbox>
+
+      <S.backbutton >
+        <Link style={{color:"#fff"}} to={`/qna/list`}>뒤로가기</Link>
+      </S.backbutton>
+
+    </S.buttonbox>
+      
     </>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import S from './style.js';
 
 const FaqExplain = () => {
@@ -42,6 +42,15 @@ const FaqExplain = () => {
           </div>
         ))}
       </S.container2>
+
+      <S.buttonbox>
+
+      <S.backbutton >
+        <Link style={{color:"#fff"}} to={`/faq/list`}>뒤로가기</Link>
+      </S.backbutton>
+
+    </S.buttonbox>
+
     </>
   );
 };

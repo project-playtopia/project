@@ -1,6 +1,6 @@
 import mongoose from   "mongoose";
 
-const connect_url = 'mongodb+srv://projectplaytopia:1234@playtopia.f4fkwmu.mongodb.net/';
+const connect_url =  'mongodb+srv://projectplaytopia:1234@playtopia.f4fkwmu.mongodb.net/';
 
 // 연결
 const connect = () => {
