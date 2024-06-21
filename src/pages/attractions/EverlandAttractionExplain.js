@@ -44,7 +44,7 @@ const EverLandAttractionExplain = () => {
    <S.ExplainWrapper>
      <S.ExplainH1>{attractions.title}</S.ExplainH1>
      <S.ExplainDescription>{attractions.description}</S.ExplainDescription>
-     <S.ExplainImage src={`${process.env.PUBLIC_URL}/AttractionsImage/Everland/at${attractions.id}.jpg`} alt="attraction" />
+     <S.ExplainImage imgSrc={`${process.env.PUBLIC_URL}/AttractionsImage/Everland/at${attractions.id}.jpg`} alt="attraction" />
 
          <S.IconWrapper>
              <div>

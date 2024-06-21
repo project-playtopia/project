@@ -14,25 +14,25 @@ const S = {};
 
 // 전체컨테이너 
   S.Background = styled.div`
-    width: 100%;
+    width: 90%;
     height: 100%;
     background-color: #fff;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     margin: 0 auto;
     margin-bottom: 10%;
+    padding-top: 5rem;
+    
 
     @media (max-width: 727px) {
       grid-template-columns: repeat(2, 1fr);
-      padding: 30px;
-  };
-
-
+    };
  `;
 
-S.Header1 = styled.h1`
+
+ S.Header1 = styled.h1`
   margin: 30px auto 10px auto;
   font-size: ${h1FontSize};
   text-align: center;
@@ -66,17 +66,24 @@ S.Header1 = styled.h1`
   `;
 
 
-
-S.SearchWrapper = styled.div`
-	padding: 0;
-	width: 400px;
+S.SearchContainer = styled.div`
+  width: 30vw;
 	height: 3rem;
-	display: flex;
-	align-items: center;
-	margin: 20px;
+  margin: 0 auto;
+  @media(max-width: 727px){
+    width: 20rem;
+  }
 `;
 
-S.SearchInput = styled.input`
+ S.SearchWrapper = styled.div`
+	padding: 0;
+  width: 100%;
+  height: 100%;
+	display: flex;
+	align-items: center;
+`;
+
+ S.SearchInput = styled.input`
 	flex-basis: 80%;
 	height: 100%;
 	background-color: #fff;
@@ -89,7 +96,10 @@ S.SearchInput = styled.input`
 	font-size: 0.9rem;
 `;
 
-S.SearchBtn = styled.button`
+
+
+
+ S.SearchBtn = styled.button`
 	flex-basis: 20%;
 	height: 100%;
 	background-color: #fff;
@@ -103,14 +113,19 @@ S.SearchBtn = styled.button`
 
 // 이미지리스트 전체박스
   S.AttractionsContainer = styled.div`
+    width: 80%;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
-    grid-gap: 30px; // 그리드 사이의 간격
+    gap: 30px; // 그리드 사이의 간격
     margin-top: 50px;
+    
 
      @media(max-width: 727px){
       grid-template-columns: repeat(2, 1fr);
-      padding: 30px;
+      width: 100%;
+      margin: 0;
+      padding-top: 1rem;
      };
   `;
 
@@ -120,11 +135,11 @@ S.SearchBtn = styled.button`
   S.ImageWrapper = styled.div`
     position: relative;
     width: 250px;
-    height: 250px;
+    aspect-ratio: 1;
     overflow: hidden;
     border-radius: 20px;
 
-  
+    margin: 0 auto;
 
     div {
      display: none;
@@ -151,6 +166,11 @@ S.SearchBtn = styled.button`
     &:hover div {
       display: block;
     };
+
+    @media(max-width:727px){
+      width: 150px;
+    }
+
  `;
 
 
@@ -161,6 +181,14 @@ S.SearchBtn = styled.button`
    position: relative;
    border-radius: 20px;
    object-fit: cover;
+
+    @media(max-width: 727px){
+
+      width: 150px;
+      height: 150px;
+    };
+
+
   `;
 
  
@@ -178,6 +206,10 @@ S.SearchBtn = styled.button`
      width: 100%;
      margin-top: 150px;
      text-align: center;
+
+   
+
+
 `;
 
 // 어트 타이틀
@@ -195,16 +227,22 @@ S.SearchBtn = styled.button`
   `;
 
 // 어트 이미지
- S.ExplainImage = styled.img`
-    width: 1200px; // 원하는 너비로 설정
-    height: 400px; // 원하는 높이로 설정
-    border-radius: 20px;
+ S.ExplainImage = styled.div`
+  background-image: url(${(props)=>props.imgSrc});
+  background-color: #D7F2FF;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 1200px; // 원하는 너비로 설정
+  height: 400px; // 원하는 높이로 설정
+  border-radius: 20px;
+  margin: 0 auto;
   `;
 
 // 탑승인원, 이용정보 컨테이너
  S.IconWrapper =styled.div`
-  display: flex;
-  /* margin-top: 80px; */
+  /* display: flex; */
+
   margin: 80px auto;
   text-align: center;
   justify-content: space-around;

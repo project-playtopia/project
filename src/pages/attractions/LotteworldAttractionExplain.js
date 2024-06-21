@@ -17,7 +17,6 @@ const LotteworldAttractionExplain = () => {
             try {
                 const response = await fetch(`http://localhost:8000/attraction/lotteworld/explain/${id}`, {
                     method: 'GET',
-                    // credentials: 'include',
                     headers: {
                         'Content-Type': 'application/json',
                         'Accept': 'application/json'
@@ -35,7 +34,7 @@ const LotteworldAttractionExplain = () => {
     }, []);
 
     if (!attractions) {
-        return <div>Loading...</div>;
+        return <div style={{marginTop: "100px auto"}}>Loading...</div>;
     }
 
     return (
@@ -44,7 +43,7 @@ const LotteworldAttractionExplain = () => {
    <S.ExplainWrapper>
      <S.ExplainH1>{attractions.title}</S.ExplainH1>
      <S.ExplainDescription>{attractions.description}</S.ExplainDescription>
-     <S.ExplainImage src={`${process.env.PUBLIC_URL}/AttractionsImage/Lotteworld/at${attractions.id}.jpg`} alt="attraction" />
+     <S.ExplainImage imgSrc={`${process.env.PUBLIC_URL}/AttractionsImage/Lotteworld/at${attractions.id}.jpg`} alt="attraction" />
 
         <S.IconWrapper>
             <div>
