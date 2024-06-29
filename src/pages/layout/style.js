@@ -50,8 +50,8 @@ S.NavPc = styled.span`
   flex-wrap: nowrap;
   align-items: center;
   position: fixed; 
-  top: 0; 
-  left: 0; 
+  top: 0;
+  left: 0;
   background-color: #fff;
   border-bottom : solid 1px #9F9F9F;
   @media (max-width:727px) {
@@ -67,6 +67,10 @@ S.MenuItemWrapper = styled.span`
   flex-direction: column;
   align-items: center;
   padding: 1.5% 0.1%;
+
+  & p{
+    cursor: pointer;
+  }
 
   &.menu-item {
     margin-left: 3%;
@@ -116,7 +120,7 @@ margin-left:20px ;
 
 S.Main = styled.main`
 flex: 1;
-`
+`;
 
 // 모바일 스타일
 S.MobileImage = styled.img`

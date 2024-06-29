@@ -9,7 +9,8 @@ import BenefitItem from './BenefitItem.jsx';
 const BenefitLotteworld = () => {
   const [filter, setFilter] =  useState("all");
   const [orderBy, setOrderBy] = useState("");
-  const [benefitList, setBenefitList] = useState([]);
+  const [showBenefitList, setShowBenefitList] = useState([]);
+  const [allBenefitList, setAllBenefitList] = useState([]);
   HTMLCollection.prototype.forEach = Array.prototype.forEach;
 
   // 필터링 버튼을 클릭하면
@@ -17,14 +18,18 @@ const BenefitLotteworld = () => {
   // -> 그에 따라 버튼색과 랜더링된 리스트를 변경
   // 리스트도 리랜더링 대상
   // 배열로 저장되었다고 가정할 때 배열이 변하면 리스트도 변해야한다.
-  // -> useState, useEffect를 사용한다.
+  // -> useState, useEffect를 사용한다
+  
+  useEffect(()=>{
+    setShowBenefitList(allBenefitList);
+  },[allBenefitList])
 
   useEffect(()=>{
     fetch(`http://localhost:8000/benefit/list/?company=lotteworld&filter=${filter}`)
       .then((res)=>res.json())
       .then((data)=>{
         // console.log(data);
-        setBenefitList(data);
+        setAllBenefitList(data);
       })
     ;
     document.getElementById('nav-container').children.forEach((btn)=>{
@@ -39,13 +44,13 @@ const BenefitLotteworld = () => {
   useEffect(()=>{
     console.log(orderBy);
     if(orderBy === 'cost'){
-      setBenefitList(benefitList.map((el)=>el).sort((a, b)=>{
+      setShowBenefitList(showBenefitList.map((el)=>el).sort((a, b)=>{
         if(a.price > b.price){ return 1; }
         else if (a.price < b.price){ return -1; }
         else{ return 0; }
       }));
     }else if(orderBy === 'new'){
-      setBenefitList(benefitList.map((el)=>el).sort((a,b)=>{
+      setShowBenefitList(showBenefitList.map((el)=>el).sort((a,b)=>{
         if (a.start_at < b.start_at){ return 1; }
         else if (a.start_at > b.start_at){ return -1; }
         else{
@@ -69,14 +74,14 @@ const BenefitLotteworld = () => {
     if(keyword === ''){
       alert('검색어를 입력해주세요');
     }else{
-      const temp = benefitList.filter((el, i)=>el.title.includes(keyword));
+      const temp = allBenefitList.filter((el, i)=>el.title.includes(keyword));
       if (temp.length === 0){
-        alert('검색 결과가 없습니다')
+        alert('검색 결과가 없습니다');
       }else{
-        setBenefitList(temp);
+        setShowBenefitList(temp);
       }
     }
-  }
+  };
 
   return (
     <div className='notosanskr'>
@@ -107,7 +112,7 @@ const BenefitLotteworld = () => {
         </S.OrderSelector>
         <S.GridWrapper>
           {
-            benefitList.map((item)=>(
+            showBenefitList.map((item)=>(
               <BenefitItem
                 itemId={item._id} title={item.title}
                 startAt={item.start_at} endAt={item.end_at} price={item.price}
