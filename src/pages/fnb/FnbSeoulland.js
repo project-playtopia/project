@@ -6,9 +6,9 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import FnbItem from './FnbItem.jsx';
 
 const FnbSeoulland = () => {
-
   const [type, setType] = useState("restaurant");
-  const [fnbList, setFnbList] = useState([]);
+  const [showFnbList, setShowFnbList] = useState([]);
+  const [allFnbList, setAllFnbList] = useState([]);
   HTMLCollection.prototype.forEach = Array.prototype.forEach;
 
   const getDatas = async () => {
@@ -22,18 +22,18 @@ const FnbSeoulland = () => {
     if(keyword === ''){
       alert('검색어를 입력해주세요');
     }else{
-      const temp = fnbList.filter((el, i)=>el.name.includes(keyword));
+      const temp = allFnbList.filter((el, i)=>el.name.includes(keyword));
       if (temp.length === 0){
         alert('검색 결과가 없습니다')
       }else{
-        setFnbList(temp);
+        setShowFnbList(temp);
       }
     }
   }
 
   useEffect(()=>{
     getDatas()
-    .then((datas)=>{setFnbList(datas)})
+    .then((datas)=>{setAllFnbList(datas)})
     ;
     document.getElementById('nav-container').children.forEach((btn)=>{
       if(btn.id === type){
@@ -46,10 +46,14 @@ const FnbSeoulland = () => {
 
   useEffect(()=>{
     getDatas()
-    .then((datas)=>{setFnbList(datas)})
-    .then(()=>{console.log(fnbList)})
+    .then((datas)=>{setAllFnbList(datas)})
+    // .then(()=>{console.log(fnbList)})
     ;
   },[]);
+
+  useEffect(()=>{
+    setShowFnbList(allFnbList);
+  },[allFnbList]);
 
   return (
     <div className='notosanskr'> 
@@ -74,7 +78,7 @@ const FnbSeoulland = () => {
         </S.NavTypeSelector>
         <S.GridWrapper>
           {
-            fnbList.map((item)=>(
+            showFnbList.map((item)=>(
               <FnbItem 
                 itemId={item._id} img={item.img}
                 title={item.name}
