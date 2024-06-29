@@ -4,6 +4,7 @@ import S from './newStyle.js';
 import { useDispatch } from 'react-redux';
 import { setPreviousUrl } from '../../modules/user.js';
 import logoImage from './logo/logo.png'; 
+import logoWhite from './logo/logoWhite.png'
 import mobileImage from './logo/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus, faHorse, faCircleDollarToSlot,  faUtensils, faMapLocationDot, faPenToSquare, faBars, faCircleUser } from '@fortawesome/free-solid-svg-icons';
@@ -92,6 +93,18 @@ const LayoutMain = () => {
 					)}
 				</S.UserMenuWrapper>
 			</S.NavBarWrapper>
+			<S.Footer>
+				<S.Image className='footerlogo' src={logoWhite} />
+				<div className='footerbox'>
+        	<p className='maker'>Maker</p>
+        	<p className='email'>           
+						snhyein2001@gmail.com <br/>
+						charmmmn@gmail.com<br/>
+						jungjune276@gmail.com <br/>
+						parkminseo3123@gmail.com <br/>
+					</p>
+				</div>
+			</S.Footer>
 		</S.Background>
 	);
 };

@@ -178,4 +178,49 @@ S.LogOutBtn = styled.button`
 	font-size: 1em;
 `;
 
+// footer
+S.Footer = styled.div`
+	@media (min-width: 727px){
+		background-color: ${ ({theme}) => theme.PALETTE.primary["main"]};
+		width: 100%;
+		height: 40%;
+		.footerlogo{
+			position: relative;
+			top:40%;
+			left: 1%;
+		}
+		.footerbox{
+			position: relative;
+			left: 350px;
+			bottom: 7%;
+			border-left: solid 2px #fff;
+			height: 120px;
+		}
+		.maker{
+			position: relative;
+			left: 30px;
+			bottom: 7%;
+			color: #fff;
+			font-weight:  ${ ({theme}) => theme.FONT_WEIGHT["bold"]};
+		}
+		.email{
+			position: relative;
+			left: 30px;
+			color: #fff;
+			font-size: ${ ({theme}) => theme.FONT_SIZE["footer"]};
+			font-weight:  ${ ({theme}) => theme.FONT_WEIGHT["thin"]};
+			line-height: 20px;
+		}
+	}
+	@media (max-width: 726px){
+		display: none;
+	}
+`;
+
+S.Image = styled.img`
+	width: 190px;
+	height: 50px;
+	margin-left:20px ;
+`;
+
 export default S;
