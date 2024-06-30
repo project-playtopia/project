@@ -371,7 +371,8 @@ S.UserListItem = styled.li`
 
 S.LogOutBtn = styled.button`
 	border: none;
-	background-color: none;
+	background-color: #fff;
+	height: 100%;
 	font-size: 1em;
 `;
 

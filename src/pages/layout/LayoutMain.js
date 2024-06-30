@@ -133,7 +133,12 @@ const LayoutMain = () => {
 								<S.ActiveBar width="6rem" />
 							</S.UserListItem>
 							<S.UserListItem>
-								로그아웃
+								<S.LogOutBtn onClick={()=>{
+                	setUser(null); 
+									alert("로그아웃 되었습니다.");
+              	}}>
+									로그아웃
+								</S.LogOutBtn>
 								<S.ActiveBar width="6rem" />
 							</S.UserListItem>
 						</S.NavUserList>
