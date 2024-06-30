@@ -19,14 +19,14 @@ S.Header1 = styled.h1`
 	font-size: ${h1FontSize};
 	text-align: center;
 	width: 100%;
-	font-weight: bold;
+	font-weight: ${fontBold};
 `;
 
 S.NavParkSelector = styled.nav`
 	font-size: 1rem;
 	width: 100%;
 	text-align: center;
-	margin: 20px auto;
+	margin: 30px auto;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -54,7 +54,6 @@ S.NavTypeSelector = styled.div`
 	min-height: 50px;
 	background-color: #d7f2ff;
 	align-items: center;
-
 `;
 
 S.NavContainer = styled.div`
