@@ -10,6 +10,8 @@ const CourseEverland = () => {
 
   useEffect(() => {
     if (activeIndex !== null) {
+      setAttractions([]);
+      
       const courseName = courses[activeIndex].replace('#', '');
       const company = "에버랜드";
       fetch(`http://localhost:8000/course/attractions?courseName=${courseName}&company=${company}`)
@@ -59,7 +61,9 @@ const CourseEverland = () => {
   {attractions.map(attraction => (
         <S.ImageWrapper key={attraction.id}>
           <S.AttractCourse>
+          <NavLink to={`/attraction/everland/explain/${attraction.id}`}>
             <S.Image src={attraction.img}/>
+          </NavLink>
           </S.AttractCourse>
           <S.HeightRestriction>
             <p>{attraction.height}</p>
