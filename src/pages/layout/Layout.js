@@ -157,5 +157,4 @@ const Layout = () => {
 		</S.Background>
 	);
 };
-
 export default Layout;
