@@ -29,6 +29,8 @@ const SignUp = () => {
     setTelecomAgreed(newAllAgreedState);
   };
 
+  const [idError, setIdError] = useState('');
+
   useEffect(() => {
     if (privacyAgreed && termsAgreed && uniqueIdAgreed && telecomAgreed) {
       setAllAgreed(true);
@@ -97,6 +99,23 @@ const SignUp = () => {
             .then(res => console.log(res))
             navigate('/signUpFinish')
   }};
+
+  const checkIdDuplication = () => {
+    const id = getValues('id');
+    fetch(`http://localhost:8000/register/checkId/${id}`)
+      .then(res => res.json())
+      .then(result => {
+        if (result.exists) {
+          setIdError('이미 사용중인 아이디입니다.');
+        } else {
+          setIdError('');
+          alert('사용 가능한 아이디입니다.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  };
   return (
     <S.Background className='notosanskr'>
       <S.FormContainer>
@@ -111,8 +130,9 @@ const SignUp = () => {
                         }
                     })}
                 />
-          <S.Button>중복확인</S.Button>
+          <S.Button onClick={checkIdDuplication}>중복확인</S.Button>
         </S.IdInputContainer>
+        {idError && <S.ErrorMessge>{idError}</S.ErrorMessge>}
           <S.PasswordContainer>
           <S.PasswordInput type={isPasswordShown ? 'text' : 'password'} 
           placeholder=" 비밀번호 (영문과 숫자를 조합한 10글자 이상 문자)"
