@@ -21,7 +21,7 @@ const Layout = () => {
 		}else{
 			setIsOpen(true);
 		}
-	},[])
+	},[window.innerWidth]);
 
 	useEffect(()=>{
 		if(isOpen){
@@ -101,7 +101,7 @@ const Layout = () => {
 							<NavLink to={"guidemap/lotteworld"}>
 								가이드맵
 							</NavLink>
-							<S.ActiveBar width='6rem' />
+							<S.ActiveBar className='active-bar' width='6rem' />
 						</S.NavListItem>
             <S.NavListItem>
 							<S.IconWrapper>
@@ -143,29 +143,17 @@ const Layout = () => {
 						<S.NavUserList>
 							<S.UserListItem>
 								<NavLink to={"/signIn"}>로그인</NavLink>
-								<S.ActiveBar width="6rem" />
+								<S.ActiveBar className='active-bar' width="6rem" />
 							</S.UserListItem>
 							<S.UserListItem>
 								<NavLink to={"/signUp"}>회원가입</NavLink>
-								<S.ActiveBar width="6rem" />
+								<S.ActiveBar className='active-bar' width="6rem" />
 							</S.UserListItem>
 						</S.NavUserList>
 					)}
 				</S.UserMenuWrapper>
 			</S.NavBarWrapper>
 			<S.DarkDiv id='dark-div'></S.DarkDiv>
-			<S.Footer>
-				<S.Image className='footerlogo' src={logoWhite} />
-				<div className='footerbox'>
-        	<p className='maker'>Maker</p>
-        	<p className='email'>           
-						snhyein2001@gmail.com <br/>
-						charmmmn@gmail.com<br/>
-						jungjune276@gmail.com <br/>
-						parkminseo3123@gmail.com <br/>
-					</p>
-				</div>
-			</S.Footer>
 		</S.Background>
 	);
 };

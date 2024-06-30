@@ -195,7 +195,7 @@ S.NavListItem = styled.li`
 	&:hover > ul{
 		display: block;
 	}
-	&:hover > div{
+	&:hover > .active-bar{
 		display: block;
 	}
 	&:hover > .arrow-icon{
@@ -355,6 +355,9 @@ S.UserListItem = styled.li`
 		@media (min-width: 728px) {
 			color: ${mainColor};
 		}
+	}
+	&:hover > .active-bar{
+		display: block;
 	}
 	&:hover {
 		font-weight: 600;
