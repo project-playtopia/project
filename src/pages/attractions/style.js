@@ -202,14 +202,14 @@ S.SearchContainer = styled.div`
 
   // 전체컨테이너
 
-  S.ExplainWrapper = styled.div`
-     width: 100%;
-     margin-top: 150px;
-     text-align: center;
-
-   
-
-
+S.ExplainWrapper = styled.div`
+  width: 90%;
+  margin-top: 150px;
+  text-align: center;
+  margin: 150px auto 50px auto;
+  @media (max-width: 727px) {
+    width: 100%;
+  }
 `;
 
 // 어트 타이틀
@@ -222,8 +222,10 @@ S.SearchContainer = styled.div`
  S.ExplainDescription = styled.div`
     font-size: 24px;
     font-weight: bold;
-    margin-top: 30px;
-    margin-bottom : 40px;
+    margin: 30px 0 40px 0;
+    @media (max-width: 727px) {
+      margin: 30px 1em 40px 1em;
+    }
   `;
 
 // 어트 이미지
@@ -233,7 +235,8 @@ S.SearchContainer = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  width: 1200px; // 원하는 너비로 설정
+  max-width: 1200px; // 원하는 너비로 설정
+  width: 80%;
   height: 400px; // 원하는 높이로 설정
   border-radius: 20px;
   margin: 0 auto;
@@ -241,14 +244,16 @@ S.SearchContainer = styled.div`
 
 // 탑승인원, 이용정보 컨테이너
  S.IconWrapper =styled.div`
-  /* display: flex; */
-
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
   margin: 80px auto;
-  text-align: center;
-  justify-content: space-around;
-  width: 60%;
+  width: 100%;
   & div{
     margin: 0 1rem;
+  }
+  & img{
+   width: 10em;
+   aspect-ratio: 1;
   }
  `;
 
