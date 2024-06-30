@@ -6,38 +6,42 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import BenefitItem from './BenefitItem.jsx';
 
 const BenefitEverland = () => {
-  const [filter, setFilter] =  useState("all");
-  const [orderBy, setOrderBy] = useState("");
-  const [benefitList, setBenefitList] = useState([]);
-  HTMLCollection.prototype.forEach = Array.prototype.forEach;
+	const [filter, setFilter] =  useState("all");
+	const [orderBy, setOrderBy] = useState("");
+	const [showBenefitList, setShowBenefitList] = useState([]);
+	const [allBenefitList, setAllBenefitList] = useState([]);
+	HTMLCollection.prototype.forEach = Array.prototype.forEach;
 
-  useEffect(()=>{
-    fetch(`http://localhost:8000/benefit/list/?company=everland&filter=${filter}`)
-      .then((res)=>res.json())
-      .then((data)=>{
-        // console.log(data);
-        setBenefitList(data);
-      })
-    ;
-    document.getElementById('nav-container').children.forEach((btn)=>{
-      if(btn.id === filter){
-        btn.classList.add('active');
-      }else{
-        btn.classList.remove('active');
-      }
-    });
+	useEffect(()=>{
+		setShowBenefitList(allBenefitList);
+	},[allBenefitList])
+
+	useEffect(()=>{
+		fetch(`http://localhost:8000/benefit/list/?company=everland&filter=${filter}`)
+			.then((res)=>res.json())
+			.then((data)=>{
+				setAllBenefitList(data);
+			})
+		;
+		document.getElementById('nav-container').children.forEach((btn)=>{
+			if(btn.id === filter){
+				btn.classList.add('active');
+			}else{
+				btn.classList.remove('active');
+			}
+		});
   }, [filter]);
 
   useEffect(()=>{
     console.log(orderBy);
     if(orderBy === 'cost'){
-      setBenefitList(benefitList.map((el)=>el).sort((a, b)=>{
+      setShowBenefitList(showBenefitList.map((el)=>el).sort((a, b)=>{
         if(a.price > b.price){ return 1; }
         else if (a.price < b.price){ return -1; }
         else{ return 0; }
-      }));
+    }));
     }else if(orderBy === 'new'){
-      setBenefitList(benefitList.map((el)=>el).sort((a,b)=>{
+      setShowBenefitList(showBenefitList.map((el)=>el).sort((a,b)=>{
         if (a.start_at < b.start_at){ return 1; }
         else if (a.start_at > b.start_at){ return -1; }
         else{
@@ -54,23 +58,33 @@ const BenefitEverland = () => {
         btn.classList.remove('active');
       }
     }))
-  }, [orderBy]);
+	}, [orderBy]);
   
-  const onClickToSearch = () => {
-    // console.log("clicked")
-  }
+	const onClickToSearch = () => {
+		const keyword = document.getElementById('search-input').value.trim();
+		if(keyword === ''){
+			alert('검색어를 입력해주세요');
+		}else{
+			const temp = allBenefitList.filter((el, i)=>el.title.includes(keyword));
+			if (temp.length === 0){
+				alert('검색 결과가 없습니다');
+			}else{
+				setShowBenefitList(temp);
+			}
+		}
+	};
 
-  return (
-    <div className='notosanskr'>
-      {/* 에버랜드 이달의혜택 */}
-      <S.Container>
-        <S.Header1>이 달의 혜택</S.Header1> 
-        <S.NavParkSelector>
-          <NavLink to={"/benefit/lotteworld"}>롯데월드</NavLink>
-          <span>|</span>
-          <NavLink to={"/benefit/everland"}>에버랜드</NavLink>
-          <span>|</span>
-          <NavLink to={"/benefit/seoulland"}>서울랜드</NavLink>
+	return (
+		<div className='notosanskr'>
+			{/* 에버랜드 이달의혜택 */}
+			<S.Container>
+				<S.Header1>이 달의 혜택</S.Header1> 
+				<S.NavParkSelector>
+					<NavLink to={"/benefit/lotteworld"}>롯데월드</NavLink>
+					<span>|</span>
+					<NavLink to={"/benefit/everland"}>에버랜드</NavLink>
+					<span>|</span>
+					<NavLink to={"/benefit/seoulland"}>서울랜드</NavLink>
         </S.NavParkSelector>
         <S.NavTypeSelector id='nav-container'>
             <S.BtnTypeSelector id='all' onClick={()=>{setFilter('all')}}>전체</S.BtnTypeSelector>
@@ -89,7 +103,7 @@ const BenefitEverland = () => {
         </S.OrderSelector>
         <S.GridWrapper>
           {
-            benefitList.map((item)=>(
+            showBenefitList.map((item)=>(
               <BenefitItem
                 itemId={item._id} title={item.title}
                 startAt={item.start_at} endAt={item.end_at} price={item.price}
