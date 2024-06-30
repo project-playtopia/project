@@ -76,7 +76,7 @@ const LotteworldAttraction = () => {
                         id='search-input'
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                    />
+                     />
                     <S.SearchBtn onClick={handleSearch}>
                         <FontAwesomeIcon icon={faSearch} size="2x" color="#1FB1D9" />
                     </S.SearchBtn>
