@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { faMapPin } from '@fortawesome/free-solid-svg-icons';
 
 
+
 const CourseLotteworld = () => {
 
   const courses = ["#우산코스", "#어린이코스", "#스릴코스", "#멀미코스"];
@@ -12,6 +13,8 @@ const CourseLotteworld = () => {
 
   useEffect(() => {
     if (activeIndex !== null) {
+      setAttractions([]);
+      
       const courseName = courses[activeIndex].replace('#', '');
       const company = "롯데월드";
       fetch(`http://localhost:8000/course/attractions?courseName=${courseName}&company=${company}`)
@@ -29,6 +32,7 @@ const CourseLotteworld = () => {
         });
     }
   }, [activeIndex]);
+  
 
   return (
     <S.Background className='notosanskr'>
@@ -62,7 +66,9 @@ const CourseLotteworld = () => {
   {attractions.map(attraction => (
         <S.ImageWrapper key={attraction.id}>
           <S.AttractCourse>
+          <NavLink to={`/attraction/lotteworld/explain/${attraction.id}`}>
             <S.Image src={attraction.img}/>
+          </NavLink>
           </S.AttractCourse>
           <S.HeightRestriction>
             <p>{attraction.height}</p>
