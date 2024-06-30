@@ -47,7 +47,6 @@ const Performance = () => {
       return timeA - timeB;
     });
     return sortedData;
-    // return await data;
   }
 
   useEffect(()=>{
