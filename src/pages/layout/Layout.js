@@ -250,7 +250,8 @@ const Layout = () => {
               </S.MenuItemWrapper>
 
               <S.MenuItemWrapper className="menu-item" onClick={()=>{
-                 setUser(null); 
+                 setUser(null);
+                 localStorage.removeItem('loggedIn');  
                  alert("로그아웃 되었습니다.");
               }}>
                 <NavLink to={"/"} className="authLink">
