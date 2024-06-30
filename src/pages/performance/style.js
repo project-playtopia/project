@@ -15,6 +15,12 @@ const h1FontSize = "40px";
 S.Container = styled.div`
 	width:90%;
 	margin: 0 auto;
+
+  @media (max-width: 727px) {
+    width: 100%;
+    padding: 0 1rem;
+  }
+ 
 `;
 
 S.Header1 = styled.h1`
@@ -23,6 +29,7 @@ S.Header1 = styled.h1`
 	text-align: center;
 	width: 100%;
 	font-weight: ${fontBold};
+
 	@media (max-width: 727px) {
 		margin: 80px auto 10px auto;
 		font-size: 35px;
@@ -39,6 +46,13 @@ S.DateWrapper = styled.div`
   padding: 1rem;
   display: flex;
   justify-content: space-between;
+   
+   @media(max-width:727px){    
+    width: 100%;
+    padding: 1rem 0.5rem;
+    margin: 1rem 0;
+   }
+
 `;
 
 S.DateSelector = styled.button`
@@ -61,17 +75,38 @@ S.DateSelector = styled.button`
     color: #fff;
     background-color: ${mainColor};
   }
+
+  @media (max-width: 727px) {
+    margin: auto 0.3rem auto auto;
+    width: 3.5rem;
+    font-size: 0.8rem;
+  }
+
 `;
+
+
+
 
 S.ItemContainer = styled.div`
   width: 70%;
   margin: 2rem auto 8rem auto;
+
+  @media (max-width: 727px) {
+    width: 100%;
+    margin: 0 auto 2rem auto;
+  }
 `;
 
 S.ItemWrapper = styled.div`
   display: grid;
   grid-template-columns: 17rem auto;
   border-bottom: 1px solid #9f9f9f;
+
+  
+  @media (max-width: 727px) {
+    grid-template-columns: 1fr 2fr;
+    text-align: center;
+  }
 `;
 
 S.ImgWrapper = styled.div`
@@ -82,6 +117,12 @@ S.ImgWrapper = styled.div`
   aspect-ratio: 3 / 2;
   border-radius: 15px;
   margin: 1.5rem;
+  
+  @media (max-width:727px){
+    aspect-ratio: 1;
+    border-radius: 50%;
+    margin: 1rem;
+  }
 `;
 
 S.ContentWrapper = styled.div`
@@ -90,9 +131,16 @@ S.ContentWrapper = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
 
+    @media (max-width: 727px) {
+    padding: 0;
+    left: 0;
+    text-align: left;
+   }
+
   & .location {
     height: 2.1rem;
     line-height: 2.1rem;
+  
   }
 `;
 
