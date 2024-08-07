@@ -18,7 +18,7 @@ const LostnFoundListSeoulland = () => {
   const [searchInput, setSearchInput] = useState(""); 
 
   useEffect(() => {
-    fetch(`http://localhost:3000/lostnfoundlist/list/?page=${currentPage}&company=seoulland`)
+    fetch(`http://localhost:8000/lostnfoundlist/list/?page=${currentPage}&company=seoulland`)
       .then((res) => res.json())
       .then(({ lostnfoundlist,totalPages }) => {
         if (Array.isArray(lostnfoundlist)) {

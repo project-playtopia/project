@@ -18,7 +18,7 @@ const LostnFoundListEverland = () => {
   const limit = 5;
 
   useEffect(() => {
-    fetch(`http://localhost:3000/lostnfoundlist/list?page=${currentPage}&company=everland`)
+    fetch(`http://localhost:8000/lostnfoundlist/list?page=${currentPage}&company=everland`)
       .then((res) => {
         if (!res.ok) {
           throw new Error('Failed to fetch data');
