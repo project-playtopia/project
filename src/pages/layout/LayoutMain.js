@@ -109,7 +109,7 @@ const LayoutMain = () => {
 							<S.DropDownContainer>
 								<S.DropDownMenu><NavLink to={"/event/lotteworld"}>QnA</NavLink></S.DropDownMenu>
 								<S.DropDownMenu><NavLink to={"/faq/list"}>FaQ</NavLink></S.DropDownMenu>
-								<S.DropDownMenu><NavLink to={"/lostmfound/list/lotteworld"}>분실물</NavLink></S.DropDownMenu>
+								<S.DropDownMenu><NavLink to={"/lostnfound/list/lotteworld"}>분실물</NavLink></S.DropDownMenu>
 							</S.DropDownContainer>
 							<S.ArrowIcon className='arrow-icon'>
 								<FontAwesomeIcon icon={faAngleLeft} />

@@ -18,7 +18,7 @@ const LostnFoundListEverland = () => {
   const limit = 5;
 
   useEffect(() => {
-    fetch(`http://localhost:8010/lostnfoundlist/list?page=${currentPage}&company=everland`)
+    fetch(`http://localhost:8000/lostnfoundlist/list?page=${currentPage}&company=everland`)
       .then((res) => {
         if (!res.ok) {
           throw new Error('Failed to fetch data');
@@ -75,7 +75,7 @@ const LostnFoundListEverland = () => {
           </S.title>
 
 
-      <div class="tablerow1">
+      <div className="tablerow1">
       <LostnFoundTable headersName={['No', '습득물', '습득장소', '습득날짜', '처리결과']}>
         {searcheverland
         .filter(item => item.company === "everland")

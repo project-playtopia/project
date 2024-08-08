@@ -16,7 +16,7 @@ const LostnFoundListLotteworld = () => {
   const [searchInput, setSearchInput] = useState("");  
 
   useEffect(() => {
-    fetch(`http://localhost:8010/lostnfoundlist/list/?page=${currentPage}&company=lotteworld`)
+    fetch(`http://localhost:8000/lostnfoundlist/list/?page=${currentPage}&company=lotteworld`)
       .then((res) => res.json())
       .then(({ lostnfoundlist, totalPages }) => {
         if (Array.isArray(lostnfoundlist)) {
@@ -67,7 +67,7 @@ const LostnFoundListLotteworld = () => {
           </S.SearchWrapper>  
           </S.title>
 
-      <div class="tablerow1">
+      <div className="tablerow1">
       <LostnFoundTable headersName={['No', '습득물', '습득장소', '습득날짜', '처리결과']} >
       {searchlotteworld
           .filter(item => item.company === "lotteworld")
