@@ -5,7 +5,7 @@ import { faMapPin } from '@fortawesome/free-solid-svg-icons';
 
 const CourseSeoulland = () => {
   const courses = ["#캐릭터코스", "#어린이코스", "#스릴코스", "#우산코스"];
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [attractions, setAttractions] = useState([]);
 
   useEffect(() => {
@@ -28,6 +28,10 @@ const CourseSeoulland = () => {
         });
     }
   }, [activeIndex]);
+
+  useEffect(() => {
+    setActiveIndex(0);  
+  }, []);
 
   return (
     <S.Background className='notosanskr'>
@@ -61,9 +65,7 @@ const CourseSeoulland = () => {
   {attractions.map(attraction => (
         <S.ImageWrapper key={attraction.id}>
           <S.AttractCourse>
-          <NavLink to={`/attraction/seoulland/explain/${attraction.id}`}>
             <S.Image src={attraction.img}/>
-          </NavLink>
           </S.AttractCourse>
           <S.HeightRestriction>
             <p>{attraction.height}</p>

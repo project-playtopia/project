@@ -13,7 +13,7 @@ S.Background = styled.div`
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0 auto;
   margin-bottom: 10%;
@@ -27,7 +27,7 @@ S.H1 = styled.h1`
   margin-top: 10%;
   margin-bottom: 2%;
   @media (max-width: 727px) {
-    margin-top: 25%;
+    margin-top: 30%;
     margin-bottom:10%;
   }
 `;
@@ -130,11 +130,10 @@ S.ImageWrapper = styled.div`
 `;
 
 S.Image = styled.img`
-  /* margin-left: 10px; */
   width: 200px;
   height: 200px;
   border-radius: 100%;
-  transition: filter 0.3s; 
+  transition: filter 0.3s;
 `;
 
 S.HeightRestriction = styled.div`
