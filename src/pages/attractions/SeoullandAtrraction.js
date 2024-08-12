@@ -45,7 +45,6 @@ const SeoullandAttraction = () => {
     );
     setFilteredAttractions(filtered); // 필터링 된 상태를 데이터에 저장
     }; 
-
     const attractionsList = filteredAttractions.map((att, i) => (
         <S.ImageWrapper key={i}>
             <NavLink to={`/attraction/seoulland/explain/${att.id}`}>
@@ -57,7 +56,6 @@ const SeoullandAttraction = () => {
             </NavLink>
         </S.ImageWrapper>
        ));
-
         return (
           <S.Background className='notosanskr'>
             <S.Header1>어트랙션</S.Header1>

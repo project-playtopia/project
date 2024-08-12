@@ -44,7 +44,6 @@ const LotteworldAttractionExplain = () => {
      <S.ExplainH1>{attractions.title}</S.ExplainH1>
      <S.ExplainDescription>{attractions.description}</S.ExplainDescription>
      <S.ExplainImage imgSrc={`${process.env.PUBLIC_URL}/AttractionsImage/Lotteworld/at${attractions.id}.jpg`} alt="attraction" />
-
         <S.IconWrapper>
             <div>
                 <img src='/AttractionsImage/at_icon1.png' alt='#' />

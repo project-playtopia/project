@@ -69,7 +69,6 @@ const EverlandAttraction = () => {
                 <span>|</span>
                 <NavLink to={"/attraction/seoulland"}>서울랜드</NavLink>
             </S.NavParkSelector>
-
             <S.SearchContainer>
                 <S.SearchWrapper>
                     <S.SearchInput

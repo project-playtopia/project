@@ -29,7 +29,6 @@ const LotteworldAttraction = () => {
         };
        getAttractions();
       }, []);
-
     useEffect(() => {
         // 검색어가 변경될 때 마다 필터링 수행
         const filtered = attractions.filter(att =>

@@ -11,7 +11,6 @@ import {faMartiniGlass,faHeartPulse, faPersonPregnant,faWheelchair ,faCircleExcl
 const SeoulLandAttractionExplain = () => {
     const { id } = useParams(); 
     const [attractions, setAttractions] = useState({});
-
     useEffect(() => {
         const fetchAttractionDetail = async () => {
             try {
