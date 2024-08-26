@@ -45,6 +45,7 @@ const GuidemapLotteworld = () => {
        <p>서울랜드</p>
       </NavLink>
      </S.NavParkSelector>
+     
      <S.H3>운영시간</S.H3>
      <S.BusinessHour>
       {attract.startTime && attract.endTime && (
@@ -52,8 +53,9 @@ const GuidemapLotteworld = () => {
         )}
       </S.BusinessHour>
 
-
-      <Lotteworldmap />
+      <S.MapContainter>
+        <Lotteworldmap />
+      </S.MapContainter>
      <S.H3>운휴시설</S.H3>
      <S.Facility>
      <S.line></S.line>
