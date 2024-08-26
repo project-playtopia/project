@@ -50,7 +50,9 @@ const GuidemapSeoulland = () => {
       <p>{attract.startTime} - {attract.endTime}</p>
         )}
       </S.BusinessHour>
-      <Seoulandmap />
+      <S.MapContainter>
+        <Seoulandmap />
+      </S.MapContainter>
       <S.H3>운휴시설</S.H3>
      <S.Facility>
      <S.line></S.line>

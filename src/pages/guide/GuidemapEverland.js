@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudRain, faSnowflake, faScrewdriverWrench, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
 
-
 const GuidemapEverland = () => {
   const [attract, setAttract] = useState([])
   const now = new Date().getDate()
@@ -53,7 +52,9 @@ const GuidemapEverland = () => {
       <p>{attract.startTime} - {attract.endTime}</p>
         )}
       </S.BusinessHour>
-      <Everlandmap />
+      <S.MapContainter>
+        <Everlandmap />
+      </S.MapContainter>
       <S.H3>운휴시설</S.H3>
      <S.Facility>
      <S.line></S.line>

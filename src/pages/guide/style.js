@@ -13,10 +13,11 @@ S.Background = styled.div`
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0 auto;
-  margin-bottom: 10%;
+  margin-bottom: 15%;
+  padding-top: 20px;
 `;
 
 S.H1 = styled.h1`
@@ -37,7 +38,7 @@ S.H3 = styled.h3`
   font-weight: ${({theme})=> theme.FONT_WEIGHT["bold"]};
   color: #000000;
   text-align: center;
-  margin-top: 5%;
+  margin-top: 3%;
   margin-bottom: 2%;
 `;
 
@@ -89,6 +90,16 @@ S.BusinessHour = styled.div`
   }
 `;
 
+S.MapContainter = styled.div`
+  width: 100%;
+  height: 400px;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  margin-top : 5%;
+  position: sticky;
+`
+
 S.line = styled.div`
   width: 500px;
   height: 1px;
@@ -116,7 +127,6 @@ S.StyledTable = styled.table`
   margin: auto;
 `;
 
-// 
 
 S.StyledTd = styled.td`
   width: ${props => props.width || "100%"};
@@ -149,7 +159,8 @@ S.footerP = styled.p`
   font-weight: ${({theme})=> theme.FONT_WEIGHT["thin"]};
   margin-bottom: 50px;
   text-align: left;
-  margin-right: 43%;
+  margin-top: 5px;
+  width: 85%;
 `;
 
 S.Icon = styled(FontAwesomeIcon)`
