@@ -102,6 +102,10 @@ ${props => props.isActive && `
     color: #1fb1d9;
     font-weight: 600;
 `}
+
+@media (max-width:727px) {
+  font-size : ${ ({theme}) => theme.FONT_SIZE["sub"]};
+}
 `
 
 S.AttractCourse = styled.div`

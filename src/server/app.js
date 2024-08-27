@@ -78,7 +78,7 @@ app.use('/giftshop', giftshopRouter);
 app.use('/giftshopExplain', giftshopExplainRouter);
 app.use('/guide', guidemapRouter);
 app.use('/getuser', signInRouter);
-app.use('register', signUpRouter);
+app.use('/register', signUpRouter);
 
 app.use('/lostnfoundlist', LostnFoundListRouter);
 app.use('/lostnfoundexplain', LostnFoundExplainRouter);

@@ -8,7 +8,6 @@ import MyPageQuestion from "../pages/myPage/MyPageQuestion.js";
 import MyPageReview from "../pages/myPage/MyPageReview.js";
 import SearchId from "../pages/searchId/SearchId.js";
 import SearchPw from "../pages/searchPw/SearchPw.js";
-import Identification from "../pages/Identification/Identification.js";
 import LotteworldAttraction from "../pages/attractions/LotteworldAttraction.js";
 import EverlandAttraction from "../pages/attractions/EverlandAttraction.js";
 import SeoullandAtrraction from "../pages/attractions/SeoullandAtrraction.js";
@@ -106,11 +105,7 @@ const router = createBrowserRouter([
       {
         path : "/searchPw",
         element : <SearchPw />
-      },
-      {
-        path : "/identification",
-        element : <Identification />
-      },  
+      }, 
       {
         path : "/changePassword",
         element : <ChangePw />

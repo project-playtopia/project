@@ -7,7 +7,7 @@ const FaqExplain = () => {
   const [faqexplain, setFaqExplain] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8001/faqexplain/list`)
+    fetch(`http://localhost:8000/faqexplain/list`)
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error ${res.status}`);

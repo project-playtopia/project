@@ -19,7 +19,7 @@ const FaqListContainer = () => {
   const limit = 5; 
 
   useEffect(() => {
-    fetch(`http://localhost:8001/faqlist/list?page=${currentPage}`)
+    fetch(`http://localhost:8000/faqlist/list?page=${currentPage}`)
     .then((res) => {
       if (!res.ok) {
         throw new Error(`http error ${res.status}`);
@@ -72,7 +72,7 @@ const FaqListContainer = () => {
       
      
 
-      <div class="Faqtablerow1">
+      <div className="Faqtablerow1">
           <FaqTable headersName={['No', '카테고리', '제목', '등록일']} >
               {page.map((item, i) => (
                 <FaqRow key={i} className="tablerow">
