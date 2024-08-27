@@ -40,7 +40,7 @@ const EverLandAttractionExplain = () => {
     return (
    
             
-   <S.ExplainWrapper>
+   <S.ExplainWrapper className='notosanskr'>
      <S.ExplainH1>{attractions.title}</S.ExplainH1>
      <S.ExplainDescription>{attractions.description}</S.ExplainDescription>
      <S.ExplainImage imgSrc={`${process.env.PUBLIC_URL}/AttractionsImage/Everland/at${attractions.id}.jpg`} alt="attraction" />

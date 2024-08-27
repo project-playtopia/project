@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import S from './style.js';
 
 const FaqExplain = () => {
@@ -7,7 +7,7 @@ const FaqExplain = () => {
   const [faqexplain, setFaqExplain] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8002/faqexplain`)
+    fetch(`http://localhost:8001/faqexplain/list`)
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error ${res.status}`);
@@ -42,6 +42,15 @@ const FaqExplain = () => {
           </div>
         ))}
       </S.container2>
+
+      <S.buttonbox>
+
+      <S.backbutton >
+        <Link style={{color:"#fff"}} to={`/faq/list`}>뒤로가기</Link>
+      </S.backbutton>
+
+    </S.buttonbox>
+
     </>
   );
 };

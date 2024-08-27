@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const EventLotteworld = () => {
   return (
-    <div>
+    <div className='notosanskr'>
       <S.H1>이벤트 공지사항</S.H1>
       <S.title>
         <S.lotteworld color='#1FB1D9'>롯데월드</S.lotteworld>
@@ -34,7 +34,7 @@ const EventLotteworld = () => {
         </S.SideBar>
         </S.SideBardiv>
  
-          <S.content >
+      <S.content >
         <S.ContentImage  src={lotteworldimage1} alt="lotteworldimage1"></S.ContentImage >
         <S.contenttitle>
         <Link to={`/event/explain/${1}`}><S.subtitle>루프탑 갤러리</S.subtitle></Link>

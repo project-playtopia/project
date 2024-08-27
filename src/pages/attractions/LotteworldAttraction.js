@@ -56,7 +56,6 @@ const LotteworldAttraction = () => {
             </NavLink>
         </S.ImageWrapper>
        ));
-
         return (
           <S.Background className='notosanskr'>
             <S.Header1>어트랙션</S.Header1>

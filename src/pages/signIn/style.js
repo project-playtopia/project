@@ -99,4 +99,15 @@ S.SignInButton = styled.button`
   margin-bottom: 10%;
 `
 
+
+S.LinksContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5%;
+& p{
+  font-size: 16px;
+  color: #000;
+}
+`
+
 export default S;

@@ -112,7 +112,7 @@ const router = createBrowserRouter([
         element : <Identification />
       },  
       {
-        path : "/changepassword",
+        path : "/changePassword",
         element : <ChangePw />
       },
       {
@@ -322,15 +322,14 @@ const router = createBrowserRouter([
         element :<LostnFoundRegisterSeoulland />
       },
       {
-        path :"lostnfound/explain",
+        path :"lostnfound/explain/:id/:company",
         element :<LostnFoundExplain />
       },
       {
-        path :"lostnfound/search",
+        path :"lostnfound/search/:id/:company",
         element :<LostnFoundSearch />
       }
     ]},
-
   {
     path: "*",
     element: <NotFoundPage />

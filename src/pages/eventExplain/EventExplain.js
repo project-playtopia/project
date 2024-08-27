@@ -58,16 +58,23 @@ const EventExplain = () => {
       title = "이벤트 설명"; // id 값이 없을 경우 기본 제목 설정
   }
   return (
-    <div>
-      <S.Container>
+<>
+    <S.margin ></S.margin >
+    
+    
+      <S.Container className='notosanskr'>
         <S.head>공지</S.head>
         <S.title>{title}</S.title>
         <S.date>2024.02.12</S.date>
       </S.Container>
-      {mainImage && <S.Mainimage src={mainImage} alt="main" />}
-      
 
-    </div>
+      <S.imagediv >
+      {mainImage && <S.Mainimage src={mainImage} alt="main" />}
+      </S.imagediv >
+
+   
+
+    </>
   );
 };
 

@@ -1,0 +1,60 @@
+.QnaTable {
+  min-width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  border-spacing: 0;
+  background-color: #D7F2FF;
+  border-radius: 15px 15px 0px 0;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+}
+
+.QnaTablehead{ 
+  border-bottom: 1px solid #1FB1D9;
+  padding: 0;
+  padding: 10px 5px;
+  font-weight: bold;
+  margin: auto;
+}
+
+
+.QnaRow {
+  background-color: #fff;
+  cursor: pointer;
+  border-bottom: 1px solid #1FB1D9;
+  line-height: 45px;
+}
+
+.Qnacolumn {
+  padding: 10px 5px;
+  color: black;
+  text-align: center;
+  margin: auto;
+}
+
+
+.qna-link{
+  color: black;
+}
+
+  @media (max-width: 727px) {
+    .Qnatablerow1 {
+      flex-direction: column;
+      width: 60%;
+      border: 1px solid #1FB1D9;
+      margin: 0 auto; 
+      margin-bottom: 10px;
+      border-radius: 50px;
+      overflow: hidden;
+    }
+  
+    .Qnacolumn:nth-child(1) {
+      display: none;
+    }
+  
+ 
+    .QnaTablehead {
+      display: none;
+    }
+}

@@ -1,45 +1,71 @@
-.table {
-    min-width: 70%;
-    margin: 0 auto;
-    text-align: center;
-    border-spacing: 0;
-    background-color: #D7F2FF;
-    border-radius: 15px 15px 0px 0;
-    height: 80px;
-    justify-content: center;
-    align-items: center;
-  }
+.FaqTable {
+  min-width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  border-spacing: 0;
+  background-color: #D7F2FF;
+  border-radius: 15px 15px 0px 0;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+}
 
-  .tablerow{
-    display: flex;
-    justify-content: center;
-
-  }
-  
-  .head{ 
-    border-bottom: 1px solid #1FB1D9;
-    padding: 0;
-    padding: 10px 5px;
-    font-weight: bold;
-    margin: auto;
-  }
-  
-
-  .row {
-    background-color: #fff;
-    cursor: pointer;
-    border-bottom: 1px solid #1FB1D9;
-    line-height: 45px;
-  }
-  
-  .column {
-    padding: 10px 5px;
-    color: black;
-    text-align: center;
-    margin: auto;
-  }
+.FaqTablehead{ 
+  border-bottom: 1px solid #1FB1D9;
+  padding: 0;
+  padding: 10px 5px;
+  font-weight: bold;
+  margin: auto;
+}
 
 
-  .faq-link{
-    color: black;
+.FaqRow {
+  background-color: #fff;
+  cursor: pointer;
+  border-bottom: 1px solid #1FB1D9;
+  line-height: 45px;
+}
+
+.Faqcolumn {
+  padding: 10px 5px;
+  color: black;
+  text-align: center;
+  margin: auto;
+}
+
+
+.faq-link{
+  color: black;
+}
+
+@media (max-width: 727px) {
+  .Faqtablerow1 {
+    flex-direction: column;
+    width: 60%;
+    border: 1px solid #1FB1D9;
+    margin: 0 auto; 
+    margin-bottom: 10px;
+    border-radius: 50px;
+    overflow: hidden;
   }
+
+  .Faqcolumn:nth-child(1) {
+    display: none;
+  }
+
+  .FaqTablehead {
+    display: none;
+  }
+
+  .FaqRow {
+    flex-direction: column;
+    border-bottom:1px solid #1FB1D9;
+
+    border-radius: 50px;
+  }
+
+  .Faqcolumn {
+    width: 130px;
+    margin-bottom: 10px; 
+  }
+}

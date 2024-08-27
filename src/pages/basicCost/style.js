@@ -3,7 +3,6 @@ const S = {};
 const mainDarkenColor = ({theme}) => theme.PALETTE.primary.main_darken;
 const mainColor = ({theme}) => theme.PALETTE.primary.main;
 
-
 S.Background = styled.div`
   width: 90%;
   height: 100vh;
@@ -23,6 +22,10 @@ S.H1 = styled.h1`
   text-align: center;
   margin-top: 10%;
   margin-bottom: 2%;
+  @media (max-width: 727px) {
+    margin-bottom: 10%;
+    margin-top: 25%;
+  }
 `;
 
 S.PalldayTitle = styled.p`
@@ -47,6 +50,9 @@ S.Pafter04Title = styled.p`
   position: absolute;
   right: 40%;
   top: 12%;
+  @media (max-width: 727px) {
+    right: 25%;
+  }
 `
 
 S.CostWrapper = styled.div`
@@ -57,18 +63,18 @@ S.CostWrapper = styled.div`
 `
 
 S.costboxtop = styled.div`
-width: 100%;
-height: 30%;
-background-color: ${({theme})=> theme.PALETTE.primary["main_soft"]};
-border-radius: 30px 30px 0 0;
-border-bottom: solid 2px ${({theme})=> theme.PALETTE.primary["main"]};
+  width: 100%; 
+  height: 30%;
+  background-color: ${({theme})=> theme.PALETTE.primary["main_soft"]};
+  border-radius: 30px 30px 0 0;
+  border-bottom: solid 2px ${({theme})=> theme.PALETTE.primary["main"]};
 `
 S.line = styled.div`
-width: 2px;
-height: 100%;
-background-color: ${({theme})=> theme.PALETTE.primary["main"]} ;
-position: absolute;
-left: 50%;
+  width: 2px;
+  height: 100%;
+  background-color: ${({theme})=> theme.PALETTE.primary["main"]} ;
+  position: absolute;
+  left: 50%;
 `
 
 S.dashedLine = styled.div`
@@ -78,7 +84,12 @@ S.dashedLine = styled.div`
   position: absolute;
   top: ${({ top }) => top}%; 
   left: ${({ left }) => left}%; 
+  @media (max-width: 727px) {
+    width: 50px;
+    left: ${({ left }) => `calc(${left}% + 7%)`}; 
+  }
 `
+
 
 S.NavParkSelector = styled.nav`
 	font-size: 18px !important;
@@ -107,5 +118,10 @@ S.NavParkSelector = styled.nav`
 		color: ${mainColor};
 		font-weight: 600;
 	}
+
+  @media (max-width: 727px) {
+    margin-bottom: 10%;
+  }
 `;
+
 export default S;
