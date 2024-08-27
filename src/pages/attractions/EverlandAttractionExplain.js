@@ -11,7 +11,6 @@ import {faMartiniGlass,faHeartPulse, faPersonPregnant,faWheelchair ,faCircleExcl
 const EverLandAttractionExplain = () => {
     const { id } = useParams(); 
     const [attractions, setAttractions] = useState({});
-
     useEffect(() => {
         const fetchAttractionDetail = async () => {
             try {
@@ -44,26 +43,26 @@ const EverLandAttractionExplain = () => {
    <S.ExplainWrapper className='notosanskr'>
      <S.ExplainH1>{attractions.title}</S.ExplainH1>
      <S.ExplainDescription>{attractions.description}</S.ExplainDescription>
-     <S.ExplainImage src={`${process.env.PUBLIC_URL}/AttractionsImage/Everland/at${attractions.id}.jpg`} alt="attraction" />
+     <S.ExplainImage imgSrc={`${process.env.PUBLIC_URL}/AttractionsImage/Everland/at${attractions.id}.jpg`} alt="attraction" />
 
-      <S.IconWrapper>
-         <div>
-           <img src='/AttractionsImage/at_icon1.png' alt='#' />
-           <S.Span> 탑승인원 </S.Span> 
-           <p>{attractions.people}</p>
-         </div>
-         <div>
-           <img src='/AttractionsImage/at_icon2.png' alt='#' />
-             <S.Span>이용 정보</S.Span>
-             <p>{attractions.height}</p>
-        </div>
-     </S.IconWrapper>
+         <S.IconWrapper>
+             <div>
+                 <img src='/AttractionsImage/at_icon1.png' alt='#' />
+                 <S.Span> 탑승인원 </S.Span> 
+                 <p>{attractions.people}</p>
+             </div>
+             <div>
+                 <img src='/AttractionsImage/at_icon2.png' alt='#' />
+                 <S.Span>이용 정보</S.Span>
+                 <p>{attractions.height}</p>
+             </div>
+         </S.IconWrapper>
 
-      <S.BigContainer>
-         <S.Limit > 
-            <FontAwesomeIcon icon={faBan}></FontAwesomeIcon>  탑승 제한
-        </S.Limit>
-         <S.LimitWrapper>
+         <S.BigContainer>
+            <S.Limit > 
+              <FontAwesomeIcon icon={faBan}></FontAwesomeIcon>  탑승 제한
+            </S.Limit>
+          <S.LimitWrapper>
              <S.IconContainer>
                  <FontAwesomeIcon icon={faMartiniGlass} style={{fontSize:"100px"}} color='#1FB1D9'/> 
                  <S.IconText>음주</S.IconText>
@@ -80,8 +79,8 @@ const EverLandAttractionExplain = () => {
                  <FontAwesomeIcon icon={faWheelchair} style={{fontSize:"100px"}} color='#1FB1D9'/>
                  <S.IconText>휠체어</S.IconText>
                  </S.IconContainer>
-        </S.LimitWrapper>
-     </S.BigContainer>
+            </S.LimitWrapper>
+         </S.BigContainer>
 
          
        <S.Notice> 

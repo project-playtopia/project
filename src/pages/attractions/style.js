@@ -2,6 +2,9 @@ import styled from "styled-components";
 const mainDarkenColor = ({theme}) => theme.PALETTE.primary.main_darken;
 const mainColor = ({theme}) => theme.PALETTE.primary.main;
 
+const h1FontSize = "40px";
+const fontBold = ({theme}) => theme.FONT_WEIGHT.bold;
+
 const S = {};
 
 
@@ -11,17 +14,31 @@ const S = {};
 
 // 전체컨테이너 
   S.Background = styled.div`
-    width: 100%;
+    width: 90%;
     height: 100%;
     background-color: #fff;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     margin: 0 auto;
     margin-bottom: 10%;
+    padding-top: 5rem;
     
+
+    @media (max-width: 727px) {
+      grid-template-columns: repeat(2, 1fr);
+    };
  `;
+
+
+ S.Header1 = styled.h1`
+  margin: 30px auto 10px auto;
+  font-size: ${h1FontSize};
+  text-align: center;
+  width: 100%;
+  font-weight: ${fontBold};
+`;
 
 // 3사 셀렉버튼
   S.NavParkSelector = styled.nav`
@@ -48,21 +65,68 @@ const S = {};
 	};
   `;
 
-// BasicSearch 검색창
- S.search = styled.div`
-   position:absolute;
-   width: 60%;
-   left: 30%;
-   top : 25%;
- `;
+
+S.SearchContainer = styled.div`
+  width: 30vw;
+	height: 3rem;
+  margin: 0 auto;
+  @media(max-width: 727px){
+    width: 20rem;
+  }
+`;
+
+ S.SearchWrapper = styled.div`
+	padding: 0;
+  width: 100%;
+  height: 100%;
+	display: flex;
+	align-items: center;
+`;
+
+ S.SearchInput = styled.input`
+	flex-basis: 80%;
+	height: 100%;
+	background-color: #fff;
+	border-color: ${mainColor};
+	border-style: solid;
+	border-width: 1px 0 1px 1px;
+	border-radius: 30px 0 0 30px;
+	outline: none;
+	padding-left: 1rem;
+	font-size: 0.9rem;
+`;
 
 
-// 이미지리스트 박스
+
+
+ S.SearchBtn = styled.button`
+	flex-basis: 20%;
+	height: 100%;
+	background-color: #fff;
+	border-color: ${mainColor};
+	border-style: solid;
+	border-width: 1px 1px 1px 0;
+	border-radius: 0 30px 30px 0;
+	cursor: pointer;
+`;
+
+
+// 이미지리스트 전체박스
   S.AttractionsContainer = styled.div`
+    width: 80%;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
-    grid-gap: 30px; // 그리드 사이의 간격
-    margin-top: 110px;
+    gap: 30px; // 그리드 사이의 간격
+    margin-top: 50px;
+    
+
+     @media(max-width: 727px){
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+      margin: 0;
+      padding-top: 1rem;
+     };
   `;
 
 
@@ -71,11 +135,11 @@ const S = {};
   S.ImageWrapper = styled.div`
     position: relative;
     width: 250px;
-    height: 250px;
+    aspect-ratio: 1;
     overflow: hidden;
     border-radius: 20px;
 
-  
+    margin: 0 auto;
 
     div {
      display: none;
@@ -85,7 +149,7 @@ const S = {};
      color : #ffffff;
      width: 100%;
      line-height: 1.5;
-  };
+    };
  
      div>p{
     color: #ffffff;
@@ -103,15 +167,11 @@ const S = {};
       display: block;
     };
 
+    @media(max-width:727px){
+      width: 150px;
+    }
 
-
-
-  
-  @media (max-width: 727px){
-    grid-template-columns: repeat(2,1fr);
-   }
-
-`;
+ `;
 
 
 
@@ -121,15 +181,20 @@ const S = {};
    position: relative;
    border-radius: 20px;
    object-fit: cover;
+
+    @media(max-width: 727px){
+
+      width: 150px;
+      height: 150px;
+    };
+
+
   `;
 
+ 
 
 
-
-
-
-
-
+ 
 
 
 
@@ -137,10 +202,14 @@ const S = {};
 
   // 전체컨테이너
 
-  S.ExplainWrapper = styled.div`
-     width: 100%;
-     margin-top: 150px;
-     text-align: center;
+S.ExplainWrapper = styled.div`
+  width: 90%;
+  margin-top: 150px;
+  text-align: center;
+  margin: 150px auto 50px auto;
+  @media (max-width: 727px) {
+    width: 100%;
+  }
 `;
 
 // 어트 타이틀
@@ -153,43 +222,39 @@ const S = {};
  S.ExplainDescription = styled.div`
     font-size: 24px;
     font-weight: bold;
-    margin-top: 30px;
-    margin-bottom : 40px;
-
+    margin: 30px 0 40px 0;
+    @media (max-width: 727px) {
+      margin: 30px 1em 40px 1em;
+    }
   `;
 
 // 어트 이미지
- S.ExplainImage = styled.img`
-    width: 1200px; // 원하는 너비로 설정
-    height: 400px; // 원하는 높이로 설정
-    border-radius: 20px;
-
+ S.ExplainImage = styled.div`
+  background-image: url(${(props)=>props.imgSrc});
+  background-color: #D7F2FF;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-width: 1200px; // 원하는 너비로 설정
+  width: 80%;
+  height: 400px; // 원하는 높이로 설정
+  border-radius: 20px;
+  margin: 0 auto;
   `;
 
 // 탑승인원, 이용정보 컨테이너
  S.IconWrapper =styled.div`
-     display: flex;
-     margin-top: 80px;
-     gap: 200px;
-     text-align: center;
-     text-align: center;
-     justify-content: flex-end;
-     max-width: 1055px;
-     
-     
-     &.icon{
-        margin :0 20px;
-      };
-  
-   
-
-   & .notice {
-      font-size: 30px;
-      font-weight: bold;
-      padding-top: 100px;
-   }; 
-
-
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  margin: 80px auto;
+  width: 100%;
+  & div{
+    margin: 0 1rem;
+  }
+  & img{
+   width: 10em;
+   aspect-ratio: 1;
+  }
  `;
 
  S.Span = styled.div`
@@ -208,7 +273,6 @@ const S = {};
     justify-content: center;
     text-align: center;
    margin : 100px 0;
-
   `;
 
 
@@ -217,9 +281,8 @@ const S = {};
       font-weight: bold;
       margin-bottom: 40px;
       text-align: center;
-      align-items: center;  
-    
-`;
+      align-items: center;    
+  `;
 
  S.LimitWrapper = styled.div`
       display: flex;
@@ -241,8 +304,10 @@ const S = {};
      display: flex;
      flex-direction: column; 
      align-items: center; 
-     margin: 10px; 
- `;
+     /* margin: 10px;  */
+     margin : 0 auto;
+
+  `;
 
 
  S.IconText = styled.p`
@@ -251,7 +316,7 @@ const S = {};
     color: #000000;
     display: flex;
     justify-content: center;
- `;
+  `;
 
 
 
@@ -262,8 +327,7 @@ S.Notice = styled.div`
     margin-bottom: 40px;
     text-align: center;
     align-items: center;  
-     
-`;
+  `;
 
 
 
