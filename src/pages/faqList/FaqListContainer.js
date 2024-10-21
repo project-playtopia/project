@@ -19,7 +19,7 @@ const FaqListContainer = () => {
   const limit = 5; 
 
   useEffect(() => {
-    fetch(`http://localhost:8000/faqlist/list?page=${currentPage}`)
+    fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/faqlist/list?page=${currentPage}`)
     .then((res) => {
       if (!res.ok) {
         throw new Error(`http error ${res.status}`);

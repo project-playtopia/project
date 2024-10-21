@@ -15,7 +15,7 @@ const GuidemapEverland = () => {
   useEffect(()=>{
     const getAttract = async () => {
         try {
-            const response = await fetch(`http://localhost:8000/guide/guideMap/${randomData}`)
+            const response = await fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/guide/guideMap/${randomData}`)
             const datas = await response.json()
             return datas;
         } catch (error) {

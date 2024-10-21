@@ -17,14 +17,14 @@ const FnbExplain = () => {
   
 
   const getFnb = async () => {
-    const response = await fetch(`http://localhost:8000/fnb/find/?fnbId=${itemId}`);
+    const response = await fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/fnb/find/?fnbId=${itemId}`);
     const data = await response.json();
     console.log(data);  
     return data;
   }
 
   const getFnbExplain = async () => {
-    const response = await fetch(`http://localhost:8000/fnbExplain/?fnbId=${itemId}`);
+    const response = await fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/fnbExplain/?fnbId=${itemId}`);
     const data = await response.json();
     console.log(data);
     return data;

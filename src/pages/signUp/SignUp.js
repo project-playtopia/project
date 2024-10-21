@@ -82,7 +82,7 @@ const SignUp = () => {
     if (!privacyAgreed || !termsAgreed || !uniqueIdAgreed || !telecomAgreed) {
       alert("필수 약관에 동의해주세요.");
     } else {
-      fetch('http://localhost:8000/register/signUp', {
+      fetch('https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/register/signUp', {
                 method : 'POST',
                 credentials:'include',
                 headers : {
@@ -102,7 +102,7 @@ const SignUp = () => {
 
   const checkIdDuplication = () => {
     const id = getValues('id');
-    fetch(`http://localhost:8000/register/checkId/${id}`)
+    fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/register/checkId/${id}`)
       .then(res => res.json())
       .then(result => {
         if (result.exists) {

@@ -9,7 +9,7 @@ const Pay = () => {
   const { itemId, explainInfo, period } = { ...location.state };
   const [ benefitInfo, setBenefitInfo ] = useState({});
   const getBenefitInfo = async () => {
-    const res = await fetch(`http://localhost:8000/benefit/find/?benefitId=${itemId}`);
+    const res = await fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/benefit/find/?benefitId=${itemId}`);
     const data = await res.json();
     setBenefitInfo(data);
     // console.log(data);

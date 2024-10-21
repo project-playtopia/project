@@ -22,7 +22,7 @@ const ChangePw = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:8000/api/changePassword', 
+      const response = await fetch('https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/api/changePassword', 
       {
         method: 'POST',
         headers: {

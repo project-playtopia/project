@@ -10,7 +10,7 @@ const LostnFoundExplain = () => {
   const [lostnfoundexplain, setLostnFoundExplain] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8010/lostnfoundexplain/list`)
+    fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/lostnfoundexplain/list`)
       .then((res) => res.json())
       .then((data) => setLostnFoundExplain(data.LostnFoundExplain));
   }, []);

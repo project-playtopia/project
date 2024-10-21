@@ -16,7 +16,7 @@ const LostnFoundListLotteworld = () => {
   const [searchInput, setSearchInput] = useState("");  
 
   useEffect(() => {
-    fetch(`http://localhost:8000/lostnfoundlist/list/?page=${currentPage}&company=lotteworld`)
+    fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/lostnfoundlist/list/?page=${currentPage}&company=lotteworld`)
       .then((res) => res.json())
       .then(({ lostnfoundlist, totalPages }) => {
         if (Array.isArray(lostnfoundlist)) {

@@ -8,7 +8,7 @@ const YearCostBenefitLotteworld = () => {
   const [ yearcostList, setYearcostList ] = useState([]);
 
   const getYearcost = async () => {
-    const res = await fetch('http://localhost:8000/yearcost/list/?company=lotteworld')
+    const res = await fetch('https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/yearcost/list/?company=lotteworld')
     const datas = await res.json();
     setYearcostList(datas);
   }

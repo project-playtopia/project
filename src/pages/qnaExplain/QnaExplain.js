@@ -8,7 +8,7 @@ const QnaExplain = () => {
    const [qnaexplain , setQnaExplain] = useState([])
 
    useEffect(() => {
-    fetch(`http://localhost:8004/qnaexplain/list`)
+    fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/qnaexplain/list`)
       .then((res) => res.json())
       .then((data) => setQnaExplain(data.qnaexplain));
   }, []);

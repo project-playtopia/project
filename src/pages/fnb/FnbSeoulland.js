@@ -12,7 +12,7 @@ const FnbSeoulland = () => {
   HTMLCollection.prototype.forEach = Array.prototype.forEach;
 
   const getDatas = async () => {
-    const response = await fetch(`http://localhost:8000/fnb/list/?company=seoulland&fnb_type=${type}`);
+    const response = await fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/fnb/list/?company=seoulland&fnb_type=${type}`);
     const datas = await response.json();
     return datas;
   }

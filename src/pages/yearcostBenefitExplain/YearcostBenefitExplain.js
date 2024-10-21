@@ -14,13 +14,13 @@ const YearcostBenefitExplain = () => {
   
 
   const getYearcostBenefit = async () => {
-    const res = await fetch(`http://localhost:8000/yearcost/find/?itemId=${itemId}`);
+    const res = await fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/yearcost/find/?itemId=${itemId}`);
     const data = await res.json();
     setTitle(await data.title);
   }
 
   const getYearcostBenefitExplain = async () => {
-    const res = await fetch(`http://localhost:8000/yearcostBenefitExplain/find/?itemId=${itemId}`);
+    const res = await fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/yearcostBenefitExplain/find/?itemId=${itemId}`);
     const data = await res.json();
     setExplainContents(await data.contents);
     setDescription(await data.description);

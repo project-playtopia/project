@@ -7,7 +7,7 @@ const FaqExplain = () => {
   const [faqexplain, setFaqExplain] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/faqexplain/list`)
+    fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/faqexplain/list`)
       .then((res) => {
         if (!res.ok) {
           throw new Error(`HTTP error ${res.status}`);

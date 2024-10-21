@@ -16,7 +16,7 @@ const LostnFoundRegisterLotteworld = () => {
   });
 
   useEffect(() => {
-    fetch('http://localhost:8010/lostnfoundlist/list/')
+    fetch('https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/lostnfoundlist/list/')
       .then((res) => res.json())
       .then((data) => {
         const lotteworldEntries = data.lostnfoundlist.filter(entry => entry.company === 'lotteworld');
@@ -30,7 +30,7 @@ const LostnFoundRegisterLotteworld = () => {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:8010/lostnfoundexplain/list/')
+    fetch('https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/lostnfoundexplain/list/')
       .then((res) => res.json())
       .then((data) => {
         const lotteworldEntries = data.lostnfoundlist.filter(entry => entry.company === 'lotteworld');
@@ -51,7 +51,7 @@ const LostnFoundRegisterLotteworld = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch('http://localhost:8010/lostnfoundexplain/post/', {
+    fetch('https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/lostnfoundexplain/post/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ const LostnFoundRegisterLotteworld = () => {
       return res.json();
     })
 
-    fetch('http://localhost:8010/lostnfoundlist/post/', {
+    fetch('https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/lostnfoundlist/post/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -18,13 +18,13 @@ const GiftshopExplain = () => {
   const [phoneNum, setPhoneNum] = useState("");
 
   const getGiftshop = async () => {
-    const response = await fetch(`http://localhost:8000/giftshop/find/?giftshopId=${itemId}`);
+    const response = await fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/giftshop/find/?giftshopId=${itemId}`);
     const data = await response.json();
     return await data;
   }
 
   const getGiftshopExplain = async () => {
-    const response = await fetch(`http://localhost:8000/giftshopExplain/findInfo?giftshopId=${itemId}`);
+    const response = await fetch(`hhttps://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/giftshopExplain/findInfo?giftshopId=${itemId}`);
     const data = await response.json();
     return await data;
   }

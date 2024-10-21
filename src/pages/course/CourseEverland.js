@@ -14,7 +14,7 @@ const CourseEverland = () => {
       
       const courseName = courses[activeIndex].replace('#', '');
       const company = "에버랜드";
-      fetch(`http://localhost:8000/course/attractions?courseName=${courseName}&company=${company}`)
+      fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/course/attractions?courseName=${courseName}&company=${company}`)
         .then(response => {
           if (!response.ok) {
             throw new Error('서버 오류');

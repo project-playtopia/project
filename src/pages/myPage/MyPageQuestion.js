@@ -14,7 +14,7 @@ const MyPageQuestion = () => {
     const confirm = window.confirm('playtopia를 정말 탈퇴하시겠습니까?')
     if(confirm){
       const userDelete = async () => {
-          const response = await fetch('http://localhost:8000/getuser/deleteuser', {
+          const response = await fetch('https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/getuser/deleteuser', {
               method : 'DELETE',
               headers: { 
                 'Content-Type': 'application/json',

@@ -15,7 +15,7 @@ const SeoullandAttraction = () => {
     useEffect(() => {
         // 컴포넌트가 처음 렌더링 될 때 데이터 가져옴
         const getAttractions = async () => {
-            const response = await fetch(`http://localhost:8000/attraction/seoulland`, {
+            const response = await fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/attraction/seoulland`, {
                 method: 'POST',
                 credentials: 'include',
                 headers: {

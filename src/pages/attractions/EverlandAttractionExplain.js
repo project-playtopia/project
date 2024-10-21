@@ -14,7 +14,7 @@ const EverLandAttractionExplain = () => {
     useEffect(() => {
         const fetchAttractionDetail = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/attraction/everland/explain/${id}`, {
+                const response = await fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/attraction/everland/explain/${id}`, {
                     method: 'GET',
                     // credentials: 'include',
                     headers: {

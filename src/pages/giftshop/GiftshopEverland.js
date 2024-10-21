@@ -8,7 +8,7 @@ const GiftshopEverland = () => {
   HTMLCollection.prototype.forEach = Array.prototype.forEach;
 
   const getDatas = async () => {
-    const response = await fetch(`http://localhost:8000/giftshop/list/?company=everland`);
+    const response = await fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/giftshop/list/?company=everland`);
     const datas = await response.json();
     return datas;
   }

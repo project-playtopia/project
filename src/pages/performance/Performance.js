@@ -37,7 +37,7 @@ const Performance = () => {
     // 데이터 형식에 맞게 변환하는 것을 parsing(파싱)이라고 한다.
     let parseDate = ((parseInt(tempDate[0]) < 10) ? "0" + tempDate[0] : tempDate[0]) + ((parseInt(tempDate[2]) < 10) ? "0" + tempDate[2] : tempDate[2]);
     
-    const res = await fetch(`http://localhost:8000/performance/list?date=${parseDate}`);
+    const res = await fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/performance/list?date=${parseDate}`);
     const data = await res.json();
 
 

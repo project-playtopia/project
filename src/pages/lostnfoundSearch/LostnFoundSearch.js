@@ -8,7 +8,7 @@ const LostnFoundSearch = () => {
   const [lostnfoundlist, setLostList] = useState([]);
   const [isChecked, setIsChecked] = useState(false);
   useEffect(() => {
-    fetch('http://localhost:8010/lostnfoundlist/list/all/')
+    fetch('https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/lostnfoundlist/list/all/')
       .then((res) => res.json())
       .then((data) => {
         const filteredList = data.lostnfoundlist.filter(item => 
@@ -37,7 +37,7 @@ const LostnFoundSearch = () => {
     });
     setLostList(updatedList);
 
-    fetch('http://localhost:8010/lostnfoundlist/update', {
+    fetch('https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/lostnfoundlist/update', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

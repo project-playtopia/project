@@ -19,7 +19,7 @@ const QnaListContainer = () => {
   const limit = 5; 
 
   useEffect(() => {
-    fetch(`http://localhost:8004/qnalist/list?page=${currentPage}`)
+    fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/qnalist/list?page=${currentPage}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error(`http error ${res.status}`);

@@ -12,7 +12,7 @@ const QnaRegister = () => {
   });
 
   useEffect(() => {
-    fetch('http://localhost:8004/qnalist/list/')
+    fetch('https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/qnalist/list/')
       .then((res) => res.json())
       .then((data) => {
         const qnaEntries = data.qnalist.filter(entry => entry.company = 'everland' );
@@ -26,7 +26,7 @@ const QnaRegister = () => {
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:8004/qnaexplain/list/')
+    fetch('https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/qnaexplain/list/')
       .then((res) => res.json())
       .then((data) => {
         const qnaEntries = data.qnaexplain.filter(entry => entry.company = 'everland' );
@@ -47,7 +47,7 @@ const QnaRegister = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch('http://localhost:8004/qnaexplain/post/', {
+    fetch('https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/qnaexplain/post/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ const QnaRegister = () => {
       return res.json();
     })
 
-    fetch('http://localhost:8004/qnalist/post/', {
+    fetch('https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/qnalist/post/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

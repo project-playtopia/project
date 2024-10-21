@@ -58,7 +58,7 @@ connect();
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended : false}));
 app.use(cors({
-  origin : 'http://localhost:3000',
+  origin : 'https://projectplaytopia.vercel.app',
   method : ['GET', 'POST', 'DELETE', 'PUT'],
   credentials : true,
 }));

@@ -11,7 +11,7 @@ const SearchId = () => {
     try {
       const formattedPhoneNumber = phoneNumber.replace(/-/g, '');
 
-      const response = await fetch('http://localhost:8000/searchid/findByPhone', {
+      const response = await fetch('https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/searchid/findByPhone', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

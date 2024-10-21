@@ -18,7 +18,7 @@ const LostnFoundListEverland = () => {
   const limit = 5;
 
   useEffect(() => {
-    fetch(`http://localhost:8000/lostnfoundlist/list?page=${currentPage}&company=everland`)
+    fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/lostnfoundlist/list?page=${currentPage}&company=everland`)
       .then((res) => {
         if (!res.ok) {
           throw new Error('Failed to fetch data');

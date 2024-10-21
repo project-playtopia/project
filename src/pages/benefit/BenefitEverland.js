@@ -17,7 +17,7 @@ const BenefitEverland = () => {
 	},[allBenefitList])
 
 	useEffect(()=>{
-		fetch(`http://localhost:8000/benefit/list/?company=everland&filter=${filter}`)
+		fetch(`https://port-0-playtopia-rccln2llw1nwqng.sel5.cloudtype.app/benefit/list/?company=everland&filter=${filter}`)
 			.then((res)=>res.json())
 			.then((data)=>{
 				setAllBenefitList(data);
