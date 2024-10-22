@@ -57,6 +57,7 @@ connect();
 
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended : false}));
+
 app.use(cors({
   origin: 'https://projectplaytopia.vercel.app',
   methods: ['GET', 'POST', 'DELETE', 'PUT'],
@@ -69,6 +70,7 @@ app.options('*', (req, res) => {
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   res.sendStatus(204);
 });
+
 
 
 app.use('/attraction', attractionRouter);
@@ -102,3 +104,11 @@ app.use('/yearcostBenefitExplain', yearcostBenefitExplainRouter);
 app.listen(PORT, ()=>{
 	console.log(`server start on ${PORT}`);
 });
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://projectplaytopia.vercel.app');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  console.log('CORS headers set');
+  next();
+});
+
