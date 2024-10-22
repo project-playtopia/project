@@ -58,10 +58,18 @@ connect();
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended : false}));
 app.use(cors({
-  origin : 'https://projectplaytopia.vercel.app',
-  method : ['GET', 'POST', 'DELETE', 'PUT'],
-  credentials : true,
+  origin: 'https://projectplaytopia.vercel.app',
+  methods: ['GET', 'POST', 'DELETE', 'PUT'],
+  credentials: true,
 }));
+
+app.options('*', (req, res) => {
+  res.header('Access-Control-Allow-Origin', 'https://projectplaytopia.vercel.app');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.sendStatus(204);
+});
+
 
 app.use('/attraction', attractionRouter);
 app.use('/api', changePwRouter);
